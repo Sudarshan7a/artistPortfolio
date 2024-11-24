@@ -1,0 +1,10 @@
+#root {
+  margin: 0;
+  padding: 0;
+  background-color: var(--primaryColor);
+  list-style-type: none;
+}
+
+.list-none {
+  list-style-type: none;
+}

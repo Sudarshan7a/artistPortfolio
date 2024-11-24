@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  width: auto;
+  --textPrimary: #333333;
+  --textSecondary: #666666;
+  --primaryColor: #f0f0f0;
+  --secondaryColor: #add8e6;
+  --accentColorYellow: #ffd700;
+  --accentColorRed: #ff4c4c;
+  --extraColorCyan: #2dd4bf;
+  --extraColorPurple: #8b5cf6;
+
+  --titleFont: Montserrat, sans-serif;
+  --subtitleFont: Merriweather, serif;
+  --h1: 56px;
+  --h2: 36px;
+  --h3: 28px;
+  --navFontSize: 16px;
+  --buttonFontSize: 18px;
+  --bodyFontSize: 16px;
+  --footerFontSize: 14px;
+  --h1LetterSpacing: 0.5px;
+  --h2LetterSpacing: 0.5px;
+  --h3LetterSpacing: 0.5px;
+  --navLetterSpacing: 0.2px;
+
+  --bold: 700;
+  --semiBold: 600;
+  --medium: 500;
+  --regular: 400;
+}
+
+li a {
+  font-family: var(--titleFont);
+  font-size: var(--navFontSize);
+  letter-spacing: var(--navLetterSpacing);
+  color: var(--textPrimary);
+  opacity: 0.8;
+}
+li a:hover {
+  color: var(--textPrimary);
+  opacity: 1;
+}
+
+.active {
+  color: var(--textPrimary);
+  opacity: 1;
+}
+.btn {
+  font-family: var(--titleFont);
+  font-size: var(--buttonFontSize);
+  font-weight: var(--semiBold);
+}
+.homeheroh1 {
+  font-family: var(--titleFont);
+  letter-spacing: var(--h1LetterSpacing);
+  color: var(--textPrimary);
+}
+.homeherop {
+  font-family: var(--subtitleFont);
+  letter-spacing: var(--h1LetterSpacing);
+  color: var(--textSecondary);
+  font-size: 22px;
+}
+h2 {
+  font-family: var(--titleFont);
+  font-size: var(--h2);
+  letter-spacing: var(--h2LetterSpacing);
+  color: var(--textPrimary);
+  font-weight: var(--semiBold);
+}
+h3 {
+  font-family: var(--titleFont);
+  font-size: var(--h3);
+  letter-spacing: var(--h3LetterSpacing);
+  color: var(--textPrimary);
+}
