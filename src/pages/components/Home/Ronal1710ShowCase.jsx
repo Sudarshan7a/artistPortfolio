@@ -77,7 +77,7 @@ const Ronal1710ShowCase = () => {
       <h1
         className={`${styles.headline}  bg-gradient-to-b from-[#f0f0f0] to-[#f8e6ef]`}
       >
-        Why is RONAL1710’s Art best for you.
+        Why is RONAL1710&apos;s Art best for you.
       </h1>
       <br />
       <div className={`gallery ${styles.gallery}`} ref={galleryRef}>
