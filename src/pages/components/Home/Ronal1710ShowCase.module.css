@@ -1,0 +1,29 @@
+.gallery h1 {
+  color: var(--darkGrayFont, #333);
+  font-family: Montserrat;
+  font-size: 44px; /* Increased from 40px to 44px */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 61.6px */
+}
+.gallery p {
+  color: var(--darkGrayFont, #333);
+  font-family: Merriweather;
+  font-size: 28px; /* Increased from 24px to 28px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 39.2px */
+}
+
+.headline {
+  color: var(--darkGrayFont, #333);
+  font-family: Montserrat;
+  font-size: 66px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 50.4px */
+  padding-left: 80px;
+  position: relative;
+  top: 40px;
+  margin-top: 80px;
+}

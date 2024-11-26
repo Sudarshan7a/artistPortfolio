@@ -1,0 +1,30 @@
+.aboutMe h1 {
+  color: var(--darkGrayFont, #333);
+  font-family: var(--titleFont);
+  font-size: 72px; /* Increased from 64px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 86.4px */
+}
+.aboutMe h2 {
+  color: var(--darkGrayFont, #333);
+  font-family: Merriweather;
+  font-size: 20px; /* Increased from 18px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+}
+.aboutMe p {
+  color: var(--darkGrayFont, #333);
+  font-family: Merriweather;
+  font-size: 18px; /* Increased from 16px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 28.8px */
+}
+
+.aboutMe img {
+  border-radius: 581px;
+  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.16) inset;
+}

@@ -11,12 +11,14 @@ function FeaturedProducts() {
           <Cards {...product} key={product.id} />
         ))}
       </div>
-      <div className="flex justify-end mt-12 mr-20 h-20">
-        <SidebarButtons />
+      <div className="flex justify-end gap-10 mt-12 mr-20 h-20">
+        <SidebarButtons scale={150} rotation={180} aviable={false} />
+        <SidebarButtons scale={150} rotation={0} aviable={true} />
       </div>
     </div>
   );
 }
+
 Cards.propTypes = {
   title: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
