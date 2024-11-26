@@ -1,5 +1,5 @@
 import logo from "../../../assets/images/profile/pro_sm.jpg";
-import styles from "./AboutMe.module.css";
+import styles from "./About.module.css";
 function AboutMe() {
   {
     /* two divs one for image rounded and one for text with 3 vaiant mini big and medium */
