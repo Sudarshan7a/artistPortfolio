@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import pro_lg from "./../../assets/images/profile/pro_lg.jpg";
+import Logo from "./Logo";
 
 function PageNav() {
   return (
@@ -38,26 +38,3 @@ function Button({ children }) {
 }
 
 export default PageNav;
-
-const logoStyle = {
-  color: "#333333",
-  fontFamily: "Montserrat, sans-serif",
-  fontSize: "24px",
-  fontStyle: "normal",
-  fontWeight: 400,
-  lineHeight: "38.4px",
-  letterSpacing: "0.064px",
-};
-
-function Logo() {
-  return (
-    <div className="flex items-center mr-3 gap-2">
-      <img
-        src={pro_lg}
-        alt="logo"
-        className="h-[36px] w-[36px] rounded-full "
-      />
-      <h1 style={logoStyle}>Ronal1710</h1>
-    </div>
-  );
-}

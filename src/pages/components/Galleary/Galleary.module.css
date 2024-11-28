@@ -1,0 +1,17 @@
+.latesArt {
+  border-radius: 41.279px;
+  background: linear-gradient(
+    256deg,
+    #8b5cf6 0%,
+    #005ae1 13.5%,
+    #2dd4bf 28%,
+    rgba(255, 215, 0, 0.6) 39%,
+    rgba(255, 76, 76, 0.6) 52%,
+    #8b5cf6 67.5%,
+    #005ae1 84.5%,
+    #2dd4bf 100%
+  );
+  filter: blur(40px);
+  width: 1220px;
+  height: 620px;
+}

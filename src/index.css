@@ -78,3 +78,74 @@ h3 {
   letter-spacing: var(--h3LetterSpacing);
   color: var(--textPrimary);
 }
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: linear-gradient(#ffe4d3ee, var(--primaryColor));
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: flex;
+  animation: 36s slide infinite linear;
+  object-fit: fill;
+}
+
+.scroll img {
+  border-radius: 20px;
+}
+.scroll {
+  display: flex;
+  width: 560px;
+  height: 372px;
+  object-fit: fill;
+  gap: 40px;
+}
+.footerul {
+  font-weight: 700;
+}
+.contact p {
+  color: #333;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+.footerh1 {
+  color: #333;
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 156px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160px; /* 125% */
+  letter-spacing: var(--Label-Large-Tracking, 0.1px);
+}
+
+hr {
+  height: 0.4px;
+  border: 1px solid #333;
+}
+
+.copywrite {
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.1px;
+}

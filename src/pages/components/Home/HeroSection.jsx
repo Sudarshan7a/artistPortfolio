@@ -3,7 +3,7 @@ import Button from "../Button";
 function HeroSection() {
   return (
     <>
-      <div className=" h-[360px] overflow-hidden relative flex items-center">
+      <div className=" h-[360px] overflow-hidden relative flex overflow-y-scroll no-scrollbar items-center">
         <img
           className="h-full w-full object-cover object-center-top"
           src="./images/fullCom/fullCom_whiteKnight/variant2.jpg"

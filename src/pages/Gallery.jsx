@@ -1,10 +1,15 @@
+import Footer from "./components/Footer";
 import PageNav from "./components/PageNav";
+import Hero from "./components/Galleary/Hero";
+import LatestWork from "./components/Galleary/LatestWork";
 
 function Gallery() {
   return (
     <div>
       <PageNav />
-      this is the gallery page
+      <Hero />
+      <LatestWork />
+      <Footer />
     </div>
   );
 }
