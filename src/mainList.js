@@ -56,8 +56,8 @@ export const homeFeatured = [
     id: 4,
     title: "Half-Body Art",
     shortDescription: "Character-focused upper body portrait",
-    imageLocation: "images/characters/char_changli/variant2.jpg",
-    layout: "-86.283px -3.277px / 206.195%",
+    imageLocation: "images/characters/char_changli/variant3.jpg",
+    layout: "0px / ",
   },
 ];
 
