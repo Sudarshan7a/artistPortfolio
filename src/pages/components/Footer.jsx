@@ -1,25 +1,20 @@
-import pro_lg from "./../../assets/images/profile/pro_lg.jpg";
+import Logo from "./Logo";
 // import PropsTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
-const logoStyle = {
-  color: "#333333",
-  fontFamily: "Montserrat, sans-serif",
-  fontSize: "24px",
-  fontStyle: "normal",
-  fontWeight: 400,
-  lineHeight: "38.4px",
-  letterSpacing: "0.064px",
-};
+
 function Footer() {
   const backgroundStyle = {
     height: "596px",
     backgroundImage: `url('images/Intersect.svg')`,
   };
   return (
-    <footer className="footer h-[596px] pt-4 " style={backgroundStyle}>
+    <footer
+      className="footer h-[500px] pt-12 overflow-hidden "
+      style={backgroundStyle}
+    >
       <div className="m-16 ml-24  flex gap-16 justify-around items-start ">
-        <Logo />
+        <Logo scale={4} />
         <FooterNavLinks />
         <Social />
         <Contact />
@@ -50,22 +45,6 @@ function FooterNavLinks() {
         <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
       </li>
     </ul>
-  );
-}
-
-// Logo.propTypes = {
-//   scale: PropsTypes.number.isRequired,
-// };
-function Logo() {
-  return (
-    <div className={`flex items-center mr-3 gap-2 scale-150`}>
-      <img
-        src={pro_lg}
-        alt="logo"
-        className="h-[36px] w-[36px] rounded-full "
-      />
-      <h1 style={logoStyle}>Ronal1710</h1>
-    </div>
   );
 }
 
@@ -147,7 +126,7 @@ function Motivation() {
 
 function Copywrite() {
   return (
-    <div className="copywrite m-6">
+    <div className="copywrite m-6 ">
       <hr></hr>
       <div>
         <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">

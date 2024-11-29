@@ -18,12 +18,10 @@ function AboutMe() {
           <span>RONAL1710</span>
         </h1>
         <p className="text-textSecondary font-subtitle">
-          I am a web developer with a passion for learning and sharing my
-          knowledge with others. I have a strong foundation in JavaScript,
-          React, and Node.js, and I am always looking to expand my skill set. I
-          am currently working on a project that will help people learn to code
-          more effectively. I love to help others and am always looking for new
-          ways to do so.
+          A digital artist bringing anime-inspired worlds to life. Through
+          intricate details and expressive characters, I create scenes that
+          captivate and inspire. Explore my gallery to see my work, or connect
+          to start a custom piece crafted to your vision.
         </p>
       </div>
     </div>

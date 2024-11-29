@@ -12,15 +12,17 @@ const logoStyle = {
 };
 var scaleStyle = " ";
 function Logo({ scale }) {
-  if (scale == null) {
-    scale = 100;
-    scaleStyle = `scale-${scale}`;
-  } else {
-    scaleStyle = `scale-${scale}`;
-  }
+  scaleStyle = {
+    // "scale-100", " scale-110", " scale-125", " scale-150",
+    0: "scale-95",
+    1: "scale-100",
+    2: "scale-110",
+    3: "scale-125",
+    4: "scale-150",
+  };
 
   return (
-    <div className={`flex items-center mr-3 gap-2 ${scaleStyle}`}>
+    <div className={`flex items-center mr-3 gap-2 ${scaleStyle[scale]}`}>
       <img
         src={pro_lg}
         alt="logo"

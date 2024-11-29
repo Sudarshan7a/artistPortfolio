@@ -68,31 +68,113 @@ export const aboutMe = {
     "A digital artist bringing anime-inspired worlds to life. Through intricate details and expressive characters, I create scenes that captivate and inspire. Explore my gallery to see my work, or connect to start a custom piece crafted to your vision.",
 };
 
-export const scrollImages = [
-  {
-    id: "product1",
-    title: "Character Commission",
-    description:
-      "Character commissions capture each character's unique personality and story, ensuring every detail reflects the essence you're envisioning. From expressive poses to fine details, every artwork brings the character to life with an authentic anime touch.",
-    imageLocation: "assets/images/fullCom/abc.jpg",
-    backgroundColor: "#f5f5f5",
-  },
-  {
-    id: "product2",
-    title: "Full Illustration",
-    description:
-      "Discover immersive, anime-inspired worlds crafted with precision and passion. Each commission showcases my skill in bringing together detailed characters and intricate backgrounds, delivering truly captivating visuals tailored to your vision.",
-    imageLocation: "assets/images/backgrounds/abc.jpg",
-    backgroundColor: "#f5f5f5",
-  },
-  {
-    id: "product3",
-    title: "Background Art Commission",
-    description:
-      "Character commissions capture each character's unique personality and story, ensuring every detail reflects the essence you're envisioning. From expressive poses to fine details, every artwork brings the character to life with an authentic anime touch.",
-    imageLocation: "assets/images/characters/abc.jpg",
-    backgroundColor: "#f5f5f5",
-  },
+export const gallearyList = [
+  [
+    1,
+    {
+      name: "fullCom_crownVsHarvester",
+      loc: "images/fullCom/fullCom_crownVsHarvester/variant2.jpg",
+    },
+  ],
+  [
+    2,
+    {
+      name: "fullCom_whiteKnight",
+      loc: "images/fullCom/fullCom_whiteKnight/variant1.jpg",
+    },
+    {
+      name: "fullCom_whiteKnight",
+      loc: "images/characters/char_whiteKnight/variant2.jpg",
+    },
+  ],
+  [
+    3,
+    {
+      name: "fullCom_changliJishsi",
+      loc: "images/fullCom/fullCom_changliJinhsi.jpg",
+    },
+    {
+      name: "char_jjinhsi",
+      loc: "images/characters/char_jinhsi.jpg",
+    },
+    {
+      name: "char_changeLi",
+      loc: "images/characters/char_changli/variant1.jpg",
+    },
+  ],
+  [
+    4,
+    {
+      name: "char_chime",
+      loc: "images/characters/char_chime.jpg",
+    },
+    {
+      nam: "char_whitKnight",
+      loc: "images/characters/char_whiteKnight/variant1.jpg",
+    },
+    {
+      name: "char_scarlet",
+      loc: "images/characters/char_scarlet/variant1.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "fullCom_elainaBlueWorld",
+      loc: "images/fullCom/fullCom_elainaBlueWorld.jpg",
+    },
+  ],
+  [
+    3,
+    {
+      name: "fullCom_extendedVersion",
+      loc: "images/fullCom/fullCom_extendedVersion.jpg",
+    },
+    {
+      name: "char_redHood",
+      loc: "images/characters/char_redHood.jpg",
+    },
+    {
+      name: "char_rapunzel",
+      loc: "images/characters/char_rapunzel.jpg",
+    },
+  ],
+  [
+    5,
+    { name: "fullCom_snowWhite", loc: "images/fullCom/fullCom_snowWhite.jpg" },
+    {
+      name: "fullCom_redhoodAlteisen",
+      loc: "images/fullCom/fullCom_redHoodAlteisen.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "char_snowWhite",
+      loc: "images/characters/char_snowWhite.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "bg_ryukawa",
+      loc: "images/background/bg_ryukawa.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "bg_crown",
+      loc: "images/background/bg_crown.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "bg_alteisen",
+      loc: "images/background/bg_alteisen.jpg",
+    },
+  ],
 ];
 
 export const featuredArtworks = {
