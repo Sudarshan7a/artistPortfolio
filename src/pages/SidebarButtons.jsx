@@ -1,8 +1,15 @@
 import PropTypes from "prop-types";
 
+/**
+ * SidebarButtons component renders a button with an SVG icon.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} props.rotation - The rotation degree for the SVG icon.
+ * @param {number} props.scale - The scale factor for the SVG icon.
+ * @param {boolean} props.aviable - The availability status of the button.
+ */
 function SidebarButtons({ rotation, scale, aviable }) {
-  let styleClass = `scale-${scale} rotate-${rotation}`;
-  console.log(styleClass);
+  const styleClass = `scale-${scale} rotate-${rotation}`;
   let active = "";
   aviable ? (active = "opacity-100") : (active = "bg-opacity-50 opacity-70");
   return (
@@ -29,9 +36,9 @@ function SidebarButtons({ rotation, scale, aviable }) {
   );
 }
 SidebarButtons.propTypes = {
-  rotation: PropTypes.number.isRequired,
-  scale: PropTypes.number.isRequired,
-  aviable: PropTypes.bool.isRequired,
+  rotation: PropTypes.number,
+  scale: PropTypes.number,
+  aviable: PropTypes.bool,
 };
 
 export default SidebarButtons;

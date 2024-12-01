@@ -3,10 +3,13 @@ import Logo from "./Logo";
 import { NavLink } from "react-router-dom";
 import Button from "./Button";
 
+/**
+ * Footer component that renders the footer section of the page.
+ */
 function Footer() {
   const backgroundStyle = {
     height: "596px",
-    backgroundImage: `url('images/Intersect.svg')`,
+    backgroundImage: 'url("images/Intersect.svg")',
   };
   return (
     <footer
@@ -29,6 +32,9 @@ function Footer() {
 
 export default Footer;
 
+/**
+ * FooterNavLinks component that renders the navigation links in the footer.
+ */
 function FooterNavLinks() {
   return (
     <ul className="footerul flex flex-col gap-4">
@@ -47,7 +53,9 @@ function FooterNavLinks() {
     </ul>
   );
 }
-
+/**
+ * Social component that renders the social media links in the footer.
+ **/
 function Social() {
   return (
     <div className="social flex flex-col gap-4 w-[180px]">
@@ -97,13 +105,13 @@ function Social() {
   );
 }
 
+/**
+ * Contact component that renders the contact section in the footer.
+ */
 function Contact() {
   return (
     <div className="contact flex flex-col gap-4">
-      <p className="text-nowrap">
-        Ready to See Your Concept Come Alive?
-        <br /> Let&apos;s Collaborate!
-      </p>
+      <p className="text-nowrap">Ready to See Your Concept Come Alive?</p>
       <div className="w-[240px]">
         <Button variant={1}>Contact</Button>
       </div>
@@ -111,6 +119,9 @@ function Contact() {
   );
 }
 
+/**
+ * Motivation component that renders the motivation section in the footer.
+ */
 function Motivation() {
   return (
     <div className="motivation flex flex-row items-end justify-between gap-4">
@@ -124,6 +135,9 @@ function Motivation() {
   );
 }
 
+/**
+ * Copywrite component that renders the copyright information in the footer.
+ */
 function Copywrite() {
   return (
     <div className="copywrite m-6 ">

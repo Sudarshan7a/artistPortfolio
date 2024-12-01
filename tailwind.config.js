@@ -47,6 +47,13 @@ export default {
         medium: "var(--medium)",
         regular: "var(--regular)",
       },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(90deg, rgba(0, 90, 225, 0.80) 0%, rgba(102, 205, 170, 0.80) 30.5%, rgba(139, 92, 246, 0.80) 55.5%, rgba(255, 215, 0, 0.80) 71.5%, rgba(255, 76, 76, 0.80) 100%)",
+      },
+      boxShadow: {
+        "custom-light": "0px 0px 8.4px 0px rgba(0, 0, 0, 0.08)",
+      },
     },
   },
   plugins: [

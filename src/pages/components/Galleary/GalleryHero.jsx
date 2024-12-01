@@ -1,4 +1,4 @@
-function Hero() {
+function GalleryHero() {
   return (
     <div
       className={`text-[#333] text-center mt-[120px] flex flex-col items-center w-full`}
@@ -19,4 +19,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default GalleryHero;

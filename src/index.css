@@ -35,6 +35,10 @@
 body {
   overflow-x: hidden;
 }
+ul li::marker {
+  font-size: 0.7rem; /* Adjust the size */
+  color: var(--textSecondary); /* Optional: Change color */
+}
 li a {
   font-family: var(--titleFont);
   font-size: var(--navFontSize);

@@ -1,7 +1,7 @@
 // Anime-style Characters
 //         Fanart and Original Characters, female preferred; NSFW content also available upon request).
 // Anime-style Illustrations
-//         Featuring both characters and detailed backgrounds.
+//         Featuring both characters and detailed background.
 // Mecha and Mechanical Designs
 //         (Mechs, robots, tanks, etc.), along with intricate weapons and architectural elements.
 // Highly Detailed
@@ -36,100 +36,122 @@
 // Simple Backgrounds: No extra charge for basic colors or textures.
 // Customization: Prices adjust based on design complexity and additional elements.
 // Flexible Options: Add props or more detailed backgrounds for a fully personalized look.
+const tickMark = "Icons/tickMarkIcon.svg";
+const redCross = "Icons/redCross.svg";
+const greenRightArrow = "Icons/greenRightArrow.svg";
 
-const customArtworkOptions = [
+export const customArtworkOptions = [
   [
     {
+      icon: tickMark,
       title: "Anime-style Characters",
       description:
         "Fanart and Original Characters Fanart and Original Characters, female preferred; NSFW content also available upon request).",
     },
     {
+      icon: tickMark,
       title: "Anime-style Illustrations",
       description: "Featuring both characters and detailed backgrounds.",
     },
     {
+      icon: tickMark,
       title: "Mecha and Mechanical Designs",
       description:
         "(Mechs, robots, tanks, etc.), along with intricate weapons and architectural elements.",
     },
     {
+      icon: tickMark,
       title: "Highly Detailed",
       description: "High-Resolution Backgrounds to complement character art.",
     },
   ],
   [
     {
+      icon: greenRightArrow,
       title: "Note",
       description:
         "Can’t find what you’re looking for above? Feel free to reach out to discuss custom requests!",
     },
   ],
   [
-    "No gore, excessive violence, hate-related themes, or political content.",
-    "No furry or bestiality artwork (normal animal characters may be negotiable).",
-    "No fetish art.",
+    {
+      icon: redCross,
+      title:
+        "No gore, excessive violence, hate-related themes, or political content.",
+    },
+    {
+      icon: redCross,
+      title:
+        "No furry or bestiality artwork (normal animal characters may be negotiable).",
+    },
+    {
+      icon: redCross,
+      title: "No fetish art.",
+    },
   ],
 ];
 
-const commissionFeatured = [
+export const commissionFeatured = [
   {
-    image: "assets/images/characters/char_whiteKnight/variant3.jpg",
+    image: "images/characters/char_whiteKnight/variant3.jpg",
     title: "Potrait (Headshot)",
     price: 50,
     addons: [
       "Detailed Design: +$30–$100",
-      "Background: +$30–$100 ",
-      'Props: +$20–$200 (Add a "Learn More" or "Customize" button)',
+      "Background: +$30–$100 (Simple Colored or Simple textured/design included) ",
     ],
+    layout: "-152.146px 0px / 201.682% 101.123%",
   },
   {
-    image: "assets/images/characters/char_scarlet/variant2.jpg",
+    image: "images/characters/char_scarlet/variant2.jpg",
     title: "Burst (Chest-Up)",
     price: 100,
     addons: [
       "Detailed Design: +$30–$100",
-      "Background: +$50–$150 ",
-      "Props: +$20–$200 ",
+      "Background: +$50–$150 (Simple Colored or Simple textured/design included) ",
+      "Additional Props just: +$20–$200 ",
     ],
+    layout: "-13.575px 0.144px / 107.516% 107.446%",
   },
   {
-    image: "assets/images/charcates/char_crown/variant2.jpg",
+    image: "images/characters/char_changli/variant2.jpg",
     title: "Half-Body or Thighs-Up",
     price: 150,
     addons: [
       "Detailed Design: +$30–$150",
-      "Background: +$50–$200 ",
-      "Props: +$20–$200 ",
+      "Background: +$50–$200 (Simple Colored or Simple textured/design included) ",
+      "Additional Props just: +$20–$200 ",
     ],
+    layout: "-55.683px 0px / 150.654% 104.773%",
   },
   {
-    image: "assets/images/charactes/char_snowWhite.jpg",
+    image: "images/characters/char_chime.jpg",
     title: "Full-Body Illustration",
     price: 220,
     addons: [
       "Detailed Design: +$30–$150",
-      "Background: +$50–$200 ",
-      "Props: +$20–$200 ",
+      "Background: +$50–$200 (Simple Colored or Simple textured/design included) ",
+      "Additional Props just: +$20–$200 ",
     ],
+    layout: " -90.278px 0px / 152.941% 106.364%",
   },
 ];
 
-const keyHighlights = [
+export const keyHighlights = [
   "Simple Backgrounds: No extra charge for basic colors or textures.",
   "Customization: Prices adjust based on design complexity and additional elements.",
   "Flexible Options: Add props or more detailed backgrounds for a fully personalized look.",
 ];
 
-const commissionSamples = [
+export const commissionSamples = [
   [
     {
       name: "char_crown",
       images: [
-        "assets/images/characters/char_crown/variant1.jpg",
-        "assets/images/characters/char_crown/variant2.jpg",
+        "images/characters/char_crown/variant1.jpg",
+        "images/characters/char_crown/variant2.jpg",
       ],
-      detail: [
+      title: [
         "NIKKE: Crown",
         300,
         {
@@ -154,9 +176,9 @@ const commissionSamples = [
   ],
   [
     {
-      name: "fullCom_elinaBlueWorld",
-      images: ["assets/images/fullCom/fullCom_elinaBlueWorld.jpg"],
-      detail: [
+      name: "fullCom_elainaBlueWorld",
+      images: ["images/fullCom/fullCom_elainaBlueWorld.jpg"],
+      title: [
         "Elina Blue World",
         400,
         {
@@ -184,13 +206,13 @@ const commissionSamples = [
     {
       name: "fullCom_crownVsHarvester",
       images: [
-        "assets/images/fullCom/fullCom_crownVsHarvester/variant1.jpg",
-        "assets/images/fullCom/fullCom_crownVsHarvester/variant2.jpg",
-        "assets/images/fullCom/fullCom_crownVsHarvester/variant3.jpg",
-        "assets/images/fullCom/fullCom_crownVsHarvester/variant4.jpg",
-        "assets/images/backgrounds/bg_crown.jpg",
+        "images/fullCom/fullCom_crownVsHarvester/variant1.jpg",
+        "images/background/bg_crown.jpg",
+        "images/fullCom/fullCom_crownVsHarvester/variant4.jpg",
+        "images/fullCom/fullCom_crownVsHarvester/variant2.jpg",
+        "images/fullCom/fullCom_crownVsHarvester/variant3.jpg",
       ],
-      detail: [
+      title: [
         "NIKKE: Crown Vs. Harvester",
         820,
         {
@@ -215,13 +237,12 @@ const commissionSamples = [
     {
       name: "fullCom_goddesSquad",
       images: [
-        "assets/images/fullCom/fullCom_goddesSquad/variant1.jpg",
-        "assets/images/fullCom/fullCom_goddesSquad/variant2.jpg",
-        "assets/images/fullCom/fullCom_goddesSquad/variant3.jpg",
-        "assets/images/fullCom/fullCom_goddesSquad/variant4.jpg",
-        "assets/images/backgrounds/bg_crown.jpg",
+        "images/fullCom/fullCom_goddessSquad/variant1.jpg",
+        "images/fullCom/fullCom_goddessSquad/variant2.jpg",
+        "images/fullCom/fullCom_goddessSquad/variant3.jpg",
+        "images/fullCom/fullCom_goddessSquad/variant4.jpg",
       ],
-      detail: [
+      title: [
         "NIKKE: Goddess Squad",
         916,
         {
@@ -265,10 +286,9 @@ const commissionSamples = [
   ],
   [
     {
-      title: "Backgrounds",
       name: "bg_ryukawa",
-      images: ["assets/images/backgrounds/bg_ryukawa.jpg"],
-      detail: [
+      images: ["images/background/bg_ryukawa.jpg"],
+      title: [
         "Fantasy/Scenery Background",
         800,
         {
@@ -279,13 +299,13 @@ const commissionSamples = [
             "Canvas Size: 6000x3000 pixels.",
           ],
         },
+        { points: [""] },
       ],
     },
     {
-      title: "Backgrounds",
       name: "bg_alteisen",
-      images: ["assets/images/backgrounds/bg_alteisen.jpg"],
-      detail: [
+      images: ["images/background/bg_alteisen.jpg"],
+      title: [
         "Fantasy/Scenery Background",
         800,
         {
@@ -296,6 +316,7 @@ const commissionSamples = [
             "Canvas Size: 6000x3000 pixels.",
           ],
         },
+        { points: [""] },
       ],
     },
   ],

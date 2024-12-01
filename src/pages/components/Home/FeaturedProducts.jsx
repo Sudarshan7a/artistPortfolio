@@ -2,6 +2,12 @@ import { homeFeatured } from "../../../mainList";
 import PropTypes from "prop-types";
 import SidebarButtons from "../../SidebarButtons";
 
+/**
+ * Renders the FeaturedProducts component,
+ * displaying a list of featured products and navigation buttons.
+ *
+ * @returns {JSX.Element} The JSX representation of the featured products section.
+ */
 function FeaturedProducts() {
   return (
     <div className="ml-24 mt-24 pl-8 pt-8">
@@ -27,6 +33,16 @@ Cards.propTypes = {
 };
 
 export default FeaturedProducts;
+/**
+ * Renders a card component with a title, description, and background image.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.shortDescription - A short description for the card.
+ * @param {string} props.imageLocation - The URL of the image to be used as the background.
+ * @param {string} props.layout - The layout style for the background image.
+ * @returns {JSX.Element} A JSX element representing the card.
+ */
 function Cards({ title, shortDescription, imageLocation, layout }) {
   return (
     <div>

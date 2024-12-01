@@ -1,7 +1,12 @@
 import styles from "./Galleary.module.css";
 import PropsTypes from "prop-types";
-import { gallearyList } from "../../.././mainList";
+import { gallearyList } from "../../../mainList";
 
+/**
+ * Ronal1710Galleary component to display the gallery.
+ *
+ * @returns {JSX.Element} The rendered gallery component.
+ */
 function Ronal1710Galleary() {
   return (
     <div
@@ -23,6 +28,15 @@ ShowCase.propTypes = {
   layout: PropsTypes.number,
   loc: PropsTypes.array,
 };
+/**
+ * ShowCase component to display images in different layouts.
+ *
+ * @param {Object} props - The component props.
+ * @param {number} props.layout - The layout type (1 to 5) to determine how images are displayed.
+ * @param {Array} props.loc - Array of image objects containing `loc` (image source) and `name` (image alt text).
+ *
+ * @returns {JSX.Element} The rendered component based on the layout type.
+ */
 function ShowCase({ layout, loc }) {
   console.log(loc);
   console.log(layout);
@@ -31,7 +45,7 @@ function ShowCase({ layout, loc }) {
       // For single image
       return (
         <div className="m-4">
-          <img className=" rounded-md" src={loc[0].loc} alt="Galleary Image" />
+          <img className=" rounded-md" src={loc[0].loc} alt={loc[0].name} />
         </div>
       );
     case 2:
@@ -41,12 +55,12 @@ function ShowCase({ layout, loc }) {
           <img
             className="w-7/12 rounded-md"
             src={loc[0].loc}
-            alt="Galleary Image"
+            alt={loc[0].name}
           />
           <img
             className="w-1/3 rounded-md"
             src={loc[1].loc}
-            alt="Galleary Image "
+            alt={loc[1].name}
           />
         </div>
       );
@@ -57,18 +71,18 @@ function ShowCase({ layout, loc }) {
           <img
             className="w-8/12 rounded-md scale-105"
             src={loc[0].loc}
-            alt="Galleary Image"
+            alt={loc[0].name}
           />
           <div className="w-1/4 scale-90 flex flex-col gap-4">
             <img
               className=" rounded-md scale-90"
               src={loc[1].loc}
-              alt="Galleary Image "
+              alt={loc[1].name}
             />
             <img
               className=" rounded-md scale-90"
               src={loc[2].loc}
-              alt="Galleary Image "
+              alt={loc[2].name}
             />
           </div>
         </div>
@@ -80,17 +94,17 @@ function ShowCase({ layout, loc }) {
           <img
             className="rounded-md scale-125 w-3/12"
             src={loc[0].loc}
-            alt="Galleary Image "
+            alt={loc[0].name}
           />
           <img
             className="rounded-md scale-125 w-3/12"
             src={loc[1].loc}
-            alt="Galleary Image "
+            alt={loc[1].name}
           />
           <img
             className="rounded-md scale-125 w-3/12"
             src={loc[2].loc}
-            alt="Galleary Image "
+            alt={loc[2].name}
           />
         </div>
       );
@@ -102,14 +116,14 @@ function ShowCase({ layout, loc }) {
             <img
               className="rounded-md w-max-fit"
               src={loc[0].loc}
-              alt="Galleary Image "
+              alt={loc[0].name}
             />
           </div>
           <div className="w-1/2 pl-4">
             <img
               className="rounded-md w-max-fit"
               src={loc[1].loc}
-              alt="Galleary Image "
+              alt={loc[1].name}
             />
           </div>
         </div>
