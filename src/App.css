@@ -44,12 +44,6 @@
   padding: 4px;
 }
 
-.gallery {
-  display: flex;
-  /* box-sizing: border-box; */
-  background: #f8e6ef;
-}
-
 .left {
   width: 50%;
 }

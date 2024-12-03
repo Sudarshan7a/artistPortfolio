@@ -98,7 +98,7 @@ h3 {
   overflow: hidden;
   /* padding: 60px 0; */
   margin: 60px 0;
-  background: linear-gradient(#ffe4d3ee, var(--primaryColor));
+  background: linear-gradient(#add8e6, var(--primaryColor));
   white-space: nowrap;
   position: relative;
 }

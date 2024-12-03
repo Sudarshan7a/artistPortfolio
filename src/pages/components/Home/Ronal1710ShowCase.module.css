@@ -23,7 +23,20 @@
   font-weight: 700;
   line-height: 140%; /* 50.4px */
   padding-left: 80px;
-  position: relative;
-  top: 40px;
-  margin-top: 80px;
+  /* position: relative; */
+  top: 0;
+  padding-top: 80px;
+}
+
+.gallery {
+  display: flex;
+  /* box-sizing: border-box;
+  background: #666; */
+  background: linear-gradient(
+    180deg,
+    #add8e6 0%,
+    #2dd4bf 33%,
+    rgba(139, 92, 246, 0.9) 66%,
+    #add8e6 100%
+  );
 }

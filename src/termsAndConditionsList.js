@@ -54,35 +54,40 @@ Approval & Final Payment - Once you approve the color sketch and submit Payment 
 Final Delivery - When the artwork is complete, I’ll send it to you via Email or Discord (full-resolution files, plus additional versions for higher-tier commissions). 
 */
 
-const termsAndConditionsList = {
-  generCommissionGuidelines: [
+export const termsAndConditionsList = [
+  [
     {
       title: "Work Pace",
-      description:
+      description: [
         "I work at my own pace to ensure quality, so please avoid rushing the process.",
+      ],
     },
     {
       title: "Provide Clear References",
-      description:
+      description: [
         "When requesting a commission, please provide clear details and reference images if possible. Visual references help me complete your commission faster and more accurately.",
+      ],
     },
     {
       title: "Original Character Design",
-      description:
+      description: [
         "If your Original Character (OC) doesn’t have an existing visual design or draft, there will be an additional fee of $50–$200 for character visualization.",
+      ],
     },
     {
       title: "Canvas Size Options",
-      description:
+      description: [
         "You can select any canvas size up to 8K resolution (7680x4320). Please specify the scale or aspect ratio you’d like for the commission.",
+      ],
     },
     {
       title: "Right to Decline",
-      description:
+      description: [
         "I reserve the right to decline any commission request if it makes me uncomfortable.",
+      ],
     },
   ],
-  paymentCancellationRefundPolicy: [
+  [
     {
       title: "Payment",
       description: [
@@ -107,7 +112,7 @@ const termsAndConditionsList = {
       ],
     },
   ],
-  copyrightUsagePolicy: [
+  [
     {
       title: "Portfolio Use",
       description: [
@@ -140,39 +145,40 @@ const termsAndConditionsList = {
       ],
     },
   ],
-  commissionProcess: [
-    {
-      title: "Review Terms",
-      description: [
-        "Ensure you’ve read and agree to the terms and conditions above.",
-      ],
-    },
-    {
-      title: "Initiate Contact",
-      description: [
-        "Reach out through one of the options in the Contact section. I’ll respond within 24 hours to discuss your request in more detail. Once we confirm the specifics, I’ll decide whether to accept the commission.",
-      ],
-    },
-    {
-      title: "Sketch & Initial Payment",
-      description: [
-        "After confirmation and receiving Payment #1 or the full amount, I’ll begin with a line sketch, progressing to a color sketch. You have 3 free revisions during the sketch phase. Additional major revisions beyond these will cost $10 each.",
-      ],
-    },
-    {
-      title: "Approval & Final Payment",
-      description: [
-        "Once you approve the color sketch and submit Payment #2, I’ll proceed to the color and rendering phase. During this phase, you’re entitled to:",
-        "1 major revision (e.g., changes to poses, composition, major details)",
-        "3 minor revisions (e.g., facial expressions, minor details, small props)",
-        "After this, additional revisions cost $5 for minor adjustments and $20 for major ones.",
-      ],
-    },
-    {
-      title: "Final Delivery",
-      description: [
-        "When the artwork is complete, I’ll send it to you via Email or Discord (full-resolution files, plus additional versions for higher-tier commissions).",
-      ],
-    },
-  ],
-};
+];
+
+export const commissionProcess = [
+  {
+    title: "Review Terms",
+    description: [
+      "Ensure you’ve read and agree to the terms and conditions above.",
+    ],
+  },
+  {
+    title: "Initiate Contact",
+    description: [
+      "Reach out through one of the options in the Contact section. I’ll respond within 24 hours to discuss your request in more detail. Once we confirm the specifics, I’ll decide whether to accept the commission.",
+    ],
+  },
+  {
+    title: "Sketch & Initial Payment",
+    description: [
+      "After confirmation and receiving Payment #1 or the full amount, I’ll begin with a line sketch, progressing to a color sketch. You have 3 free revisions during the sketch phase. Additional major revisions beyond these will cost $10 each.",
+    ],
+  },
+  {
+    title: "Approval & Final Payment",
+    description: [
+      "Once you approve the color sketch and submit Payment #2, I’ll proceed to the color and rendering phase. During this phase, you’re entitled to:",
+      "1 major revision (e.g., changes to poses, composition, major details)",
+      "3 minor revisions (e.g., facial expressions, minor details, small props)",
+      "After this, additional revisions cost $5 for minor adjustments and $20 for major ones.",
+    ],
+  },
+  {
+    title: "Final Delivery",
+    description: [
+      "When the artwork is complete, I’ll send it to you via Email or Discord (full-resolution files, plus additional versions for higher-tier commissions).",
+    ],
+  },
+];

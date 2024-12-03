@@ -1,11 +1,19 @@
 import PageNav from "./components/PageNav";
+import TermsAndConditionsHero from "./components/TermsAndConditions/TermsAndConditionsHero";
+import CommissionGuildLines from "./components/TermsAndConditions/CommissionGuildLines";
+import Footer from "./components/Footer";
 
+/**
+ * Terms and Conditions Page component.
+ * This component renders the navigation and hero section for the terms and conditions page.
+ */
 function Termsandconditionspage() {
   return (
     <div>
       <PageNav />
-      all you need to know about the terms and contionc of the commission proces
-      and steps
+      <TermsAndConditionsHero />
+      <CommissionGuildLines />
+      <Footer />
     </div>
   );
 }

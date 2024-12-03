@@ -1,3 +1,7 @@
+/**
+ * Component to showcase images in a scrolling marquee.
+ * @returns {JSX.Element} The ImagesShowcase component.
+ */
 function ImagesShowcase() {
   const images = [
     {
@@ -49,16 +53,16 @@ function ImagesShowcase() {
     { src: "images/characters/char_jinhsi.jpg", alt: "char_jinhsi", key: "11" },
   ];
   return (
-    <div className="bg-[#ffe4d3ee]">
-      <div className="h-[80px]"></div>
+    <div className="bg-[#add8e6]">
+      <div className="h-[80px]" />
       <div className="logos">
         <div className="logos-slide">
           <div className="scroll">
-            {images.map((images) => (
+            {images.map((image) => (
               <img
-                key={images.key}
-                src={images.src}
-                alt={`Marquee ${images.key}`}
+                key={image.key}
+                src={image.src}
+                alt={`Marquee ${image.key}`}
               />
             ))}
           </div>

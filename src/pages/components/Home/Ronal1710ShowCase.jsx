@@ -5,6 +5,10 @@ import styles from "./Ronal1710ShowCase.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * Ronal1710ShowCase component displays a gallery with animations and scroll effects.
+ * @returns {JSX.Element} The rendered component.
+ */
 const Ronal1710ShowCase = () => {
   const galleryRef = useRef(null);
 
@@ -12,7 +16,7 @@ const Ronal1710ShowCase = () => {
     if (!galleryRef.current) return;
 
     const gallery = galleryRef.current;
-    const details = gsap.utils.toArray(".details", gallery);
+    // const details = gsap.utils.toArray(".details", gallery);
     const photos = gsap.utils.toArray(".photo", gallery);
 
     // Set initial properties for animation
@@ -50,36 +54,37 @@ const Ronal1710ShowCase = () => {
       start: "top top",
       end: "bottom bottom",
       pin: ".right",
-      animation: animation,
+      animation,
       scrub: 2,
     });
 
     // Background color changes
-    const colors = ["#f9d2e5aa", "#cdd1ffaa", "#ffe4d3ee", "#ffb399aa"];
-    details.forEach((detail, index) => {
-      gsap.to(gallery, {
-        duration: 1,
-        backgroundColor: colors[index],
-        scrollTrigger: {
-          trigger: detail,
-          scrub: true,
-        },
-      });
-    });
+    // const colors = ["#f9d2e5aa", "#cdd1ffaa", "#ffe4d3ee", "#ffb399aa"];
+    // details.forEach((detail, index) => {
+    //   gsap.to(gallery, {
+    //     duration: 1,
+    //     backgroundColor: colors[index],
+    //     scrollTrigger: {
+    //       trigger: detail,
+    //       scrub: true,
+    //     },
+    //   });
+    // });
 
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill()); // Clean up ScrollTrigger on unmount
     };
   }, []);
 
+  // IMPORTANT: Styles for this component are in App.css. Don't miss it!
+
   return (
     <div>
       <h1
-        className={`${styles.headline}  bg-gradient-to-b from-[#f0f0f0] to-[#f8e6ef]`}
+        className={`${styles.headline}  bg-gradient-to-b from-secondaryColor to-[#add8e6]`}
       >
         Why is RONAL1710&apos;s Art best for you.
       </h1>
-      <br />
       <div className={`gallery ${styles.gallery}`} ref={galleryRef}>
         <div className="left">
           <div className="detailsWrapper">
