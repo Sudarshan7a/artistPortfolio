@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
+/**
+ * PageNav component renders the navigation bar with links and a contact button.
+ */
 function PageNav() {
   return (
     <nav className="h-[48px] w-full flex items-center px-28 justify-between">
-      <Logo></Logo>
+      <Logo />
       <ul className="list-none flex gap-16 justify-center">
         <li>
           <NavLink to="/">Home</NavLink>
@@ -19,9 +22,11 @@ function PageNav() {
           <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
         </li>
       </ul>
-      <Button variant={0} h={8}>
-        Contact
-      </Button>
+      <a href="/connect" className="no-underline">
+        <Button variant={0} h={8}>
+          Contact
+        </Button>
+      </a>
     </nav>
   );
 }
@@ -30,7 +35,8 @@ function PageNav() {
 function Button({ children }) {
   return (
     <button
-      className={`btn h-10 w-32 px-4 rounded-[36px] "text-[#f0f0f0] bg-[#f0f0f0]  border-2 border-[#f0f0f0] hover:text-[#f0f0f0] hover:bg-[#ff4c4c] " transition-all`}
+      // skipcq: JS-R1004
+      className={`btn h-10 w-32 px-4 rounded-[36px] text-[#333] font-bold bg-[#f0f0f0] border-2 border-[#f0f0f0] hover:text-[#f0f0f0] hover:bg-[#ff4c4c] transition-all`}
     >
       {children}
     </button>
