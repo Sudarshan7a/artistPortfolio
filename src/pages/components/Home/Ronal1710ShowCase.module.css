@@ -40,3 +40,31 @@
     #add8e6 100%
   );
 }
+
+.hideScroll {
+  overflow-x: scroll; /* Enable scrolling behavior */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+}
+
+.hideScroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+}
+
+.scrollable-container {
+  scroll-behavior: smooth; /* Smooth scrolling on scroll events */
+}
+.productImage {
+  transition: transform 0.5s ease-in-out;
+}
+
+.productImage:hover {
+  transform: scale(1.04);
+}
+
+button {
+  transition: transform 0.4s ease-out;
+}
+button:hover {
+  transform: scale(1.08);
+}

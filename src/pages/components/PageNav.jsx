@@ -6,7 +6,10 @@ import Logo from "./Logo";
  */
 function PageNav() {
   return (
-    <nav className="h-[48px] w-full flex items-center px-28 justify-between">
+    <nav
+      className="h-[48px] w-full flex items-center px-28 justify-between"
+      id="pageNav"
+    >
       <Logo />
       <ul className="list-none flex gap-16 justify-center">
         <li>
@@ -22,11 +25,12 @@ function PageNav() {
           <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
         </li>
       </ul>
-      <a href="/connect" className="no-underline">
+
+      <NavLink to="/connect">
         <Button variant={0} h={8}>
           Contact
         </Button>
-      </a>
+      </NavLink>
     </nav>
   );
 }

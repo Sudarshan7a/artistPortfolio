@@ -115,11 +115,18 @@ h3 {
 
 .scroll img {
   border-radius: 20px;
+  transition: transform 0.5s ease-in-out; /* Apply transition for both hover and non-hover states */
+
+  &:hover {
+    transform: scale(1.04); /* Scale the image when hovered */
+  }
 }
+
 .scroll {
   display: flex;
-  width: 560px;
-  height: 372px;
+  width: 600px;
+  height: 400px;
+  padding: 20px;
   object-fit: fill;
   gap: 40px;
 }
@@ -155,4 +162,19 @@ hr {
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.1px;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.98;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
+  }
+}
+.fadein {
+  animation: appear 0.7s ease-out;
 }

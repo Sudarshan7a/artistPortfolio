@@ -1,4 +1,5 @@
-import pro_lg from "./../../assets/images/profile/pro_lg.jpg";
+import { useNavigate } from "react-router-dom";
+import pro_lg from "../../assets/images/profile/pro_lg.jpg";
 import PropTypes from "prop-types";
 
 const logoStyle = {
@@ -11,7 +12,14 @@ const logoStyle = {
   letterSpacing: "0.064px",
 };
 var scaleStyle = " ";
+/**
+ * Logo component that displays a profile image and name with scaling options.
+ * @param {Object} props - Component properties.
+ * @param {number} props.scale - Scale value for the logo.
+ */
 function Logo({ scale }) {
+  const navigate = useNavigate();
+
   scaleStyle = {
     // "scale-100", " scale-110", " scale-125", " scale-150",
     0: "scale-95",
@@ -22,7 +30,18 @@ function Logo({ scale }) {
   };
 
   return (
-    <div className={`flex items-center mr-3 gap-2 ${scaleStyle[scale]}`}>
+    <div
+      // onClick={scrollToTop}
+      className={`flex items-center mr-3 gap-2 ${scaleStyle[scale]}`}
+      onClick={(e) => {
+        e.preventDefault(); // Prevent immediate navigation
+        scrollToTop(); // Scroll to the top
+        setTimeout(() => {
+          navigate("/"); // Navigate to `/` after scrolling
+        }, 800);
+      }}
+      style={{ cursor: "pointer" }}
+    >
       <img
         src={pro_lg}
         alt="logo"
@@ -37,3 +56,10 @@ Logo.propTypes = {
 };
 
 export default Logo;
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Enables smooth scrolling
+  });
+}

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import PageNav from "./PageNav";
 
@@ -24,6 +25,9 @@ const Links = [
   },
 ];
 
+/**
+ * Connect component that renders the connection options.
+ **/
 function Connect() {
   return (
     <div className=" relative">
@@ -75,10 +79,10 @@ function Social() {
  **/
 function Back() {
   return (
-    <a href="/" className=" flex justify-end mr-36 mt-12">
+    <NavLink to="/">
       <svg height="28" width="28" xmlns="">
         <image width="28" height="28" href={"Icons/backArrow.svg"} />
       </svg>
-    </a>
+    </NavLink>
   );
 }

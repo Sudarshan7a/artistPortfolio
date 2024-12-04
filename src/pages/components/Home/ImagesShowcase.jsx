@@ -55,7 +55,7 @@ function ImagesShowcase() {
   return (
     <div className="bg-[#add8e6]">
       <div className="h-[80px]" />
-      <div className="logos">
+      <div className="logos fadein">
         <div className="logos-slide">
           <div className="scroll">
             {images.map((image) => (

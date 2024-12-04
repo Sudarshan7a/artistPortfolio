@@ -9,18 +9,21 @@ const guideLinesList = [
   "Copyright & Usage Policy",
 ];
 
+/**
+ * Component to display the commission guidelines and process.
+ */
 function CommissionGuildLines() {
   return (
     <div className="mb-32">
       {termsAndConditionsList.map((guidelines, index) => (
-        <div className="my-28 mx-[10%]" key={index}>
-          <h1 className="text-h2 text-textPrimary text-title font-semibold tracking-wide">
+        <div className="my-28 mx-[10%]" key={guidelines[0].title}>
+          <h1 className="fadein text-h2 text-textPrimary text-title font-semibold tracking-wide">
             {guideLinesList[index]}
           </h1>
-          <div className="mt-10 py-[2%] px-[4%] rounded-[40px]  bg-white shadow-custom-light">
-            {guidelines.map((guideline, index) => (
+          <div className="fadein mt-10 py-[2%] px-[4%] rounded-[40px]  bg-white shadow-custom-light">
+            {guidelines.map((guideline, guidelineIndex) => (
               <div
-                key={index}
+                key={guidelineIndex}
                 className={`p-8 ${
                   index < guidelines.length - 1 && "border-b "
                 } border-[#666]`}
@@ -52,26 +55,27 @@ function CommissionGuildLines() {
         </div>
       ))}
       <div className="my-28 mx-[10%]">
-        <h1 className="text-h2 text-textPrimary text-title font-semibold tracking-wide">
+        <h1 className="fadein text-h2 text-textPrimary text-title font-semibold tracking-wide">
           Commission Process
         </h1>
-        <div className="mt-10 py-[2%] px-[4%] rounded-[40px]  bg-white shadow-custom-light">
-          {commissionProcess.map((guideline, index) => (
+        <div className=" mt-10 py-[2%] px-[4%] rounded-[40px]  bg-white shadow-custom-light">
+          {commissionProcess.map((guideline, commissionProcessIndex) => (
             <div
-              key={index}
+              key={commissionProcessIndex}
               className={`p-8 ${
-                index < commissionProcess.length - 1 && "border-b "
+                commissionProcessIndex < commissionProcess.length - 1 &&
+                "border-b "
               } border-[#666] flex gap-4`}
             >
-              <h3 className=" w-48 flex gap-2 text-[18px] text-textPrimary font-subtitle font-bold">
-                <div>{index + 1}. </div>
+              <h3 className="fadein w-48 flex gap-2 text-[18px] text-textPrimary font-subtitle font-bold">
+                <div>{commissionProcessIndex + 1}. </div>
                 {guideline.title}
               </h3>
-              <div className="flex flex-col  w-full items-start ">
-                {guideline.description.map((desc, index) => (
+              <div className="fadein flex flex-col  w-full items-start ">
+                {guideline.description.map((desc, commissionProcessIndex) => (
                   <p
                     className="text-textPrimary text-body font-subtitle font-normal"
-                    key={index}
+                    key={commissionProcessIndex}
                   >
                     {desc}
                   </p>

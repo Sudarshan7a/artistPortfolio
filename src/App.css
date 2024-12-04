@@ -4,6 +4,9 @@
   background-color: var(--primaryColor);
   list-style-type: none;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .list-none {
   list-style-type: none;

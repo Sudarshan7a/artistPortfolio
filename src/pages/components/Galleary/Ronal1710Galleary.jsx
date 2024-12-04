@@ -26,7 +26,7 @@ export default Ronal1710Galleary;
 
 ShowCase.propTypes = {
   layout: PropsTypes.number,
-  loc: PropsTypes.array,
+  loc: PropsTypes.arrayOf(PropsTypes.object),
 };
 /**
  * ShowCase component to display images in different layouts.
@@ -38,8 +38,6 @@ ShowCase.propTypes = {
  * @returns {JSX.Element} The rendered component based on the layout type.
  */
 function ShowCase({ layout, loc }) {
-  console.log(loc);
-  console.log(layout);
   switch (layout) {
     case 1:
       // For single image
@@ -131,5 +129,4 @@ function ShowCase({ layout, loc }) {
     default:
       break;
   }
-  return <div></div>;
 }

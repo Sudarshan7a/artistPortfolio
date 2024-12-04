@@ -1,8 +1,10 @@
+/**
+ * GalleryHero component renders the hero section of the gallery page.
+ * @returns {JSX.Element} The GalleryHero component.
+ */
 function GalleryHero() {
   return (
-    <div
-      className={`text-[#333] text-center mt-[120px] flex flex-col items-center w-full`}
-    >
+    <div className="text-[#333] text-center mt-[120px] flex flex-col items-center w-full">
       <h1 className=" font-title font-bold text-[60px]">
         <span className="text-nowrap">Find Your Inspiration</span> in Our
         Gallery

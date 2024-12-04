@@ -13,7 +13,7 @@ function AboutMe() {
       </div>
       <div className="basis-1/3 flex flex-col justify-center">
         <h2>HEYA!</h2>
-        <h1>
+        <h1 className="fadein">
           I&apos;M <br />
           <span>RONAL1710</span>
         </h1>

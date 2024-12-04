@@ -1,12 +1,18 @@
 import Logo from "./Logo";
-// import PropsTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Button from "./Button";
 
 /**
  * Footer component that renders the footer section of the page.
  */
 function Footer() {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location.pathname);
+  }, []);
   const backgroundStyle = {
     height: "596px",
     backgroundImage: 'url("images/Intersect.svg")',
@@ -35,21 +41,36 @@ export default Footer;
 /**
  * FooterNavLinks component that renders the navigation links in the footer.
  */
+const navLinks = [
+  { path: "/", label: "Home" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/commission", label: "Commission" },
+  { path: "/terms-and-conditions", label: "Terms and Conditions" },
+];
+
 function FooterNavLinks() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
-    <ul className="footerul flex flex-col gap-4">
-      <li className="h-[32px]">
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li className="h-[32px]">
-        <NavLink to="/gallery">Gallery</NavLink>
-      </li>
-      <li className="h-[32px]">
-        <NavLink to="/commission">Commission</NavLink>
-      </li>
-      <li className="h-[32px]">
-        <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
-      </li>
+    <ul className="footerul text-textSecondary flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <li
+          key={link.path}
+          className={`h-[32px] cursor-pointer ${
+            location.pathname === link.path && "active"
+          }`}
+          onClick={(e) => {
+            e.preventDefault(); // Prevent immediate navigation
+            scrollToTop(); // Scroll to the top
+            setTimeout(() => {
+              navigate(link.path); // Navigate to the path after scrolling
+            }, 800);
+          }}
+        >
+          {link.label}
+        </li>
+      ))}
     </ul>
   );
 }
@@ -71,7 +92,7 @@ function Social() {
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="https://www.pixiv.net/en/users/21112248">
             <div className="flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/pixiv.svg" />
@@ -91,7 +112,7 @@ function Social() {
           </a>
         </li>
         <li>
-          <a href="/">
+          <a href="https://twitter.com/Ronaldeweeb17">
             <div className="flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/twitter.svg" />
@@ -126,7 +147,10 @@ function Motivation() {
   return (
     <div className="motivation flex flex-row items-end justify-between gap-4">
       <h1 className="footerh1">Say hello!</h1>
-      <div className="bg-[#D9D9D9] relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer ">
+      <div
+        onClick={scrollToTop}
+        className="scrollToTop bg-[#D9D9D9] relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer "
+      >
         <svg className="top-3 absolute" height="32" width="32" xmlns="">
           <image width="32" height="32" href="Icons/downArrow.svg" />
         </svg>
@@ -141,7 +165,7 @@ function Motivation() {
 function Copywrite() {
   return (
     <div className="copywrite m-6 ">
-      <hr></hr>
+      <hr />
       <div>
         <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">
           <li>Ronal1710</li>
@@ -151,4 +175,11 @@ function Copywrite() {
       </div>
     </div>
   );
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Enables smooth scrolling
+  });
 }

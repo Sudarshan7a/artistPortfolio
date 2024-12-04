@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
 import { commissionFeatured, keyHighlights } from "../../../commissionList";
 
+/**
+ * CommissionFeatured component renders the featured commissions section.
+ */
 function CommissionFeatured() {
   return (
-    <div className=" bg-white pl-[10%] py-[5%] pr-[10%]">
+    <div
+      className=" bg-white pl-[10%] py-[5%] pr-[10%]"
+      id="CommissionFeatured"
+    >
       <h2 className="mb-[5%] text-textPrimary font-title text-h2 font-semibold tracking-wide">
         Character and Background Combined.
       </h2>

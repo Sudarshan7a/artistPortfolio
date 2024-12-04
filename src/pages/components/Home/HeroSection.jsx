@@ -1,5 +1,10 @@
+import { NavLink } from "react-router-dom";
 import Button from "../Button";
 
+/**
+ * HeroSection component renders the hero section of the homepage.
+ * It includes an image, a heading, a paragraph, and two buttons.
+ */
 function HeroSection() {
   return (
     <>
@@ -17,8 +22,12 @@ function HeroSection() {
         Every Scene Tells a Story, Every Detail Holds a Memory
       </p>
       <div className="mt-8 mb-4 flex gap-12 justify-center">
-        <Button variant={1}>View Gallery</Button>
-        <Button variant={0}>Commission</Button>
+        <NavLink to="/gallery">
+          <Button variant={1}>View Gallery</Button>
+        </NavLink>
+        <NavLink to="/commission">
+          <Button variant={0}>Commission</Button>
+        </NavLink>
       </div>
     </>
   );
