@@ -5,10 +5,11 @@ const variants = [
   "text-[#f0f0f0] bg-[#ff4c4c]  hover:text-[#ff4c4c] hover:bg-[#ffd700] hover:bg-opacity-60 hover:shadow-lg hover:border-[#ffd700] hover:border-opacity-60",
 ];
 
-function Button({ variant, children }) {
+function Button({ variant, children, onClick }) {
   return (
     <button
       className={`btn h-12 px-10 rounded-[32px] ${variants[variant]} transition-all`}
+      onClick={onClick}
     >
       {children}
     </button>
@@ -17,6 +18,7 @@ function Button({ variant, children }) {
 Button.propTypes = {
   variant: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Button;

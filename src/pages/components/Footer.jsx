@@ -1,6 +1,5 @@
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "./Button";
 
@@ -8,11 +7,6 @@ import Button from "./Button";
  * Footer component that renders the footer section of the page.
  */
 function Footer() {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log(location.pathname);
-  }, []);
   const backgroundStyle = {
     height: "596px",
     backgroundImage: 'url("images/Intersect.svg")',
@@ -48,6 +42,9 @@ const navLinks = [
   { path: "/terms-and-conditions", label: "Terms and Conditions" },
 ];
 
+/**
+ * FooterNavLinks component that renders the navigation links in the footer.
+ */
 function FooterNavLinks() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -130,11 +127,23 @@ function Social() {
  * Contact component that renders the contact section in the footer.
  */
 function Contact() {
+  const navigate = useNavigate();
   return (
     <div className="contact flex flex-col gap-4">
       <p className="text-nowrap">Ready to See Your Concept Come Alive?</p>
       <div className="w-[240px]">
-        <Button variant={1}>Contact</Button>
+        <Button
+          onClick={(e) => {
+            e.preventDefault(); // Prevent immediate navigation
+            scrollToTop(); // Scroll to the top
+            setTimeout(() => {
+              navigate("/connect"); // Navigate to the path after scrolling
+            }, 800);
+          }}
+          variant={1}
+        >
+          Contact
+        </Button>
       </div>
     </div>
   );
@@ -177,6 +186,9 @@ function Copywrite() {
   );
 }
 
+/**
+ * Scrolls the window to the top smoothly.
+ */
 function scrollToTop() {
   window.scrollTo({
     top: 0,

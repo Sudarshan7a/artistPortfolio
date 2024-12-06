@@ -80,7 +80,7 @@ function Social() {
 function Back() {
   return (
     <NavLink to="/">
-      <svg height="28" width="28" xmlns="">
+      <svg className="absolute left-20 top-24" height="28" width="28" xmlns="">
         <image width="28" height="28" href={"Icons/backArrow.svg"} />
       </svg>
     </NavLink>

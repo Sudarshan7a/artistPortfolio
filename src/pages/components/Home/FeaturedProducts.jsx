@@ -17,6 +17,9 @@ function FeaturedProducts() {
   const [showRightButton, setShowRightButton] = useState(false);
   const navigate = useNavigate();
 
+  /**
+   * Navigates to the custom artwork section.
+   */
   const goToCustomArtWorkSection = () => {
     navigate("/commission#CommissionFeatured"); // Navigate to the specific section
   };
@@ -54,6 +57,9 @@ function FeaturedProducts() {
   useEffect(() => {
     const container = containerRef.current;
 
+    /**
+     * Handles the scroll event and rechecks scrollability.
+     */
     const handleScroll = () => {
       checkScrollability(); // Recheck scrollability after each scroll event
     };
@@ -130,7 +136,7 @@ function Cards({ title, shortDescription, imageLocation, layout }) {
     <div>
       {/* //productImage  */}
       <div
-        className={`${styles.productImage} fadein bg-slate-700`}
+        className={`${styles.productImage} bg-slate-700`}
         style={{
           width: "400px",
           height: "660px",

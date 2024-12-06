@@ -146,6 +146,7 @@ export const keyHighlights = [
 export const commissionSamples = [
   [
     {
+      type: "Characters",
       name: "char_crown",
       images: [
         "images/characters/char_crown/variant1.jpg",
@@ -176,6 +177,7 @@ export const commissionSamples = [
   ],
   [
     {
+      type: "CharactersBackground",
       name: "fullCom_elainaBlueWorld",
       images: ["images/fullCom/fullCom_elainaBlueWorld.jpg"],
       title: [
@@ -204,6 +206,7 @@ export const commissionSamples = [
   ],
   [
     {
+      type: "CharactersOver800",
       name: "fullCom_crownVsHarvester",
       images: [
         "images/fullCom/fullCom_crownVsHarvester/variant1.jpg",
@@ -235,6 +238,7 @@ export const commissionSamples = [
       ],
     },
     {
+      type: "CharactersOver800",
       name: "fullCom_goddesSquad",
       images: [
         "images/fullCom/fullCom_goddessSquad/variant1.jpg",
@@ -286,6 +290,7 @@ export const commissionSamples = [
   ],
   [
     {
+      type: "Background",
       name: "bg_ryukawa",
       images: ["images/background/bg_ryukawa.jpg"],
       title: [
@@ -299,10 +304,11 @@ export const commissionSamples = [
             "Canvas Size: 6000x3000 pixels.",
           ],
         },
-        { points: [""] },
+        {},
       ],
     },
     {
+      type: "Background",
       name: "bg_alteisen",
       images: ["images/background/bg_alteisen.jpg"],
       title: [
@@ -316,7 +322,7 @@ export const commissionSamples = [
             "Canvas Size: 6000x3000 pixels.",
           ],
         },
-        { points: [""] },
+        {},
       ],
     },
   ],

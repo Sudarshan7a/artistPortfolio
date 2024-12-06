@@ -163,18 +163,13 @@ hr {
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.1px;
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-    scale: 0.98;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-    transform: translateY(0);
-  }
+
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
 }
-.fadein {
-  animation: appear 0.7s ease-out;
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
 }
