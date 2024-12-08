@@ -9,7 +9,11 @@ function AboutMe() {
       className={`flex ${styles.aboutMe} flex-col lg:flex-row p-10 lg:p-40 gap:10 lg:gap-24  bg-gradient-to-b from-[#DBE8ED] to-[#ADD8E6]`}
     >
       <div className="flex justify-center items-center w-[80%] m-auto  lg:p-12">
-        <img src={logo} className="bg-[#D9D9D9] rounded-full " />
+        <img
+          src={logo}
+          alt="anime Profile"
+          className="bg-[#D9D9D9] rounded-full "
+        />
       </div>
       <div className="basis-1/3  flex pt-4 md:p-10 flex-col justify-center">
         <h2>HEYA!</h2>

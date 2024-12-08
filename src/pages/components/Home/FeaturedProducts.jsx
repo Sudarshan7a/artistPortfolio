@@ -99,12 +99,14 @@ function FeaturedProducts() {
           rotation={180}
           aviable={showLeftButton} // Left button visibility based on scroll position
           onClick={() => scrollContainer("left")} // Move left when clicked
+          arialabel="Go Left"
         />
         <SidebarButtons
           scale={150}
           rotation={0}
           aviable={showRightButton} // Right button visibility based on scroll position
           onClick={() => scrollContainer("right")} // Move right when clicked
+          arialabel="Go right"
         />
       </div>
     </>

@@ -23,10 +23,12 @@ function HeroSection() {
       </p>
       <div className="mt-8 mb-4 flex flex-col items-center sm:flex-row  gap-6 sm:gap-12 justify-center">
         <NavLink className={"w-fit"} to="/gallery">
-          <Button variant={1}>View Gallery</Button>
+          <Button variant={1} arialabel="View Gallery">
+            View Gallery
+          </Button>
         </NavLink>
         <NavLink className={"w-fit"} to="/commission">
-          <Button variant={0}>Commission</Button>
+          <Button variant={0} arialabel="View Commission">Commission</Button>
         </NavLink>
       </div>
     </>
