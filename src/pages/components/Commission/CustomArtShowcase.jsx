@@ -52,11 +52,11 @@ function CustomArtShowcase() {
 
   return (
     <div className="flex flex-col">
-      <h1 className="my-10 text-center text-h1 text-textPrimary font-title font-semibold ">
+      <h1 className="my-10 text-center text-3xl sm:text-4xl md:text-h1 text-textPrimary font-title font-semibold ">
         Custom Artwork Showcase
       </h1>
       <div>
-        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-h2 tracking-wide">
+        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-2xl md:text-h2 tracking-wide">
           Characters
         </h2>
 
@@ -83,7 +83,7 @@ function CustomArtShowcase() {
             indexLength={commissionSamples[0].length}
           />
         </div>
-        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-h2 tracking-wide">
+        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-2xl md:text-h2 tracking-wide">
           CharactersBackground
         </h2>
 
@@ -121,7 +121,7 @@ function CustomArtShowcase() {
             indexLength={commissionSamples[1].length}
           />
         </div>
-        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-h2 tracking-wide">
+        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-2xl md:text-h2 tracking-wide">
           CharactersOver800
         </h2>
 
@@ -158,7 +158,7 @@ function CustomArtShowcase() {
             indexLength={commissionSamples[2].length}
           />
         </div>
-        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-h2 tracking-wide">
+        <h2 className="w-[80%] mx-auto mb-8 text-textPrimary font-title text-2xl md:text-h2 tracking-wide">
           Background
         </h2>
 

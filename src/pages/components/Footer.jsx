@@ -2,27 +2,45 @@ import Logo from "./Logo";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Button from "./Button";
-
+import React from "react";
+const backgroundStyle = {
+  backgroundImage: 'url("images/Intersect.svg")',
+};
 /**
  * Footer component that renders the footer section of the page.
  */
+
 function Footer() {
-  const backgroundStyle = {
-    height: "596px",
-    backgroundImage: 'url("images/Intersect.svg")',
-  };
+  const [deviceWidth, setDeviceWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setDeviceWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <footer
-      className="footer h-[500px] pt-12 overflow-hidden "
+      className="footer p-4 md:pt-12 overflow-hidden "
       style={backgroundStyle}
     >
-      <div className="m-16 ml-24  flex gap-16 justify-around items-start ">
-        <Logo scale={4} />
-        <FooterNavLinks />
-        <Social />
-        <Contact />
+      <div className="mb-4 sm:mb-0 md:m-16 ml:16 lg:ml-24 flex flex-col lg:flex-row gap-10 justify-between items-start ">
+        <div className="min-w-fit">
+          <Logo scale={deviceWidth < 768 ? 1 : 4} />
+        </div>
+        <div className="flex gap-4 md:gap-16 justify-around h-fit w-full items-center">
+          <FooterNavLinks />
+          <Social />
+        </div>
+        <div className=" w-fit mx-4 md:mx-8">
+          <Contact />
+        </div>
       </div>
-      <div className="ml-24  mr-20 ">
+      <div className="ml-10 md:ml-16 lg:ml-24 mr-10 md:mr-20 ">
         <Motivation />
         <Copywrite />
       </div>
@@ -129,8 +147,11 @@ function Social() {
 function Contact() {
   const navigate = useNavigate();
   return (
-    <div className="contact flex flex-col gap-4">
-      <p className="text-nowrap">Ready to See Your Concept Come Alive?</p>
+    <div className="contact flex flex-col w-fit gap-4">
+      <p className="text-wrap w-fit">
+        <span className="text-nowrap">Ready to See Your Concept</span>
+        <span> Come Alive?</span>
+      </p>
       <div className="w-[240px]">
         <Button
           onClick={(e) => {
@@ -173,8 +194,8 @@ function Motivation() {
  */
 function Copywrite() {
   return (
-    <div className="copywrite m-6 ">
-      <hr />
+    <div className="copywrite m-4 md:m-6 ">
+      <hr className="w-full md:w-a" />
       <div>
         <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">
           <li>Ronal1710</li>

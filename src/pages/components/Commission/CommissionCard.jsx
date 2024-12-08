@@ -38,9 +38,9 @@ function CommissionCard({
 
   return (
     <div className={`mb-20  ${isModalOpen ? "overflow-hidden h-screen" : ""}`}>
-      <div className="w-[80%] mx-auto p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex">
+      <div className="w-[80%] mx-auto p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
         {/* Images */}
-        <div className="w-9/12">
+        <div className="w-full md:w-9/12 mt-6 md:mt-0 md:mx-auto">
           {images.length === 1 && (
             // Single Image Layout
             <img
@@ -57,14 +57,14 @@ function CommissionCard({
                   key={image}
                   src={image}
                   alt={`${title} Preview ${index + 1}`}
-                  className="w-1/2 rounded-lg object-cover"
+                  className="w-1/2  rounded-lg object-cover"
                 />
               ))}
             </div>
           )}
           {images.length > 2 && (
             // Multi-Image Layout (Main Image + Thumbnails)
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex  flex-col items-center gap-2">
               <img
                 src={images[mainImageIndex]}
                 alt={`${title} Main Preview`}
@@ -76,7 +76,7 @@ function CommissionCard({
                     key={image}
                     src={image}
                     alt={`Thumbnail ${index}`}
-                    className={`w-32 h-20 rounded-md object-cover border-4  ${
+                    className={`w-32 imgs h-20 rounded-md object-cover border-4  ${
                       mainImageIndex === index
                         ? "border-accentColorRed"
                         : "border-gray-200"
@@ -144,14 +144,14 @@ function CommissionCard({
         >
           <button
             onClick={toggleModal}
-            className="absolute top-7 right-8 text-gray-500 hover:text-gray-700"
+            className="absolute top-3 md:top-7 z-20 right-4 md:right-8 text-gray-500 hover:text-gray-700"
           >
             <svg className="" height="32" width="32" xmlns="">
               <image width="32" height="32" href="Icons/closeIcon.svg" />
             </svg>
           </button>
           <div
-            className={`relative bg-primaryColor p-4 rounded-lg max-w-[90%] h-[90%] object-fit overflow-x-scroll no-scrollbar`}
+            className={`relative bg-primaryColor p-4 rounded-lg max-w-[90%] max-h-[90%] object-fit overflow-x-scroll no-scrollbar`}
             onClick={(e) => e.stopPropagation()} // Prevent click bubbling
           >
             <img
@@ -180,7 +180,7 @@ function FullSidebarButtons({
   indexLength,
 }) {
   return (
-    <div className="flex items-center gap-8">
+    <div className="flex items-center gap-2 md:gap-8">
       <SidebarButtons
         onClick={() => handelSideButtonClick(type, "left")}
         scale={150}

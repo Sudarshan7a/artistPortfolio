@@ -35,6 +35,16 @@
 body {
   overflow-x: hidden;
 }
+img {
+  user-drag: none; /* For Safari */
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.imgs {
+  pointer-events: auto;
+}
+
 ul li::marker {
   font-size: 0.7rem; /* Adjust the size */
   color: var(--textSecondary); /* Optional: Change color */
@@ -125,10 +135,31 @@ h3 {
 .scroll {
   display: flex;
   width: 600px;
+  min-width: 600px;
   height: 400px;
   padding: 20px;
-  object-fit: fill;
+  object-fit: cover;
   gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .scroll {
+    width: 500px;
+    min-width: 500px;
+    height: 350px;
+    padding: 10px;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .scroll {
+    width: 400px;
+    min-width: 400px;
+    height: 300px;
+    padding: 6px;
+    gap: 20px;
+  }
 }
 .footerul {
   font-weight: 700;
@@ -153,6 +184,27 @@ h3 {
   letter-spacing: var(--Label-Large-Tracking, 0.1px);
 }
 
+@media (max-width: 1028px) {
+  .footerh1 {
+    font-size: 120px;
+    line-height: 130px;
+  }
+}
+
+@media (max-width: 786px) {
+  .footerh1 {
+    font-size: 100px;
+    line-height: 110px;
+  }
+}
+
+@media (max-width: 620px) {
+  .footerh1 {
+    font-size: 80px;
+    line-height: 90px;
+  }
+}
+
 hr {
   height: 0.4px;
   border: 1px solid #333;
@@ -172,4 +224,65 @@ hr {
 }
 .opacity-100 {
   opacity: 1;
+}
+/* Default Styles */
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: calc(2rem + 2vw);
+}
+
+/* For screens up to 1024px */
+@media screen and (max-width: 1024px) {
+  nav ul {
+    gap: calc(1rem + 1vw);
+  }
+}
+
+/* For screens 768px and above */
+@media screen and (min-width: 766px) {
+  nav ul {
+    display: flex; /* Ensure consistency */
+    top: 40;
+  }
+}
+
+/* For screens below 769px */
+@media screen and (max-width: 768px) {
+  nav {
+    z-index: 20;
+  }
+  nav ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column; /* Stack the items vertically */
+    gap: 1rem;
+    background: var(--primaryColor);
+  }
+}
+
+.productImage {
+  transition: transform 0.5s ease-in-out;
+  width: 328px;
+  height: 480px;
+}
+@media (max-width: 768px) {
+  .productImage {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 620px) {
+  .productImage {
+    width: 240px;
+    height: 320px;
+  }
 }

@@ -26,10 +26,10 @@ function TermsAndConditionsHero() {
         />
       </div>
       <div className="m-10 flex flex-col items-center gap-8">
-        <h1 className="fadein w-auto mx-auto text-center text-h1 text-textPrimary font-title font-semibold tracking-wide">
+        <h1 className="fadein w-auto mx-auto text-center text-2xl sm:text-4xl md:text-6xl lg:text-h1 text-textPrimary font-title font-semibold tracking-wide">
           Terms and Conditions
         </h1>
-        <ul className="fadein flex gap-10 mx-auto w-auto text-center text-textSecondary font-title">
+        <ul className="fadein flex flex-wrap sm:flex-nowrap gap-10 mx-auto w-auto text-center text-textSecondary font-title">
           {TermsServiceNavLins.map((link) => (
             <li key={link}>{link}</li>
           ))}

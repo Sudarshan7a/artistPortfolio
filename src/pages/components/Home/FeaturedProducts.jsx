@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import SidebarButtons from "../../SidebarButtons";
 import styles from "./Ronal1710ShowCase.module.css";
 import { useNavigate } from "react-router-dom";
-
 /**
  * Renders the FeaturedProducts component,
  * displaying a list of featured products and navigation buttons.
@@ -42,7 +41,7 @@ function FeaturedProducts() {
   const scrollContainer = (direction) => {
     const container = containerRef.current;
     if (container) {
-      const scrollAmount = 400 + 8 * 16; // Scroll by 8rem + 400px
+      const scrollAmount = 400 + 2 * 16; // Scroll by 8rem + 400px
       container.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -81,12 +80,12 @@ function FeaturedProducts() {
 
   return (
     <>
-      <div className="ml-24 mt-24 pl-8 pt-8">
+      <div className="ml-6 sm:ml-12 md:ml-24 mt-24 pl-4 sm:pl-1 md:pl-2 lg:pl-8 pt-8">
         <h2 className="text-h2">Popular Featured</h2>
       </div>
       <div
         ref={containerRef}
-        className={`${styles.hideScroll} flex gap-10 px-32 pt-12 w-full overflow-x-auto`}
+        className={`${styles.hideScroll} flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 w-full overflow-x-auto`}
         style={{ scrollBehavior: "smooth" }}
         onClick={() => goToCustomArtWorkSection()}
       >
@@ -94,7 +93,7 @@ function FeaturedProducts() {
           <Cards {...product} key={product.id} />
         ))}
       </div>
-      <div className="flex justify-end gap-10 mt-12 mr-20 h-20">
+      <div className="flex justify-end gap-10 mt-6 md:mt-12 mr-10 md:mr-20 h-20">
         <SidebarButtons
           scale={150}
           rotation={180}
@@ -138,8 +137,6 @@ function Cards({ title, shortDescription, imageLocation, layout }) {
       <div
         className={`${styles.productImage} bg-slate-700`}
         style={{
-          width: "400px",
-          height: "660px",
           flexShrink: 0,
           borderRadius: "40px",
           background: `url(${imageLocation}) lightgray ${layout} 100% no-repeat`,

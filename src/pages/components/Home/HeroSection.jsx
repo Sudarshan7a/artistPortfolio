@@ -8,24 +8,24 @@ import Button from "../Button";
 function HeroSection() {
   return (
     <>
-      <div className=" h-[360px] overflow-hidden relative flex overflow-y-scroll no-scrollbar items-center">
+      <div className="z-0 h-[360px] overflow-hidden relative flex overflow-y-scroll no-scrollbar items-center">
         <img
           className="h-full w-full object-cover object-center-top"
           src="./images/fullCom/fullCom_whiteKnight/variant2.jpg"
           alt="fullCom_whiteKnight "
         />
       </div>
-      <h1 className="homeheroh1 text-6xl font-bold mt-12 text-center ">
+      <h1 className="homeheroh1 text-3xl sm:text-5xl md:text-6xl mb-6 mx-6 md:mb-0 font-bold mt-12 text-center ">
         Crafting Dreams into Art
       </h1>
-      <p className="homeherop mt-2 text-textPrimary font-medium text-center ">
+      <p className="homeherop mt-2 text-sm mx-4 md:text-xl text-textPrimary font-medium text-center ">
         Every Scene Tells a Story, Every Detail Holds a Memory
       </p>
-      <div className="mt-8 mb-4 flex gap-12 justify-center">
-        <NavLink to="/gallery">
+      <div className="mt-8 mb-4 flex flex-col items-center sm:flex-row  gap-6 sm:gap-12 justify-center">
+        <NavLink className={"w-fit"} to="/gallery">
           <Button variant={1}>View Gallery</Button>
         </NavLink>
-        <NavLink to="/commission">
+        <NavLink className={"w-fit"} to="/commission">
           <Button variant={0}>Commission</Button>
         </NavLink>
       </div>

@@ -5,7 +5,6 @@ import Commission from "./pages/Commission";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PageNotFound from "./pages/PageNotFound";
 import Connect from "./pages/components/Connect";
-
 import "./App.css";
 
 /**

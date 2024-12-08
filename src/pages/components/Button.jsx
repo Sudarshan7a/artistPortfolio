@@ -8,7 +8,7 @@ const variants = [
 function Button({ variant, children, onClick }) {
   return (
     <button
-      className={`btn h-12 px-10 rounded-[32px] ${variants[variant]} transition-all`}
+      className={`btn min-h-12 md:h-12 px-10 rounded-[32px] ${variants[variant]} transition-all`}
       onClick={onClick}
     >
       {children}

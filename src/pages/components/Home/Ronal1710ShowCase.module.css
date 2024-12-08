@@ -6,6 +6,19 @@
   font-weight: 600;
   line-height: 140%; /* 61.6px */
 }
+
+@media (max-width: 620px) {
+  .gallery h1 {
+    font-size: 36px; /* Reduced font size for screens 620px and below */
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery h1 {
+    font-size: 28px; /* Reduced font size for screens 420px and below */
+  }
+}
+
 .gallery p {
   color: var(--darkGrayFont, #333);
   font-family: Merriweather;
@@ -13,6 +26,18 @@
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 39.2px */
+}
+
+@media (max-width: 620px) {
+  .gallery p {
+    font-size: 24px; /* Reduced font size for screens 620px and below */
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery p {
+    font-size: 20px; /* Reduced font size for screens 420px and below */
+  }
 }
 
 .headline {
@@ -27,11 +52,24 @@
   top: 0;
   padding-top: 80px;
 }
+@media (max-width: 768px) {
+  .headline {
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 620px) {
+  .headline {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 30px;
+  }
+}
 
 .gallery {
   display: flex;
-  /* box-sizing: border-box;
-  background: #666; */
   background: linear-gradient(
     180deg,
     #add8e6 0%,
@@ -56,6 +94,14 @@
 }
 .productImage {
   transition: transform 0.5s ease-in-out;
+  width: 400px;
+  height: 660px;
+}
+@media (max-width: 768px) {
+  .productImage {
+    width: 300px;
+    height: 495px;
+  }
 }
 
 .productImage:hover {
