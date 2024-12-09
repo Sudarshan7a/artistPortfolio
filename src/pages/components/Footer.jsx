@@ -97,7 +97,7 @@ function Social() {
     <div className="social flex flex-col gap-4 w-[180px]">
       <ul className="footerul flex flex-col gap-4">
         <li>
-          <a href="mailto:artiste@example.com?subject=Commission%20Inquiry&body=Hi%20there,%0A%0AI%20am%20interested%20in%20commissioning%20an%20artwork.%20Here%20are%20some%20details%20about%20my%20project..">
+          <a href="mailto:dupro1710@gmail.com?subject=Commission%20Inquiry&body=Hi%20there,%0A%0AI%20am%20interested%20in%20commissioning%20an%20artwork.%20Here%20are%20some%20details%20about%20my%20project..">
             <div className="flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/gmail.svg" />
