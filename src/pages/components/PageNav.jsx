@@ -2,6 +2,28 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "./Logo";
 
+const Links = [
+  {
+    name: "Discord",
+    url: "https://discordapp.com/users/559749115991556107",
+    icon: "discord.svg",
+  },
+  {
+    name: "Gmail",
+    url: "mailto:dupro1710@gmail.com?subject=Commission%20Inquiry&body=Hi%20there,%0A%0AI%20am%20interested%20in%20commissioning%20an%20artwork.%20Here%20are%20some%20details%20about%20my%20project..",
+    icon: "gmail.svg",
+  },
+  {
+    name: "Pixiv",
+    url: "https://www.pixiv.net/en/users/21112248",
+    icon: "pixiv.svg",
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/Ronaldeweeb17",
+    icon: "twitter.svg",
+  },
+];
 /**
  * PageNav component renders the navigation bar with links and a contact button.
  */
@@ -67,6 +89,26 @@ function PageNav() {
             menuOpen ? "visible z-10" : "hidden"
           }  fixed bg-primaryColor top-12 left-0 h-screen w-full`}
         ></div>
+        <ul
+          className={`${
+            menuOpen ? "visible" : "hidden"
+          } footerul z-40 md:hidden w-full flex flex-row top-[600px] items-end justify-center gap-8`}
+        >
+          {Links.map((link) => (
+            <li
+              className="mx-2 flex sm:flex-row gap-8 sm:gap-20 w-auto justify-center items-center"
+              key={link.name}
+            >
+              <div className="flex text-textPrimary scale-125 items-center">
+                <a href={link.url}>
+                  <svg height="32" width="32" xmlns="">
+                    <image width="32" height="32" href={`Icons/${link.icon}`} />
+                  </svg>
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
       </nav>
     </>
   );

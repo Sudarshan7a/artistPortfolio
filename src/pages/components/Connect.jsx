@@ -55,7 +55,7 @@ function Social() {
             className="mx-2 flex flex-col sm:flex-row gap-8 sm:gap-20 w-auto justify-center items-center"
             key={link.name}
           >
-            <div className="flex scale-125 w-[120px] sm:w-[160px] gap-4 items-center">
+            <div className="flex text-textPrimary scale-125 w-[120px] sm:w-[160px] gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href={`Icons/${link.icon}`} />
               </svg>
@@ -70,6 +70,15 @@ function Social() {
           </li>
         ))}
       </ul>
+      <div className="flex absolute mt-40 md:px-[5%] w-auto md:w-full items-start justify-center">
+        <h1 className="text-xl w-auto sm:text-2xl text-textPrimary font-title font-bold text-center">
+          Note:
+        </h1>
+        <p className=" text-lg text-textPrimary text-wrap text-center mx-2 sm:mx-4">
+          it usually take me 24-48 hours to read and reply to your request via
+          all means above, please be patient!
+        </p>
+      </div>
     </div>
   );
 }
