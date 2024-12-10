@@ -102,7 +102,7 @@ function Social() {
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/gmail.svg" />
               </svg>
-              Gmail
+              Email
             </div>
           </a>
         </li>
