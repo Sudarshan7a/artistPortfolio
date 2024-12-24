@@ -43,30 +43,35 @@ function ImagesShowcase() {
       alt: "char_scarlet_variant1",
       key: "9",
     },
-
-    {
-      src: "images/fullCom/fullCom_whiteKnight/variant1.jpg",
-      alt: "fullCom_whiteKnight_variant1",
-      key: "10",
-    },
-
     { src: "images/characters/char_jinhsi.jpg", alt: "char_jinhsi", key: "11" },
   ];
   return (
-    <div className="bg-[#add8e6]">
-      <div className="h-[80px]" />
-      <div className="logos fadein">
-        <div className="logos-slide">
-          <div className="scroll">
-            {images.map((image) => (
-              <img
-                key={image.key}
-                src={image.src}
-                alt={`Marquee ${image.key}`}
-              />
-            ))}
-          </div>
-        </div>
+    <div className="imagesShowcase">
+      <div className="imagesShowcaseSlide">
+        {images.map((image) => (
+          <img
+            key={image.key}
+            src={image.src}
+            alt={`Marquee ${image.key}`}
+            loading="lazy"
+          />
+        ))}
+
+        <img
+          src="images/fullCom/fullCom_whiteKnight/variant1.jpg"
+          alt={`Marquee `}
+          loading="lazy"
+        />
+        <img
+          src="images/background/bg_alteisen.jpg"
+          alt={`Marquee `}
+          loading="lazy"
+        />
+        <img
+          src="images/fullCom/fullCom_elainaBlueWorld.jpg"
+          alt={`Marquee `}
+          loading="lazy"
+        />
       </div>
     </div>
   );

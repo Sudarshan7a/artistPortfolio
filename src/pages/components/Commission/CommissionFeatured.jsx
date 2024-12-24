@@ -57,6 +57,7 @@ const drawingIcon = "Icons/drawing.svg";
 const landscape = "Icons/landscape.svg";
 const start = "Icons/star.svg";
 const icons = [drawingIcon, landscape, start];
+
 function Card({ title, price, image: imageLocation, layout, addons }) {
   return (
     <div className="max-w-96">
@@ -69,7 +70,7 @@ function Card({ title, price, image: imageLocation, layout, addons }) {
           border: "1px solid rgba(51, 51, 51, 0.20)",
           background: `url(${imageLocation}) lightgray ${layout}  no-repeat`,
         }}
-      ></div>
+      />
 
       {/* Product Description */}
       <div className="ml-2 max-w-64 mt-4">
