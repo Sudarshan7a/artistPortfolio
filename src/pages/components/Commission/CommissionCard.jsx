@@ -38,7 +38,7 @@ function CommissionCard({
 
   return (
     <div className={`mb-20  ${isModalOpen ? "overflow-hidden h-screen" : ""}`}>
-      <div className="w-[80%] mx-auto p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
+      <div className="w-[80%] max-h-screen mx-auto p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
         {/* Images */}
         <div className="w-full md:w-9/12 mt-6 md:mt-0 md:mx-auto">
           {images.length === 1 && (
@@ -137,6 +137,7 @@ function CommissionCard({
           indexLength={indexLength}
         />
       </div>
+      {/*View larger Modal */}
       {isModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-textSecondary bg-opacity-50"
@@ -151,13 +152,13 @@ function CommissionCard({
             </svg>
           </button>
           <div
-            className={`relative bg-primaryColor p-4 rounded-lg max-w-[90%] max-h-[90%] object-fit overflow-x-scroll no-scrollbar`}
+            className={`relative bg-primaryColor mx-6 p-4 rounded-lg object-fit overflow-x-scroll no-scrollbar`}
             onClick={(e) => e.stopPropagation()} // Prevent click bubbling
           >
             <img
               src={images[mainImageIndex]}
               alt="Enlarged View"
-              className=" rounded-lg h-full"
+              className=" rounded-lg max-h-[80vh] object-cover"
             />
           </div>
         </div>

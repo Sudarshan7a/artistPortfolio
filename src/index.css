@@ -94,74 +94,6 @@ h3 {
   letter-spacing: var(--h3LetterSpacing);
   color: var(--textPrimary);
 }
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.logos {
-  overflow: hidden;
-  /* padding: 60px 0; */
-  margin: 60px 0;
-  background: linear-gradient(#add8e6, var(--primaryColor));
-  white-space: nowrap;
-  position: relative;
-}
-
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-
-.logos-slide {
-  display: flex;
-  animation: 36s slide infinite linear;
-  object-fit: fill;
-}
-
-.scroll img {
-  border-radius: 20px;
-  transition: transform 0.5s ease-in-out; /* Apply transition for both hover and non-hover states */
-
-  &:hover {
-    transform: scale(1.04); /* Scale the image when hovered */
-  }
-}
-
-.scroll {
-  display: flex;
-  width: 600px;
-  min-width: 600px;
-  height: 400px;
-  padding: 20px;
-  object-fit: cover;
-  gap: 40px;
-}
-
-@media (max-width: 768px) {
-  .scroll {
-    width: 500px;
-    min-width: 500px;
-    height: 350px;
-    padding: 10px;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 620px) {
-  .scroll {
-    width: 400px;
-    min-width: 400px;
-    height: 300px;
-    padding: 6px;
-    gap: 20px;
-  }
-}
-
 .imagesShowcase {
   overflow: hidden;
   position: relative;
@@ -191,6 +123,72 @@ h3 {
   }
   to {
     transform: translateX(-310.6%);
+  }
+}
+
+@media (max-width: 1080px) {
+  @keyframes scrollMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-399.6%);
+    }
+  }
+  .imagesShowcaseSlide {
+    animation: scrollMarquee 36s linear infinite;
+  }
+}
+@media (max-width: 768px) {
+  .imagesShowcaseSlide img {
+    height: 250px;
+    margin: 5px 3px;
+  }
+  @keyframes scrollMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-488.6%);
+    }
+  }
+  .imagesShowcaseSlide {
+    animation: scrollMarquee 32s linear infinite;
+  }
+}
+
+@media (max-width: 620px) {
+  .imagesShowcaseSlide img {
+    height: 200px;
+    margin: 4px 2px;
+  }
+  @keyframes scrollMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-487%);
+    }
+  }
+  .imagesShowcaseSlide {
+    animation: scrollMarquee 28s linear infinite;
+  }
+}
+@media (max-width: 480px) {
+  .imagesShowcaseSlide img {
+    height: 150px;
+    margin: 3px 1px;
+  }
+  @keyframes scrollMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-474%);
+    }
+  }
+  .imagesShowcaseSlide {
+    animation: scrollMarquee 24s linear infinite;
   }
 }
 

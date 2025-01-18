@@ -85,7 +85,7 @@ function FeaturedProducts() {
       </div>
       <div
         ref={containerRef}
-        className={`${styles.hideScroll} flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 w-full overflow-x-auto`}
+        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 w-full overflow-x-auto`}
         style={{ scrollBehavior: "smooth" }}
         onClick={() => goToCustomArtWorkSection()}
       >
