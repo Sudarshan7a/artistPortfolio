@@ -94,101 +94,48 @@ h3 {
   letter-spacing: var(--h3LetterSpacing);
   color: var(--textPrimary);
 }
+
 .imagesShowcase {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  height: 300px;
+  padding: 20px 20px;
   background: linear-gradient(#add8e6, var(--primaryColor));
-}
-
-.imagesShowcaseSlide {
   display: flex;
-  gap: 10px;
-  animation: scrollMarquee 44s linear infinite;
+  overflow: hidden;
+  user-select: none;
 }
 
-.imagesShowcaseSlide img {
-  height: 288px;
+.imagesShowcase ul {
+  list-style: none;
+  display: flex;
   flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-left: 20px;
+  min-width: 100%;
+  animation: scroll 40s linear infinite;
+}
+
+.imagesShowcase img {
+  height: 300px;
+  /* width: 600px; */
+  width: 100%;
   object-fit: cover;
-  display: block;
-  margin: 6px 4px;
   border-radius: 8px;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes scrollMarquee {
-  from {
-    transform: translateX(0);
-  }
+.imagesShowcase:hover ul {
+  animation-play-state: paused;
+}
+
+.imagesShowcase img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes scroll {
   to {
-    transform: translateX(-310.6%);
-  }
-}
-
-@media (max-width: 1080px) {
-  @keyframes scrollMarquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-399.6%);
-    }
-  }
-  .imagesShowcaseSlide {
-    animation: scrollMarquee 36s linear infinite;
-  }
-}
-@media (max-width: 768px) {
-  .imagesShowcaseSlide img {
-    height: 250px;
-    margin: 5px 3px;
-  }
-  @keyframes scrollMarquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-488.6%);
-    }
-  }
-  .imagesShowcaseSlide {
-    animation: scrollMarquee 32s linear infinite;
-  }
-}
-
-@media (max-width: 620px) {
-  .imagesShowcaseSlide img {
-    height: 200px;
-    margin: 4px 2px;
-  }
-  @keyframes scrollMarquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-487%);
-    }
-  }
-  .imagesShowcaseSlide {
-    animation: scrollMarquee 28s linear infinite;
-  }
-}
-@media (max-width: 480px) {
-  .imagesShowcaseSlide img {
-    height: 150px;
-    margin: 3px 1px;
-  }
-  @keyframes scrollMarquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-474%);
-    }
-  }
-  .imagesShowcaseSlide {
-    animation: scrollMarquee 24s linear infinite;
+    transform: translateX(calc(-100%));
   }
 }
 

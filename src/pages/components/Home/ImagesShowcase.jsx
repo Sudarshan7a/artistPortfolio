@@ -47,7 +47,7 @@ function ImagesShowcase() {
   ];
   return (
     <div className="imagesShowcase">
-      <div className="imagesShowcaseSlide">
+      {/* <div className="imagesShowcaseSlide">
         {images.map((image) => (
           <img
             key={image.key}
@@ -72,7 +72,21 @@ function ImagesShowcase() {
           alt={`Marquee `}
           loading="lazy"
         />
-      </div>
+      </div> */}
+      <ul>
+        {images.map((image) => (
+          <li key={image.key}>
+            <img src={image.src} alt={image.alt} loading="lazy" />
+          </li>
+        ))}
+      </ul>
+      <ul aria-hidden="true">
+        {images.map((image) => (
+          <li key={image.key}>
+            <img src={image.src} alt={image.alt} loading="lazy" />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
