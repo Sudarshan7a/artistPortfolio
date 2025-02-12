@@ -140,12 +140,12 @@ function CommissionCard({
       {/*View larger Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-textSecondary bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center overlay bg-opacity-10"
           onClick={toggleModal}
         >
           <button
             onClick={toggleModal}
-            className="absolute top-3 md:top-7 z-20 right-4 md:right-8 text-gray-500 hover:text-gray-700"
+            className="absolute top-3 md:top-7 z-20 right-4 md:right-8 text-gray-950 hover:text-gray-900"
           >
             <svg className="" height="32" width="32" xmlns="">
               <image width="32" height="32" href="Icons/closeIcon.svg" />

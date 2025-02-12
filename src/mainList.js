@@ -72,6 +72,13 @@ export const gallearyList = [
   [
     1,
     {
+      name: "fullCom_preciousBean",
+      loc: "images/fullCom/fullCom_preciousBean.jpg",
+    },
+  ],
+  [
+    1,
+    {
       name: "fullCom_crownVsHarvester",
       loc: "images/fullCom/fullCom_crownVsHarvester/variant2.jpg",
     },
@@ -145,6 +152,13 @@ export const gallearyList = [
     {
       name: "fullCom_redhoodAlteisen",
       loc: "images/fullCom/fullCom_redHoodAlteisen.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "char_Bikini",
+      loc: "images/fullCom/fullCom_Bikini.jpg",
     },
   ],
   [

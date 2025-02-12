@@ -81,7 +81,7 @@ function FeaturedProducts() {
   return (
     <>
       <div className="ml-6 sm:ml-12 md:ml-24 mt-24 pl-4 sm:pl-1 md:pl-2 lg:pl-8 pt-8">
-        <h2 className="text-h2">Popular Featured</h2>
+        <h2 className="text-h2">Featured Commissions</h2>
       </div>
       <div
         ref={containerRef}

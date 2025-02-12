@@ -194,16 +194,18 @@ function Motivation() {
  */
 function Copywrite() {
   return (
-    <div className="copywrite m-4 md:m-6 ">
-      <hr className="w-full md:w-a" />
-      <div>
-        <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">
-          <li>Ronal1710</li>
-          <li>2024</li>
-          <li>@copywrite</li>
-        </ul>
+    <>
+      <hr className=" mt-6" />
+      <div className="copywrite m-4 md:m-6 ">
+        <div>
+          <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">
+            <li>Ronal1710</li>
+            <li>2024</li>
+            <li>@copywrite</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
