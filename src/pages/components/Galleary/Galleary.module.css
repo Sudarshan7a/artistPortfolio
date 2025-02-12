@@ -12,11 +12,11 @@
     #d42d2d 100%
   );
   filter: blur(40px);
-  height: 620px;
+  height: 100%;
 }
 .latesArt > div {
   width: "1220px";
-  height: "620px";
+  /* height: "660px"; */
 }
 
 .galleary h1 {

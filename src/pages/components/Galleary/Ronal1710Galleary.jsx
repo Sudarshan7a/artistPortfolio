@@ -10,7 +10,7 @@ import { gallearyList } from "../../../mainList";
 function Ronal1710Galleary() {
   return (
     <div
-      className={`${styles.galleary} flex flex-col sm:gap-[36px] mx-4 mt-10 bg-textPrimary items-center rounded-md pb-8 mb-10`}
+      className={`${styles.galleary} flex flex-col sm:gap-[36px]  mt-10 bg-textPrimary items-center  pb-8 mb-10`}
     >
       <h1 className="text-center text-[48px] text-primaryColor font-title font-semiBold m-10 ">
         Ronal1710’s Gallery

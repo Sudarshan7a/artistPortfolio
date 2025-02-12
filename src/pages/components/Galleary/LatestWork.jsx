@@ -2,6 +2,7 @@ import styles from "./Galleary.module.css";
 
 const latestArt = {
   borderRadius: "40px",
+  height: "100%",
   background:
     'url("images/fullCom/fullCom_Tale_of_the_Future_20.jpg") lightgray 50% / cover no-repeat',
 };
@@ -20,10 +21,10 @@ function LatestWork() {
           We can create it.
         </p>
       </div>
-      <div className="m-auto my-20 mb-32 md:mb-20 relative">
+      <div className="m-auto my-20 mb-32 md:mb-20 relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]  xl:h-[90vh]">
         <div className={`${styles.latesArt} mt-12 m-auto p-4`} />
         <div
-          className="justify-center m-auto  absolute top-0 left-0 right-0 bottom-0"
+          className="justify-center   absolute top-0 left-0 right-0 bottom-0"
           style={latestArt}
         ></div>
       </div>
