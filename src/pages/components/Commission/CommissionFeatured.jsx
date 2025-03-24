@@ -76,7 +76,7 @@ function Card({ title, price, image: imageLocation, layout, addons }) {
       <div className="ml-2 max-w-64 mt-4">
         <h3 className="text-xl w-fit font-bold">{title}</h3>
         <p className="text-lg w-fit text-textSecondary font-subtitle">
-          {price}
+          ${price}
         </p>
 
         {/* Addons List */}
