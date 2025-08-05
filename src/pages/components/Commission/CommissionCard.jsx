@@ -9,7 +9,7 @@ CommissionCard.propTypes = {
   commissionType: PropTypes.arrayOf(PropTypes.string).isRequired,
   pricingBreakdown: PropTypes.arrayOf(PropTypes.string),
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handelSideButtonClick: PropTypes.func.isRequired,
+  handleSideButtonClick: PropTypes.func.isRequired,
   currentIndex: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
   indexLength: PropTypes.number.isRequired,
@@ -21,7 +21,7 @@ function CommissionCard({
   commissionType,
   pricingBreakdown,
   images,
-  handelSideButtonClick,
+  handleSideButtonClick,
   currentIndex,
   type,
   indexLength,
@@ -131,7 +131,7 @@ function CommissionCard({
       </div>
       <div className="mt-12  flex gap-5 m-auto w-auto justify-center">
         <FullSidebarButtons
-          handelSideButtonClick={handelSideButtonClick}
+          handleSideButtonClick={handleSideButtonClick}
           type={type}
           currentIndex={currentIndex}
           indexLength={indexLength}
@@ -169,21 +169,21 @@ function CommissionCard({
 export default CommissionCard;
 
 FullSidebarButtons.propTypes = {
-  handelSideButtonClick: PropTypes.func.isRequired,
+  handleSideButtonClick: PropTypes.func.isRequired,
   currentIndex: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
   indexLength: PropTypes.number.isRequired,
 };
 function FullSidebarButtons({
   type,
-  handelSideButtonClick,
+  handleSideButtonClick,
   currentIndex,
   indexLength,
 }) {
   return (
     <div className="flex items-center gap-2 md:gap-8">
       <SidebarButtons
-        onClick={() => handelSideButtonClick(type, "left")}
+        onClick={() => handleSideButtonClick(type, "left")}
         scale={150}
         rotation={180}
         aviable={currentIndex > 0} // Disable if at the start
@@ -199,7 +199,7 @@ function FullSidebarButtons({
         ))}
       </div>
       <SidebarButtons
-        onClick={() => handelSideButtonClick(type, "right")}
+        onClick={() => handleSideButtonClick(type, "right")}
         scale={150}
         rotation={0}
         aviable={currentIndex < indexLength - 1} // Disable if at the end

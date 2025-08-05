@@ -1,4 +1,4 @@
-const TermsServiceNavLins = [
+const TermsServiceNavLinks = [
   "General",
   "Payment, Cancelation & Refund",
   "Copyright & Usage",
@@ -30,7 +30,7 @@ function TermsAndConditionsHero() {
           Terms and Conditions
         </h1>
         <ul className="fadein flex flex-wrap sm:flex-nowrap gap-10 mx-auto w-auto text-center text-textSecondary font-title">
-          {TermsServiceNavLins.map((link) => (
+          {TermsServiceNavLinks.map((link) => (
             <li key={link}>{link}</li>
           ))}
         </ul>

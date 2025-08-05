@@ -12,7 +12,7 @@ const guideLinesList = [
 /**
  * Component to display the commission guidelines and process.
  */
-function CommissionGuildLines() {
+function CommissionGuidelines() {
   return (
     <div className="mb-32">
       {termsAndConditionsList.map((guidelines, index) => (
@@ -90,4 +90,4 @@ function CommissionGuildLines() {
   );
 }
 
-export default CommissionGuildLines;
+export default CommissionGuidelines;

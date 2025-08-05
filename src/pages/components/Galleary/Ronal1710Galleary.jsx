@@ -1,5 +1,5 @@
 import styles from "./Galleary.module.css";
-import PropsTypes from "prop-types";
+import PropTypes from "prop-types";
 import { gallearyList } from "../../../mainList";
 
 /**
@@ -24,10 +24,123 @@ function Ronal1710Galleary() {
 
 export default Ronal1710Galleary;
 
-ShowCase.propTypes = {
-  layout: PropsTypes.number,
-  loc: PropsTypes.arrayOf(PropsTypes.object),
+/**
+ * Renders a single image layout
+ */
+const SingleImageLayout = ({ loc }) => (
+  <div className="m-4">
+    <img className=" rounded-md" src={loc[0].loc} alt={loc[0].name} />
+  </div>
+);
+
+SingleImageLayout.propTypes = {
+  loc: PropTypes.arrayOf(PropTypes.object),
 };
+
+/**
+ * Renders a two image layout with main and sub image
+ */
+const TwoImageMainLayout = ({ loc }) => (
+  <div className="m-4 flex flex-col lg:flex-row items-center justify-center gap-8 scale-105 ">
+    <img
+      className="px-4 w-full lg:w-7/12 rounded-md"
+      src={loc[0].loc}
+      alt={loc[0].name}
+    />
+    <img
+      className="px-4 w-full lg:w-1/3 rounded-md"
+      src={loc[1].loc}
+      alt={loc[1].name}
+    />
+  </div>
+);
+
+TwoImageMainLayout.propTypes = {
+  loc: PropTypes.arrayOf(PropTypes.object),
+};
+
+/**
+ * Renders a three image layout with main and two sub images
+ */
+const ThreeImageMainLayout = ({ loc }) => (
+  <div className="mx-4  sm:pm-0 w-fit h-fit flex flex-col md:flex-row md:items-center justify-end sm:justify-end gap-4 md:gap-8 ">
+    <img
+      className="w-11/12 h-fit m-auto md:w-8/12 rounded-md scale-105"
+      src={loc[0].loc}
+      alt={loc[0].name}
+    />
+    <div className="w-full sm:w-1/2 flex-grow sm:flex-grow-0 justify-start md:w-1/4 scale-90 flex flex-col sm:flex-row md:flex-col gap-12 sm:gap-4">
+      <img
+        className="rounded-md sm:scale-90"
+        src={loc[1].loc}
+        alt={loc[1].name}
+      />
+      <img
+        className="rounded-md sm:scale-90"
+        src={loc[2].loc}
+        alt={loc[2].name}
+      />
+    </div>
+  </div>
+);
+
+ThreeImageMainLayout.propTypes = {
+  loc: PropTypes.arrayOf(PropTypes.object),
+};
+
+/**
+ * Renders a three image grid layout
+ */
+const ThreeImageGridLayout = ({ loc }) => (
+  <div className="m-4 px-4 flex flex-col sm:flex-row gap-8 sm:gap-8   justify-around ">
+    <img
+      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      src={loc[0].loc}
+      alt={loc[0].name}
+    />
+    <img
+      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      src={loc[1].loc}
+      alt={loc[1].name}
+    />
+    <img
+      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      src={loc[2].loc}
+      alt={loc[2].name}
+    />
+  </div>
+);
+
+ThreeImageGridLayout.propTypes = {
+  loc: PropTypes.arrayOf(PropTypes.object),
+};
+
+/**
+ * Renders a two image equal layout
+ */
+const TwoImageEqualLayout = ({ loc }) => (
+  <div className="m-4 mx-8 my-8  flex flex-col md:flex-row items-center gap-8 md:gap-4 justify-between">
+    <div className="w-full md:w-1/2 md:pr-4">
+      <img
+        className="rounded-md w-max-fit"
+        src={loc[0].loc}
+        alt={loc[0].name}
+      />
+    </div>
+    <div className="w-full md:w-1/2 md:pl-4">
+      <img
+        className="rounded-md w-max-fit"
+        src={loc[1].loc}
+        alt={loc[1].name}
+      />
+    </div>
+  </div>
+);
+
+TwoImageEqualLayout.propTypes = {
+  loc: PropTypes.arrayOf(PropTypes.object),
+};
+
 /**
  * ShowCase component to display images in different layouts.
  *
@@ -38,95 +151,33 @@ ShowCase.propTypes = {
  * @returns {JSX.Element} The rendered component based on the layout type.
  */
 function ShowCase({ layout, loc }) {
+  if (!loc || loc.length === 0) {
+    return (
+      <div className="m-4 text-center text-gray-500">No images available</div>
+    );
+  }
+
   switch (layout) {
     case 1:
-      // For single image
-      return (
-        <div className="m-4">
-          <img className=" rounded-md" src={loc[0].loc} alt={loc[0].name} />
-        </div>
-      );
+      return <SingleImageLayout loc={loc} />;
     case 2:
-      // For Left main image and right sub image
-      return (
-        <div className="m-4 flex flex-col lg:flex-row items-center justify-center gap-8 scale-105 ">
-          <img
-            className="px-4 w-full lg:w-7/12 rounded-md"
-            src={loc[0].loc}
-            alt={loc[0].name}
-          />
-          <img
-            className="px-4 w-full lg:w-1/3 rounded-md"
-            src={loc[1].loc}
-            alt={loc[1].name}
-          />
-        </div>
-      );
+      return <TwoImageMainLayout loc={loc} />;
     case 3:
-      // For Left main image and right two sub image
-      return (
-        <div className="mx-4  sm:pm-0 w-fit h-fit flex flex-col md:flex-row md:items-center justify-end sm:justify-end gap-4 md:gap-8 ">
-          <img
-            className="w-11/12 h-fit m-auto md:w-8/12 rounded-md scale-105"
-            src={loc[0].loc}
-            alt={loc[0].name}
-          />
-          <div className="w-full sm:w-1/2 flex-grow sm:flex-grow-0 justify-start md:w-1/4 scale-90 flex flex-col sm:flex-row md:flex-col gap-12 sm:gap-4">
-            <img
-              className="rounded-md sm:scale-90"
-              src={loc[1].loc}
-              alt={loc[1].name}
-            />
-            <img
-              className="rounded-md sm:scale-90"
-              src={loc[2].loc}
-              alt={loc[2].name}
-            />
-          </div>
-        </div>
-      );
+      return <ThreeImageMainLayout loc={loc} />;
     case 4:
-      // For three images
-      return (
-        <div className="m-4 px-4 flex flex-col sm:flex-row gap-8 sm:gap-8   justify-around ">
-          <img
-            className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
-            src={loc[0].loc}
-            alt={loc[0].name}
-          />
-          <img
-            className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
-            src={loc[1].loc}
-            alt={loc[1].name}
-          />
-          <img
-            className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
-            src={loc[2].loc}
-            alt={loc[2].name}
-          />
-        </div>
-      );
+      return <ThreeImageGridLayout loc={loc} />;
     case 5:
-      // For two images
+      return <TwoImageEqualLayout loc={loc} />;
+    default:
       return (
-        <div className="m-4 mx-8 my-8  flex flex-col md:flex-row items-center gap-8 md:gap-4 justify-between">
-          <div className="w-full md:w-1/2 md:pr-4">
-            <img
-              className="rounded-md w-max-fit"
-              src={loc[0].loc}
-              alt={loc[0].name}
-            />
-          </div>
-          <div className="w-full md:w-1/2 md:pl-4">
-            <img
-              className="rounded-md w-max-fit"
-              src={loc[1].loc}
-              alt={loc[1].name}
-            />
-          </div>
+        <div className="m-4 text-center text-red-500">
+          Unsupported layout type: {layout}
         </div>
       );
-    default:
-      break;
   }
 }
+
+ShowCase.propTypes = {
+  layout: PropTypes.number,
+  loc: PropTypes.arrayOf(PropTypes.object),
+};

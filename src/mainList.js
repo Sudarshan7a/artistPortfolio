@@ -72,8 +72,22 @@ export const gallearyList = [
   [
     1,
     {
+      name: "fullCom_Tale_of_the_Future_20",
+      loc: "images/fullCom/fullCom_Tale_of_the_Future_20.jpg",
+    },
+  ],
+  [
+    1,
+    {
       name: "fullCom_preciousBean",
       loc: "images/fullCom/fullCom_preciousBean.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "fullCom_Mafia_waifu_21",
+      loc: "images/fullCom/fullCom_Mafia_waifu_21.jpg",
     },
   ],
   [

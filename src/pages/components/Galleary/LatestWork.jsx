@@ -1,10 +1,11 @@
 import styles from "./Galleary.module.css";
+import { memo } from "react";
 
 const latestArt = {
   borderRadius: "40px",
   height: "100%",
   background:
-    'url("images/fullCom/fullCom_Tale_of_the_Future_20.jpg") lightgray 50% / cover no-repeat',
+    'url("images/fullCom/fullCom_Crown_2.5_999EX.jpg") lightgray 50% / cover no-repeat',
 };
 /**
  * LatestWork component renders the latest artwork section.
@@ -32,4 +33,4 @@ function LatestWork() {
   );
 }
 
-export default LatestWork;
+export default memo(LatestWork);
