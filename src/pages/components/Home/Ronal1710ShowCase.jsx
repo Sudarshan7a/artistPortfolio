@@ -119,7 +119,7 @@ const Ronal1710ShowCase = () => {
             <div className="photos-box">
               <div className="photo col1">
                 <img
-                  src="/images/characters/char_whiteKnight/variant1.jpg"
+                  src="/images/characters/char_augusta_wuwa.jpg"
                   alt="Character Commission"
                 />
               </div>
