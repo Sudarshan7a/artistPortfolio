@@ -68,7 +68,15 @@ export const aboutMe = {
     "A digital artist bringing anime-inspired worlds to life. Through intricate details and expressive characters, I create scenes that captivate and inspire. Explore my gallery to see my work, or connect to start a custom piece crafted to your vision.",
 };
 
+// new image images/fullCom/fullCom_Crown_2.5_999EX.jpg
 export const gallearyList = [
+  [
+    1,
+    {
+      name: "fullCom_Crown_2.5_999EX",
+      loc: "images/fullCom/fullCom_Crown_2.5_999EX.jpg",
+    },
+  ],
   [
     1,
     {
