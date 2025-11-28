@@ -85,7 +85,7 @@ const Ronal1710ShowCase = () => {
       >
         Why My Art is best for you.
       </h1>
-      <div className={`gallery ${styles.gallery}`} ref={galleryRef}>
+      <div className={`gallery px-[80px] ${styles.gallery}`} ref={galleryRef}>
         <div className="left">
           <div className="detailsWrapper">
             <div className="details d1">

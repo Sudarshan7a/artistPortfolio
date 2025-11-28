@@ -11,13 +11,15 @@ function CustomArtShowcase() {
   });
 
   const [visibleIndex, setVisibleIndex] = useState(currentIndex); // Controls visible content
-  const [isAnimating, setIsAnimating] = useState(false); // Manages animation state
+  const [isAnimating, setIsAnimating] = useState({
+    Characters: false,
+    CharactersBackground: false,
+    CharactersOver800: false,
+    Background: false,
+  }); // Manages animation state
 
-  function handelSideButtonClick(type, direction) {
-    console.log(
-      `Type: ${type}, Direction: ${direction}, CurrentIndex:`,
-      currentIndex
-    );
+  function handleSideButtonClick(type, direction) {
+
 
     const indexKey = type + "Index"; // Dynamically create the key name
     const current = currentIndex[indexKey]; // Access the current value using bracket notation
@@ -30,7 +32,7 @@ function CustomArtShowcase() {
     }
 
     // Start fade-out animation
-    setIsAnimating(true);
+    setIsAnimating((prev) => ({ ...prev, [type]: true }));
 
     // Update `visibleIndex` after fade-out completes
     setTimeout(() => {
@@ -46,7 +48,7 @@ function CustomArtShowcase() {
         ...prev,
         [indexKey]: newIndex,
       }));
-      setIsAnimating(false); // Reset animation state
+      setIsAnimating((prev) => ({ ...prev, [type]: false })); // Reset animation state
     }, 600); // Double the CSS duration for fade-in
   }
 
@@ -62,7 +64,7 @@ function CustomArtShowcase() {
 
         <div
           className={`transition-opacity duration-300 ${
-            isAnimating ? "opacity-0" : "opacity-100"
+            isAnimating.Characters ? "opacity-0" : "opacity-100"
           }`}
         >
           <CommissionCard
@@ -79,7 +81,7 @@ function CustomArtShowcase() {
             }
             images={commissionSamples[0][visibleIndex.CharactersIndex]?.images}
             type={commissionSamples[0][visibleIndex.CharactersIndex]?.type}
-            handelSideButtonClick={handelSideButtonClick}
+            handleSideButtonClick={handleSideButtonClick}
             indexLength={commissionSamples[0].length}
           />
         </div>
@@ -89,7 +91,7 @@ function CustomArtShowcase() {
 
         <div
           className={`transition-opacity duration-300 ${
-            isAnimating ? "opacity-0" : "opacity-100"
+            isAnimating.CharactersBackground ? "opacity-0" : "opacity-100"
           }`}
         >
           <CommissionCard
@@ -117,7 +119,7 @@ function CustomArtShowcase() {
             type={
               commissionSamples[1][visibleIndex.CharactersBackgroundIndex]?.type
             }
-            handelSideButtonClick={handelSideButtonClick}
+            handleSideButtonClick={handleSideButtonClick}
             indexLength={commissionSamples[1].length}
           />
         </div>
@@ -127,7 +129,7 @@ function CustomArtShowcase() {
 
         <div
           className={`transition-opacity duration-300 ${
-            isAnimating ? "opacity-0" : "opacity-100"
+            isAnimating.CharactersOver800 ? "opacity-0" : "opacity-100"
           }`}
         >
           <CommissionCard
@@ -154,7 +156,7 @@ function CustomArtShowcase() {
             type={
               commissionSamples[2][visibleIndex.CharactersOver800Index]?.type
             }
-            handelSideButtonClick={handelSideButtonClick}
+            handleSideButtonClick={handleSideButtonClick}
             indexLength={commissionSamples[2].length}
           />
         </div>
@@ -164,7 +166,7 @@ function CustomArtShowcase() {
 
         <div
           className={`transition-opacity duration-300 ${
-            isAnimating ? "opacity-0" : "opacity-100"
+            isAnimating.Background ? "opacity-0" : "opacity-100"
           }`}
         >
           <CommissionCard
@@ -181,7 +183,7 @@ function CustomArtShowcase() {
             }
             images={commissionSamples[3][visibleIndex.BackgroundIndex]?.images}
             type={commissionSamples[3][visibleIndex.BackgroundIndex]?.type}
-            handelSideButtonClick={handelSideButtonClick}
+            handleSideButtonClick={handleSideButtonClick}
             indexLength={commissionSamples[3].length}
           />
         </div>
