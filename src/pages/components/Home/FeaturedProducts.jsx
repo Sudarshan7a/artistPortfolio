@@ -28,11 +28,12 @@ function FeaturedProducts() {
     const container = containerRef.current;
     if (container) {
       // Left button enabled only if scrollLeft > 0 (i.e., if not at the far left)
-      setShowLeftButton(container.scrollLeft > 0);
+      setShowLeftButton(container.scrollLeft > 1);
 
       // Right button enabled only if scrollLeft < (scrollWidth - clientWidth)
+      // Add 1px tolerance for rounding errors
       setShowRightButton(
-        container.scrollLeft < container.scrollWidth - container.clientWidth
+        container.scrollLeft < container.scrollWidth - container.clientWidth - 1
       );
     }
   };
@@ -41,7 +42,7 @@ function FeaturedProducts() {
   const scrollContainer = (direction) => {
     const container = containerRef.current;
     if (container) {
-      const scrollAmount = 400 + 2 * 16; // Scroll by 8rem + 400px
+      const scrollAmount = 350 + 2 * 16; // Scroll by gap (40px) + card width (350px)
       container.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -63,17 +64,23 @@ function FeaturedProducts() {
       checkScrollability(); // Recheck scrollability after each scroll event
     };
 
+    const handleResize = () => {
+      checkScrollability();
+    };
+
     if (container) {
       container.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleResize);
     }
 
-    // Initial scrollability check
-    checkScrollability();
+    // Initial scrollability check with a small delay to ensure layout
+    setTimeout(checkScrollability, 100);
 
     // Cleanup on unmount
     return () => {
       if (container) {
         container.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleResize);
       }
     };
   }, []);
@@ -97,16 +104,16 @@ function FeaturedProducts() {
         <SidebarButtons
           scale={150}
           rotation={180}
-          aviable={showLeftButton} // Left button visibility based on scroll position
+          available={showLeftButton} // Left button visibility based on scroll position
           onClick={() => scrollContainer("left")} // Move left when clicked
-          arialabel="Go Left"
+          ariaLabel="Go Left"
         />
         <SidebarButtons
           scale={150}
           rotation={0}
-          aviable={showRightButton} // Right button visibility based on scroll position
+          available={showRightButton} // Right button visibility based on scroll position
           onClick={() => scrollContainer("right")} // Move right when clicked
-          arialabel="Go right"
+          ariaLabel="Go right"
         />
       </div>
     </>
@@ -135,15 +142,18 @@ export default FeaturedProducts;
 function Cards({ title, shortDescription, imageLocation, layout }) {
   return (
     <div>
-      {/* //productImage  */}
-      <div
-        className={`${styles.productImage} bg-slate-700`}
-        style={{
-          flexShrink: 0,
-          borderRadius: "40px",
-          background: `url(${imageLocation}) lightgray ${layout} 100% no-repeat`,
-        }}
-      />
+      {/* Wrapper div with overflow hidden to contain the scaling image */}
+      <div className={styles.imageWrapper}>
+        {/* //productImage  */}
+        <div
+          className={`${styles.productImage} bg-slate-700`}
+          style={{
+            flexShrink: 0,
+            borderRadius: "40px",
+            background: `url(${imageLocation}) lightgray ${layout} 100% no-repeat`,
+          }}
+        />
+      </div>
       {/* //productImage's description  */}
       <div className="ml-2 mt-4">
         <h3>{title}</h3>
