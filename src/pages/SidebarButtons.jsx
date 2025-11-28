@@ -6,13 +6,13 @@ import PropTypes from "prop-types";
  * @param {Object} props - The properties object.
  * @param {number} props.rotation - The rotation degree for the SVG icon.
  * @param {number} props.scale - The scale factor for the SVG icon.
- * @param {boolean} props.aviable - The availability status of the button.
+ * @param {boolean} props.available - The availability status of the button.
  * @param {Function} props.onClick - The click handler for the button.
- * @param {string} props.arialabel - The aria-label for the button.
- */ function SidebarButtons({ rotation, scale, aviable, onClick, arialabel }) {
+ * @param {string} props.ariaLabel - The aria-label for the button.
+ */ function SidebarButtons({ rotation, scale, available, onClick, ariaLabel }) {
   const styleClass = `scale-${scale} rotate-${rotation}`;
-  const isDisabled = !aviable; // Button is disabled if not available
-  const activeClass = aviable
+  const isDisabled = !available; // Button is disabled if not available
+  const activeClass = available
     ? "opacity-100 cursor-pointer"
     : "opacity-50 cursor-not-allowed";
 
@@ -22,7 +22,7 @@ import PropTypes from "prop-types";
       disabled={isDisabled}
       className={`bg-[#D9D9D9] shadow-sm rounded-full h-12 w-12 flex justify-center items-center ${activeClass}`}
       style={{ cursor: isDisabled ? "default" : "pointer" }}
-      aria-label={arialabel}
+      aria-label={ariaLabel}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +44,9 @@ import PropTypes from "prop-types";
 SidebarButtons.propTypes = {
   rotation: PropTypes.number,
   scale: PropTypes.number,
-  aviable: PropTypes.bool,
+  available: PropTypes.bool,
   onClick: PropTypes.func, // New prop for click handler
-  arialabel: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 export default SidebarButtons;

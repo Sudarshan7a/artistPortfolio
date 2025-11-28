@@ -186,7 +186,7 @@ function FullSidebarButtons({
         onClick={() => handleSideButtonClick(type, "left")}
         scale={150}
         rotation={180}
-        aviable={currentIndex > 0} // Disable if at the start
+        available={currentIndex > 0} // Disable if at the start
       />
       <div className="w-32 h-16 bg-slate-300 flex gap-2 justify-center items-center rounded-full">
         {Array.from({ length: indexLength }).map((_, index) => (
@@ -202,7 +202,7 @@ function FullSidebarButtons({
         onClick={() => handleSideButtonClick(type, "right")}
         scale={150}
         rotation={0}
-        aviable={currentIndex < indexLength - 1} // Disable if at the end
+        available={currentIndex < indexLength - 1} // Disable if at the end
       />
     </div>
   );
