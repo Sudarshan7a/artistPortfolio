@@ -6,9 +6,9 @@ function AboutMe() {
   }
   return (
     <div
-      className={`flex ${styles.aboutMe} flex-col lg:flex-row p-10 lg:p-40 gap:10 lg:gap-24  bg-gradient-to-b from-[#DBE8ED] to-[#ADD8E6]`}
+      className={`flex ${styles.aboutMe} flex-col lg:flex-row p-10 xl:p-40 gap:10 xl:gap-24  bg-gradient-to-b from-[#DBE8ED] to-[#ADD8E6]`}
     >
-      <div className="flex justify-center items-center w-[80%] m-auto  lg:p-12">
+      <div className="flex justify-center items-center min-w-[200px] w-[80%] m-auto p-4    2  xl:p-12">
         <img
           src={logo}
           alt="anime Profile"
