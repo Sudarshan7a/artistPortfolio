@@ -57,7 +57,7 @@ html {
 }
 
 .details {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +65,7 @@ html {
 
 .right {
   width: 50%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
