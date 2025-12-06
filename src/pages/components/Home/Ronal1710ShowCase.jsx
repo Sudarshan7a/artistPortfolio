@@ -85,8 +85,8 @@ const Ronal1710ShowCase = () => {
       >
         Why My Art is best for you.
       </h1>
-      <div className={`gallery px-[80px] md:px-[40px] lg:px-[80px]  ${styles.gallery}`} ref={galleryRef}>
-        <div className="left">
+      <div className={`gallery px-[80px] md:px-[40px]   ${styles.gallery}`} ref={galleryRef}>
+        <div className="left pt-[0px] sm:pt-[80px] lg:pt-[0px]">
           <div className="detailsWrapper">
             <div className="details d1">
               <h1 className="headline col1">Character Commission</h1>
@@ -110,6 +110,10 @@ const Ronal1710ShowCase = () => {
                 atmosphere, and vibrant detail, perfectly complementing your
                 characters and story.
               </p>
+            </div>
+            <div className=" d4">
+              {/* <h1 className="headline col4">Background Art Commission</h1> */}
+             
             </div>
           </div>
         </div>

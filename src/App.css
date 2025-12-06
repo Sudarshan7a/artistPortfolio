@@ -117,7 +117,16 @@ html {
 
 .col4 {
   background: #ffb399;
+
 } */
+@media all and (max-width: 1080px) {
+
+
+}
+
+.d4{
+  display: none;
+}
 
 @media all and (max-width: 640px) {
   .gallery {
@@ -138,6 +147,7 @@ html {
     width: 100%;
     height: 50vh;
     bottom: 0px;
+    margin:auto;
   }
 
   .photos-box {
@@ -146,6 +156,7 @@ html {
     top: 30%;
     left: -5%;
     bottom: 50%;
+    
   }
 
   .details {
@@ -155,14 +166,10 @@ html {
   .headline {
     font-size: 24px;
   }
-}
-
-@media screen and (max-width: 400px) {
-  .photos-box {
-    width: 70%;
-    height: 90%;
-    top: 20%;
-    left: -10%;
-    /* bottom: -50%; */
+  .d4{
+    display: block;
+    opacity: 0;
+    height: 40vh;
   }
 }
+
