@@ -143,9 +143,9 @@ html {
   .photos-box {
     width: 90%;
     height: 90%;
-    top: 0%;
-    left: 5%;
-    bottom: 5%;
+    top: 40%;
+    left: -8%;
+    /* bottom: -50%; */
   }
 
   .details {

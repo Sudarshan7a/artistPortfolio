@@ -114,7 +114,7 @@ const Ronal1710ShowCase = () => {
           </div>
         </div>
 
-        <div className="right">
+        <div className="right"> 
           <div className="photos">
             <div className="photos-box">
               <div className="photo col1">
