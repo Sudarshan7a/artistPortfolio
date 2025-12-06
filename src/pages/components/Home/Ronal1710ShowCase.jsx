@@ -81,11 +81,11 @@ const Ronal1710ShowCase = () => {
   return (
     <div>
       <h1
-        className={`${styles.headline}  bg-gradient-to-b from-secondaryColor to-[#add8e6]`}
+        className={`${styles.headline} bg-gradient-to-b  from-secondaryColor to-[#add8e6]`}
       >
         Why My Art is best for you.
       </h1>
-      <div className={`gallery px-[80px] ${styles.gallery}`} ref={galleryRef}>
+      <div className={`gallery px-[80px] md:px-[40px] lg:px-[80px]  ${styles.gallery}`} ref={galleryRef}>
         <div className="left">
           <div className="detailsWrapper">
             <div className="details d1">

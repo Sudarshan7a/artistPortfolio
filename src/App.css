@@ -141,11 +141,11 @@ html {
   }
 
   .photos-box {
-    width: 90%;
-    height: 90%;
-    top: 40%;
-    left: -8%;
-    /* bottom: -50%; */
+    width: 80%;
+    height: 100%;
+    top: 30%;
+    left: -5%;
+    bottom: 50%;
   }
 
   .details {
@@ -154,5 +154,15 @@ html {
   }
   .headline {
     font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .photos-box {
+    width: 70%;
+    height: 90%;
+    top: 20%;
+    left: -10%;
+    /* bottom: -50%; */
   }
 }
