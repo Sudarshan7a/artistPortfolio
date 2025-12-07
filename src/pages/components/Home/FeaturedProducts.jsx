@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { homeFeatured } from "../../../mainList";
+import { homeFeatured } from "../../../featuredList";
 import PropTypes from "prop-types";
 import SidebarButtons from "../../SidebarButtons";
 import styles from "./Ronal1710ShowCase.module.css";
