@@ -124,7 +124,6 @@ Cards.propTypes = {
   title: PropTypes.string.isRequired,
   shortDescription: PropTypes.string.isRequired,
   imageLocation: PropTypes.string.isRequired,
-  layout: PropTypes.string.isRequired,
 };
 
 export default FeaturedProducts;
@@ -136,10 +135,9 @@ export default FeaturedProducts;
  * @param {string} props.title - The title of the card.
  * @param {string} props.shortDescription - A short description for the card.
  * @param {string} props.imageLocation - The URL of the image to be used as the background.
- * @param {string} props.layout - The layout style for the background image.
  * @returns {JSX.Element} A JSX element representing the card.
  */
-function Cards({ title, shortDescription, imageLocation, layout }) {
+function Cards({ title, shortDescription, imageLocation }) {
   return (
     <div>
       {/* Wrapper div with overflow hidden to contain the scaling image */}
@@ -150,7 +148,10 @@ function Cards({ title, shortDescription, imageLocation, layout }) {
           style={{
             flexShrink: 0,
             borderRadius: "40px",
-            background: `url(${imageLocation}) lightgray ${layout} 100% no-repeat`,
+            backgroundImage: `url(${imageLocation})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         />
       </div>
