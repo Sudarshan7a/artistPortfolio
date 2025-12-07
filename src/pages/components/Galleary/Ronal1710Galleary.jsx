@@ -1,6 +1,6 @@
 import styles from "./Galleary.module.css";
 import PropTypes from "prop-types";
-import { gallearyList } from "../../../mainList";
+import { galleryList } from "../../../galleryList";
 
 /**
  * Ronal1710Galleary component to display the gallery.
@@ -13,9 +13,9 @@ function Ronal1710Galleary() {
       className={`${styles.galleary} flex flex-col sm:gap-[36px]  mt-10 bg-textPrimary items-center  pb-8 mb-10`}
     >
       <h1 className="text-center text-[48px] text-primaryColor font-title font-semiBold m-10 ">
-        Ronal1710’s Gallery
+        Ronal1710's Gallery
       </h1>
-      {gallearyList.map((item) => (
+      {galleryList.map((item) => (
         <ShowCase key={item[1].name} layout={item[0]} loc={item.slice(1)} />
       ))}
     </div>
