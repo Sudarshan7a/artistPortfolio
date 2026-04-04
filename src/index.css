@@ -155,24 +155,24 @@ h3 {
   color: #333;
   text-align: left;
   font-family: Montserrat;
-  font-size: 156px;
+  font-size: 126px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160px; /* 125% */
+  line-height: 120px;
   letter-spacing: var(--Label-Large-Tracking, 0.1px);
 }
 
 @media (max-width: 1028px) {
   .footerh1 {
     font-size: 120px;
-    line-height: 130px;
+    line-height: 100px;
   }
 }
 
 @media (max-width: 786px) {
   .footerh1 {
     font-size: 100px;
-    line-height: 110px;
+    line-height: 80px;
   }
 }
 

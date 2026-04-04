@@ -25,10 +25,10 @@ function Footer() {
   }, []);
   return (
     <footer
-      className="footer p-4 md:pt-12 overflow-hidden "
+      className="footer px-8 md:pt-8 overflow-hidden "
       style={backgroundStyle}
     >
-      <div className="mb-4 sm:mb-0 md:m-16 ml:16 lg:ml-24 flex flex-col lg:flex-row gap-10 justify-between items-start ">
+      <div className="mb-4 sm:mb-4 md:m-8 ml:16 lg:ml-20 flex flex-col lg:flex-row gap-10 justify-between items-start ">
         <div className="min-w-fit">
           <Logo scale={deviceWidth < 768 ? 1 : 4} />
         </div>
@@ -196,9 +196,9 @@ function Copywrite() {
   return (
     <>
       <hr className=" mt-6" />
-      <div className="copywrite m-4 md:m-6 ">
+      <div className="copywrite mt-2 mx-4  ">
         <div>
-          <ul className="flex justify-center gap-12 m-4 text-[#333] text-[16px] font-subtitle">
+          <ul className="flex justify-center gap-12 mx-4 my-2 text-[#333] text-[16px] font-subtitle">
             <li>Ronal1710</li>
             <li>2024</li>
             <li>@copywrite</li>
