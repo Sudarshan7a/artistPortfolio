@@ -304,7 +304,24 @@ h3 {
 .section-shell {
   margin-left: auto;
   margin-right: auto;
-  width: min(1200px, 92%);
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
 [data-hero-reveal] {
