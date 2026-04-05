@@ -38,45 +38,45 @@ function CommissionCard({
 
   return (
     <div className={`mb-20  ${isModalOpen ? "overflow-hidden h-screen" : ""}`}>
-      <div className="w-[80%] max-h-screen mx-auto p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
+      <div className="w-[90%] sm:w-[85%] max-w-5xl max-h-screen mx-auto p-4 sm:p-6 md:p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
         {/* Images */}
-        <div className="w-full md:w-9/12 mt-6 md:mt-0 md:mx-auto">
+        <div className="w-full lg:w-1/2 xl:w-5/12 mt-6 md:mt-0 flex flex-col items-center">
           {images.length === 1 && (
             // Single Image Layout
             <img
               src={images[mainImageIndex]}
               alt={`${title} Preview`}
-              className="w-full rounded-lg object-cover"
+              className="w-full aspect-square rounded-lg object-cover"
             />
           )}
           {images.length === 2 && (
             // Two Image Layout
-            <div className="flex justify-center gap-4 p-4">
+            <div className="flex justify-center gap-4 p-4 w-full">
               {images.map((image, index) => (
                 <img
                   key={image}
                   src={image}
                   alt={`${title} Preview ${index + 1}`}
-                  className="w-1/2  rounded-lg object-cover"
+                  className="w-1/2 aspect-square rounded-lg object-cover"
                 />
               ))}
             </div>
           )}
           {images.length > 2 && (
             // Multi-Image Layout (Main Image + Thumbnails)
-            <div className="flex  flex-col items-center gap-2">
+            <div className="flex  flex-col items-center gap-2 w-full">
               <img
                 src={images[mainImageIndex]}
                 alt={`${title} Main Preview`}
-                className="w-full rounded-lg object-cover"
+                className="w-full aspect-square rounded-lg object-cover"
               />
-              <div className="flex gap-2 overflow-x-auto">
+              <div className="flex gap-2 overflow-x-auto w-full">
                 {images.map((image, index) => (
                   <img
                     key={image}
                     src={image}
                     alt={`Thumbnail ${index}`}
-                    className={`w-32 imgs h-20 rounded-md object-cover border-4  ${
+                    className={`w-24 h-24 sm:w-32 sm:h-24 imgs rounded-md object-cover border-4 flex-shrink-0  ${
                       mainImageIndex === index
                         ? "border-accentColorRed"
                         : "border-gray-200"
@@ -97,12 +97,12 @@ function CommissionCard({
           </div>
         </div>
         {/* Details */}
-        <div className="pl-6 py-4">
+        <div className="pl-0 lg:pl-6 py-4 w-full lg:w-1/2 xl:w-7/12 mt-6 lg:mt-0 max-w-2xl">
           <h2 className="text-h2 font-bold text-textPrimary mb-4">{title}</h2>
           <p className="text-h3 text-textPrimary font-semibold mb-2">
             Total: ${total}
           </p>
-          <div className="ml-4">
+          <div className="ml-4 text-base md:text-lg overflow-auto max-h-[400px]">
             {/* Commission Type */}
             <h3 className="text-lg font-semibold text-textPrimary mb-2">
               Commission Type:
