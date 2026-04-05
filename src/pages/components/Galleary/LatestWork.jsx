@@ -5,7 +5,7 @@ const latestArt = {
   borderRadius: "40px",
   height: "100%",
   background:
-    'url("images/fullCom/fullCom_Augusta_WUWA.jpg") lightgray 50% / cover no-repeat',
+    'url("images/fullCom/fullCom_goddess_n_angel_9999.jpg") lightgray 50% / cover no-repeat',
 };
 /**
  * LatestWork component renders the latest artwork section.
