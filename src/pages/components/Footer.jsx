@@ -72,7 +72,7 @@ function FooterNavLinks() {
       {navLinks.map((link) => (
         <li
           key={link.path}
-          className={`h-[32px] cursor-pointer ${
+          className={`footer-nav-item h-[32px] cursor-pointer ${
             location.pathname === link.path && "active"
           }`}
           onClick={(e) => {
@@ -98,7 +98,7 @@ function Social() {
       <ul className="footerul flex flex-col gap-4">
         <li>
           <a href="mailto:dupro1710@gmail.com?subject=Commission%20Inquiry&body=Hi%20there,%0A%0AI%20am%20interested%20in%20commissioning%20an%20artwork.%20Here%20are%20some%20details%20about%20my%20project..">
-            <div className="flex gap-4 items-center">
+            <div className="social-link-row flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/gmail.svg" />
               </svg>
@@ -108,7 +108,7 @@ function Social() {
         </li>
         <li>
           <a href="https://www.pixiv.net/en/users/21112248">
-            <div className="flex gap-4 items-center">
+            <div className="social-link-row flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/pixiv.svg" />
               </svg>
@@ -118,7 +118,7 @@ function Social() {
         </li>
         <li>
           <a href="https://discordapp.com/users/559749115991556107">
-            <div className="flex gap-4 items-center">
+            <div className="social-link-row flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/discord.svg" />
               </svg>
@@ -128,7 +128,7 @@ function Social() {
         </li>
         <li>
           <a href="https://twitter.com/Ronaldeweeb17">
-            <div className="flex gap-4 items-center">
+            <div className="social-link-row flex gap-4 items-center">
               <svg height="32" width="32" xmlns="">
                 <image width="32" height="32" href="Icons/twitter.svg" />
               </svg>
@@ -179,7 +179,7 @@ function Motivation() {
       <h1 className="footerh1">Say hello!</h1>
       <div
         onClick={scrollToTop}
-        className="scrollToTop bg-[#D9D9D9] relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer "
+        className="scrollToTop bg-[#dfe8ff] border border-[#c9def5] relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer "
       >
         <svg className="top-3 absolute" height="32" width="32" xmlns="">
           <image width="32" height="32" href="Icons/downArrow.svg" />
