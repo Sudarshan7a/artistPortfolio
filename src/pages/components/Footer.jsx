@@ -25,7 +25,7 @@ function Footer() {
   }, []);
   return (
     <footer
-      className="footer px-8 md:pt-8 overflow-hidden"
+      className="footer px-4 sm:px-6 md:px-8 md:pt-8 overflow-hidden"
       style={backgroundStyle}
     >
       <div className="mb-4 sm:mb-4 md:m-8 ml:16 lg:ml-20 flex flex-col lg:flex-row gap-10 justify-between items-start ">
@@ -40,7 +40,7 @@ function Footer() {
           <Contact />
         </div>
       </div>
-      <div className="relative ml-10 md:ml-16 lg:ml-24 mr-10 md:mr-20 pb-1">
+      <div className="relative ml-4 sm:ml-6 md:ml-16 lg:ml-24 mr-4 sm:mr-6 md:mr-20 pb-1">
         <Motivation />
         <Copywrite />
       </div>
