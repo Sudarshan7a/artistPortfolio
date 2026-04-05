@@ -25,7 +25,7 @@ function Footer() {
   }, []);
   return (
     <footer
-      className="footer px-8 md:pt-8 overflow-hidden "
+      className="footer px-8 md:pt-8 overflow-hidden"
       style={backgroundStyle}
     >
       <div className="mb-4 sm:mb-4 md:m-8 ml:16 lg:ml-20 flex flex-col lg:flex-row gap-10 justify-between items-start ">
@@ -40,7 +40,7 @@ function Footer() {
           <Contact />
         </div>
       </div>
-      <div className="ml-10 md:ml-16 lg:ml-24 mr-10 md:mr-20 ">
+      <div className="relative ml-10 md:ml-16 lg:ml-24 mr-10 md:mr-20 pb-1">
         <Motivation />
         <Copywrite />
       </div>
@@ -175,8 +175,7 @@ function Contact() {
  */
 function Motivation() {
   return (
-    <div className="motivation flex flex-row items-end justify-between gap-4">
-      <h1 className="footerh1">Say hello!</h1>
+    <div className="motivation absolute right-0 top-0 -translate-y-1/2 z-20">
       <div
         onClick={scrollToTop}
         className="scrollToTop bg-[#dfe8ff] border border-[#c9def5] relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer "
