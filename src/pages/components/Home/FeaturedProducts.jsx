@@ -33,7 +33,8 @@ function FeaturedProducts() {
       // Right button enabled only if scrollLeft < (scrollWidth - clientWidth)
       // Add 1px tolerance for rounding errors
       setShowRightButton(
-        container.scrollLeft < container.scrollWidth - container.clientWidth - 1
+        container.scrollLeft <
+          container.scrollWidth - container.clientWidth - 1,
       );
     }
   };
@@ -139,12 +140,12 @@ export default FeaturedProducts;
  */
 function Cards({ title, shortDescription, imageLocation }) {
   return (
-    <div>
+    <div className="interactive-card rounded-[36px] p-2">
       {/* Wrapper div with overflow hidden to contain the scaling image */}
       <div className={styles.imageWrapper}>
         {/* //productImage  */}
         <div
-          className={`${styles.productImage} bg-slate-700`}
+          className={`${styles.productImage} interactive-card-media bg-slate-700`}
           style={{
             flexShrink: 0,
             borderRadius: "40px",

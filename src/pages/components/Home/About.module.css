@@ -25,7 +25,7 @@
 
 .aboutMe img {
   border-radius: 581px;
-  background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+  background: lightgray 50% / cover no-repeat;
   box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.16) inset;
 }
 
