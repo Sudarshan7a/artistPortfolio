@@ -1,8 +1,9 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import Button from "./Button";
 
-const Links = [
+const socialLinks = [
   {
     name: "Discord",
     url: "https://discordapp.com/users/559749115991556107",
@@ -24,107 +25,199 @@ const Links = [
     icon: "twitter.svg",
   },
 ];
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/commission", label: "Commission" },
+  { to: "/terms-and-conditions", label: "Terms" },
+];
+
 /**
  * PageNav component renders the navigation bar with links and a contact button.
  */
 function PageNav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 18);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleHomeClick = (event, isActive) => {
+    if (isActive) {
+      event.preventDefault();
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const getNavClass = ({ isActive }) =>
+    `nav-link-animated text-[15px] tracking-wide transition-all duration-300 nav-text-glow ${
+      isActive
+        ? "opacity-100 font-semibold nav-link-active"
+        : "opacity-80 hover:opacity-100"
+    }`;
 
   return (
-    <>
+    <header className="sticky top-0 z-40">
       <nav
-        className={`h-[48px] bg-primaryColor w-screen flex items-center px-[4%] lg:px-[8%] justify-between 
-          ${menuOpen && "fixed top-0 left-0 z-30"}`}
+        className={`nav-surface w-full px-4 md:px-10 lg:px-20 flex items-center justify-between transition-all duration-300 ${
+          isScrolled
+            ? "is-scrolled h-[52px] bg-primaryColor/88"
+            : "h-[58px] bg-primaryColor/95"
+        }`}
         id="pageNav"
       >
-        {/* Menu icon */}
+        <div className="flex items-center gap-2">
+          <button
+            className="md:hidden h-8 w-8 rounded-full border border-black/10 flex items-center justify-center"
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+              <image
+                width="18"
+                height="18"
+                href={`Icons/${menuOpen ? "closeIcon.svg" : "menuIcon.svg"}`}
+              />
+            </svg>
+          </button>
+          <Logo />
+        </div>
 
-        <svg
-          className={`visible md:hidden -order-1 md:mr-20`}
-          height="32"
-          width="32"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
-          <image
-            width="32"
-            height="32"
-            href={`Icons/${menuOpen ? "closeIcon.svg " : "menuIcon.svg"}`}
-          />
-        </svg>
-
-        <Logo />
-
-        {/* Navigation links */}
-        <ul
-          className={`list-none flex 
-               flex-col md:flex-row bg-primaryColor w-fit ${
-                 menuOpen
-                   ? "block z-20 top-12 left-0 p-16 justify-center items-start gap-4 py-10"
-                   : "hidden z-20 top-2 left-52  md:flex"
-               } "gap-6 lg:gap-16" justify-center`}
-        >
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/gallery">Gallery</NavLink>
-          </li>
-          <li>
-            <NavLink to="/commission">Commission</NavLink>
-          </li>
-          <li className="min-w-fit">
-            <NavLink to="/terms-and-conditions">Terms and Conditions</NavLink>
-          </li>
-        </ul>
-
-        {/* Contact Button */}
-
-        <NavLink to="/connect">
-          <Button variant={0} h={8}>
-            Contact
-          </Button>
-        </NavLink>
-        <div
-          className={`${
-            menuOpen ? "visible z-10" : "hidden"
-          }  fixed bg-primaryColor top-12 left-0 h-screen w-full`}
-        ></div>
-        <ul
-          className={`${
-            menuOpen ? "visible" : "hidden"
-          } footerul z-40 md:hidden w-full flex flex-row top-[600px] items-end justify-center gap-8`}
-        >
-          {Links.map((link) => (
-            <li
-              className="mx-2 flex sm:flex-row gap-8 sm:gap-20 w-auto justify-center items-center"
-              key={link.name}
-            >
-              <div className="flex text-textPrimary scale-125 items-center">
-                <a href={link.url}>
-                  <svg height="32" width="32" xmlns="">
-                    <image width="32" height="32" href={`Icons/${link.icon}`} />
-                  </svg>
-                </a>
-              </div>
+        <ul className="hidden md:flex items-center gap-5 lg:gap-8">
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <NavLink className={getNavClass} to={link.to}>
+                {({ isActive }) => (
+                  <span
+                    onClick={
+                      link.to === "/"
+                        ? (event) => handleHomeClick(event, isActive)
+                        : undefined
+                    }
+                  >
+                    {link.label}
+                  </span>
+                )}
+              </NavLink>
             </li>
           ))}
         </ul>
+
+        <div className="hidden md:flex items-center gap-3">
+          <NavLink to="/connect">
+            <Button
+              variant="ghost"
+              className="nav-contact-button min-h-8 px-4 text-xs"
+            >
+              Contact
+            </Button>
+          </NavLink>
+        </div>
+
+        <NavLink className="md:hidden" to="/connect">
+          <Button
+            variant="ghost"
+            className="nav-contact-button min-h-8 px-3 text-[11px]"
+          >
+            Contact
+          </Button>
+        </NavLink>
       </nav>
-    </>
-  );
-}
 
-// Button component
-import PropTypes from "prop-types";
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+      {menuOpen && (
+        <div
+          className="md:hidden fixed inset-0 top-[58px] z-30 bg-black/30 backdrop-blur-sm"
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className="section-shell mt-3 bg-primaryColor rounded-3xl p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ul className="flex flex-col gap-4 border-b border-black/10 pb-5 mb-5">
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <NavLink className={getNavClass} to={link.to}>
+                    {({ isActive }) => (
+                      <span
+                        onClick={
+                          link.to === "/"
+                            ? (event) => handleHomeClick(event, isActive)
+                            : undefined
+                        }
+                      >
+                        {link.label}
+                      </span>
+                    )}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
 
-function Button({ children }) {
-  return (
-    <button className="btn h-10 md:w-32 md:px-2 rounded-[36px] text-[#333] font-bold bg-[#f0f0f0] border-2 border-[#f0f0f0] hover:text-[#f0f0f0] hover:bg-[#ff4c4c] transition-all">
-      {children}
-    </button>
+            <div className="grid grid-cols-4 gap-2 mb-5">
+              {socialLinks.map((link) => (
+                <a
+                  className="menu-social-tile h-11 rounded-xl bg-white border border-black/10 flex items-center justify-center"
+                  href={link.url}
+                  key={link.name}
+                  aria-label={link.name}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <svg
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <image width="24" height="24" href={`Icons/${link.icon}`} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+
+            <div className="flex gap-3">
+              <NavLink className="w-full" to="/connect">
+                <Button variant="secondary" className="w-full min-h-8 text-sm">
+                  Contact
+                </Button>
+              </NavLink>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
 
