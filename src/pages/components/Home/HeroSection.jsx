@@ -40,7 +40,7 @@ function HeroSection() {
         />
       </div>
 
-      <div className="section-shell px-2 py-4 md:px-4  text-center">
+      <div className="section-shell px-2 py-4 md:px-0 md:py-4 text-center">
         <p
           className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-textSecondary mb-2 font-title hero-stagger"
           style={{ "--stagger-order": 1 }}
