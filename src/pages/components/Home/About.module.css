@@ -1,7 +1,7 @@
 .aboutMe h1 {
   color: var(--darkGrayFont, #333);
   font-family: var(--titleFont);
-  font-size: 72px; /* Increased from 64px */
+  font-size: clamp(30px, 5vw, 72px);
   font-style: normal;
   font-weight: 700;
   line-height: 120%; /* 86.4px */
@@ -17,7 +17,7 @@
 .aboutMe p {
   color: var(--darkGrayFont, #333);
   font-family: Merriweather;
-  font-size: 18px; /* Increased from 16px */
+  font-size: clamp(14px, 2.5vw, 18px);
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 28.8px */

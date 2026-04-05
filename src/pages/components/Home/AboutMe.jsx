@@ -15,7 +15,7 @@ function AboutMe() {
           />
         </div>
 
-        <div className="basis-1/3 w-full min-w-0 flex pt-2 sm:pt-4 md:p-4 lg:p-8 flex-col justify-center">
+        <div className="w-full min-w-0 flex pt-2 sm:pt-4 md:p-4 lg:p-8 flex-col justify-center max-w-lg lg:max-w-xl">
           <h2 className="text-base uppercase tracking-[0.16em]">
             Artist Profile
           </h2>
@@ -24,7 +24,7 @@ function AboutMe() {
             <span>RONAL1710</span>
           </h1>
 
-          <p className="text-textSecondary font-subtitle mt-4">
+          <p className="text-textSecondary font-subtitle mt-4 text-sm sm:text-base lg:text-lg line-clamp-none">
             A digital artist bringing anime-inspired worlds to life. Through
             intricate details and expressive characters, I create scenes that
             captivate and inspire. Explore my gallery to see my work, or connect
