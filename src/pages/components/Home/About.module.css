@@ -31,16 +31,16 @@
 
 @media (max-width: 620px) {
   .aboutMe h1 {
-    font-size: 56px;
+    font-size: 48px;
   }
 }
 @media (max-width: 520px) {
   .aboutMe h1 {
-    font-size: 42px;
+    font-size: 38px;
   }
 }
 @media (max-width: 420px) {
   .aboutMe h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
