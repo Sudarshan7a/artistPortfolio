@@ -13,7 +13,7 @@ function CommissionFeatured() {
       <h2 className="mb-[5%] text-textPrimary font-title  text-2xl sm:text-4xl md:text-h2 font-semibold tracking-wide">
         Character and Background Combined.
       </h2>
-      <div className="my-8 mb-12 flex justify-center sm:justify-start flex-wrap gap-4 md:gap-8">
+      <div className="my-8 mb-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-7">
         {commissionFeatured.map((item) => (
           <Card {...item} key={item.title} />
         ))}
@@ -60,10 +60,10 @@ const icons = [drawingIcon, landscape, start];
 
 function Card({ title, price, image: imageLocation, layout, addons }) {
   return (
-    <div className="max-w-96">
+    <article className="rounded-[30px] border border-[#d9e2f3] bg-[#f9fbff] p-4 shadow-[0_12px_24px_rgba(13,20,36,0.08)] h-full flex flex-col">
       {/* Product Image */}
       <div
-        className="productImage"
+        className="w-full h-[320px] md:h-[360px]"
         style={{
           flexShrink: 0,
           borderRadius: "40px",
@@ -73,30 +73,30 @@ function Card({ title, price, image: imageLocation, layout, addons }) {
       />
 
       {/* Product Description */}
-      <div className="ml-2 max-w-64 mt-4">
-        <h3 className="text-xl w-fit font-bold">{title}</h3>
-        <p className="text-lg w-fit text-textSecondary font-subtitle">
+      <div className="mt-4 px-1 flex-1 flex flex-col">
+        <h3 className="text-xl leading-tight font-bold">{title}</h3>
+        <p className="text-lg text-textSecondary font-subtitle mt-1">
           ${price}
         </p>
 
         {/* Addons List */}
-        <ul className="mt-4 lg:w-11/12">
+        <ul className="mt-4 space-y-2">
           {addons.map((addon, index) => (
             <li
               key={index}
-              className="flex max-w-full items-center text-sm text-gray-600 mb-1"
+              className="flex max-w-full items-start text-sm text-gray-600"
             >
               {/* Icon before text */}
               <img
                 src={icons[index % icons.length]} // Cycle through icons
                 alt={`icon-${index}`}
-                className="w-6 h-6 mr-2"
+                className="w-5 h-5 mr-2 mt-0.5"
               />
               {addon}
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </article>
   );
 }
