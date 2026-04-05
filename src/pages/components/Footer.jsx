@@ -227,11 +227,11 @@ function Copywrite() {
 
       {showDeveloperContact && (
         <div
-          className={`fixed inset-0 z-[999] flex items-center justify-center ${isClosing ? 'animate-apple-backdrop-hide' : 'animate-apple-backdrop'}`}
+          className={`fixed inset-0 z-[999] flex items-center justify-center ${isClosing ? "animate-apple-backdrop-hide" : "animate-apple-backdrop"}`}
           onClick={handleCloseContact}
         >
           <div
-            className={`bg-[#f5f5f7]/95 backdrop-blur-2xl border border-black/5 rounded-[3rem] p-16 md:p-24 max-w-4xl w-[95%] relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] ${isClosing ? 'animate-apple-hide' : 'animate-apple-reveal'} flex flex-col items-center`}
+            className={`bg-[#f5f5f7]/95 backdrop-blur-2xl border border-black/5 rounded-[3rem] p-16 md:p-24 max-w-4xl w-[95%] relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] ${isClosing ? "animate-apple-hide" : "animate-apple-reveal"} flex flex-col items-center`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
