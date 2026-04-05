@@ -193,18 +193,98 @@ function Motivation() {
  * Copywrite component that renders the copyright information in the footer.
  */
 function Copywrite() {
+  const [showDeveloperContact, setShowDeveloperContact] = React.useState(false);
+
   return (
     <>
       <hr className=" mt-6" />
-      <div className="copywrite mt-2 mx-4  ">
+      <div className="copywrite mt-2 mx-4 relative">
         <div>
-          <ul className="flex justify-center gap-12 mx-4 my-2 text-[#333] text-[16px] font-subtitle">
+          <ul className="flex justify-center gap-12 mx-4 my-2 text-[#333] text-[16px] font-subtitle items-center">
             <li>Ronal1710</li>
             <li>2024</li>
             <li>@copywrite</li>
+            <li>
+              <button
+                className="relative inline-block text-textPrimary opacity-80 hover:opacity-100 hover:scale-100 transition-opacity duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[1px] after:bottom-[-2px] after:left-0 after:bg-textPrimary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                onClick={() => setShowDeveloperContact(true)}
+              >
+                Contact Developer
+              </button>
+            </li>
           </ul>
         </div>
       </div>
+
+      {/* Developer Contact Modal */}
+      {showDeveloperContact && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center animate-apple-backdrop z-[999]"
+          onClick={() => setShowDeveloperContact(false)}
+        >
+          <div
+            className="bg-[#f5f5f7]/95 backdrop-blur-2xl border border-black/5 rounded-[3rem] p-16 md:p-24 max-w-4xl w-[95%] relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] animate-apple-reveal flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowDeveloperContact(false)}
+              className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center rounded-full bg-black/5 text-[#86868b] hover:bg-black/10 hover:text-[#1d1d1f] transition-colors duration-300 text-xl"
+            >
+              ✕
+            </button>
+
+            <div className="mb-14 text-center">
+              <h3 className="text-4xl md:text-5xl font-title tracking-tight text-[#1d1d1f] mb-5 font-semibold">
+                Developer Contact.
+              </h3>
+              <p className="text-[#86868b] font-subtitle text-xl font-medium">
+                Reach out for inquiries, collaborations, or technical support.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-6 w-full max-w-[440px]">
+              <a
+                href="mailto:sudupa0007@gmail.com"
+                className="group flex items-center gap-5 text-[#86868b] hover:text-[#1d1d1f] bg-white hover:bg-white/60 p-5 rounded-2xl transition-all duration-300 border border-black/5"
+              >
+                <div className="bg-[#f5f5f7] p-3 rounded-xl border border-black/5">
+                  <img
+                    src="Icons/gmail.svg"
+                    alt="Email"
+                    className="w-7 h-7 opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <p className="font-title font-semibold text-[#1d1d1f] text-lg">
+                    Email
+                  </p>
+                  <p className="text-sm">sudupa0007@gmail.com</p>
+                </div>
+              </a>
+              <a
+                href="https://discordapp.com/users/1276841090657288255"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-5 text-[#86868b] hover:text-[#1d1d1f] bg-white hover:bg-white/60 p-5 rounded-2xl transition-all duration-300 border border-black/5"
+              >
+                <div className="bg-[#f5f5f7] p-3 rounded-xl border border-black/5">
+                  <img
+                    src="Icons/discord.svg"
+                    alt="Discord"
+                    className="w-7 h-7 opacity-80 group-hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex flex-col items-start">
+                  <p className="font-title font-semibold text-[#1d1d1f] text-lg">
+                    Discord
+                  </p>
+                  <p className="text-sm">Connect instantly with sudupa</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
