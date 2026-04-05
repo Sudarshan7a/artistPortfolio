@@ -19,8 +19,6 @@ function CustomArtShowcase() {
   }); // Manages animation state
 
   function handleSideButtonClick(type, direction) {
-
-
     const indexKey = type + "Index"; // Dynamically create the key name
     const current = currentIndex[indexKey]; // Access the current value using bracket notation
 
