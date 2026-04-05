@@ -194,6 +194,15 @@ function Motivation() {
  */
 function Copywrite() {
   const [showDeveloperContact, setShowDeveloperContact] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
+
+  const handleCloseContact = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowDeveloperContact(false);
+      setIsClosing(false);
+    }, 400); // 400ms allows the popup to smoothly hide, while the blur dissipates faster
+  };
 
   return (
     <>
@@ -216,18 +225,17 @@ function Copywrite() {
         </div>
       </div>
 
-      {/* Developer Contact Modal */}
       {showDeveloperContact && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center animate-apple-backdrop z-[999]"
-          onClick={() => setShowDeveloperContact(false)}
+          className={`fixed inset-0 z-[999] flex items-center justify-center ${isClosing ? 'animate-apple-backdrop-hide' : 'animate-apple-backdrop'}`}
+          onClick={handleCloseContact}
         >
           <div
-            className="bg-[#f5f5f7]/95 backdrop-blur-2xl border border-black/5 rounded-[3rem] p-16 md:p-24 max-w-4xl w-[95%] relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] animate-apple-reveal flex flex-col items-center"
+            className={`bg-[#f5f5f7]/95 backdrop-blur-2xl border border-black/5 rounded-[3rem] p-16 md:p-24 max-w-4xl w-[95%] relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] ${isClosing ? 'animate-apple-hide' : 'animate-apple-reveal'} flex flex-col items-center`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setShowDeveloperContact(false)}
+              onClick={handleCloseContact}
               className="absolute top-8 right-8 w-12 h-12 flex items-center justify-center rounded-full bg-black/5 text-[#86868b] hover:bg-black/10 hover:text-[#1d1d1f] transition-colors duration-300 text-xl"
             >
               ✕

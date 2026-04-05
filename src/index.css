@@ -5,7 +5,7 @@
 @keyframes appleReveal {
   from {
     opacity: 0;
-    transform: scale(0.95) translateY(10px);
+    transform: scale(0.98) translateY(5px);
   }
   to {
     opacity: 1;
@@ -13,7 +13,21 @@
   }
 }
 .animate-apple-reveal {
-  animation: appleReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: appleReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes appleHide {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98) translateY(5px);
+  }
+}
+.animate-apple-hide {
+  animation: appleHide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes appleBackdrop {
@@ -24,12 +38,28 @@
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     background: rgba(0, 0, 0, 0.15);
   }
 }
 .animate-apple-backdrop {
-  animation: appleBackdrop 0.6s ease-out forwards;
+  animation: appleBackdrop 0.4s ease-out forwards;
+}
+
+@keyframes appleBackdropHide {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.15);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    background: rgba(0, 0, 0, 0);
+  }
+}
+.animate-apple-backdrop-hide {
+  animation: appleBackdropHide 0.2s ease-out forwards;
 }
 
 :root {
