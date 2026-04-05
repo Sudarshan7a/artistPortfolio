@@ -5,6 +5,8 @@ import Commission from "./pages/Commission";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PageNotFound from "./pages/PageNotFound";
 import Connect from "./pages/components/Connect";
+import ScrollToTop from "./pages/components/ScrollToTop";
+import ScrollRevealObserver from "./pages/components/ScrollRevealObserver";
 import "./App.css";
 
 /**
@@ -13,6 +15,8 @@ import "./App.css";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <ScrollRevealObserver />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/gallery" element={<Gallery />} />
