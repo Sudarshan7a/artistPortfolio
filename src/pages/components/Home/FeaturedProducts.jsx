@@ -93,7 +93,7 @@ function FeaturedProducts() {
       </div>
       <div
         ref={containerRef}
-        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 w-full overflow-x-auto`}
+        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 pb-8 w-full overflow-x-auto`}
         style={{ scrollBehavior: "smooth" }}
         onClick={() => goToCustomArtWorkSection()}
       >
@@ -101,7 +101,7 @@ function FeaturedProducts() {
           <Cards {...product} key={product.id} />
         ))}
       </div>
-      <div className="flex justify-end gap-10 mt-6 md:mt-12 mr-10 md:mr-20 h-20">
+      <div className="flex justify-end gap-10 -mt-2 md:mt-0 mr-10 md:mr-20 h-20">
         <SidebarButtons
           scale={150}
           rotation={180}
