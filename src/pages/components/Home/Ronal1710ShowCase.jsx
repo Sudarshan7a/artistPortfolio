@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Ronal1710ShowCase.module.css";
@@ -11,6 +11,13 @@ gsap.registerPlugin(ScrollTrigger);
  */
 const Ronal1710ShowCase = () => {
   const galleryRef = useRef(null);
+  const [isBelowMd, setIsBelowMd] = useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return window.matchMedia("(max-width: 767px)").matches;
+  });
 
   useEffect(() => {
     if (!galleryRef.current) return;
@@ -76,6 +83,34 @@ const Ronal1710ShowCase = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleMediaChange = (event) => {
+      setIsBelowMd(event.matches);
+    };
+
+    setIsBelowMd(mediaQuery.matches);
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleMediaChange);
+
+      return () => {
+        mediaQuery.removeEventListener("change", handleMediaChange);
+      };
+    }
+
+    mediaQuery.addListener(handleMediaChange);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaChange);
+    };
+  }, []);
+
   // IMPORTANT: Styles for this component are in App.css. Don't miss it!
 
   return (
@@ -85,8 +120,11 @@ const Ronal1710ShowCase = () => {
       >
         Why My Art is best for you.
       </h1>
-      <div className={`gallery px-[80px] md:px-[40px]   ${styles.gallery}`} ref={galleryRef}>
-        <div className="left pt-[0px] sm:pt-[80px] lg:pt-[0px]">
+      <div
+        className={`gallery px-4 sm:px-6 md:px-10 lg:px-[40px] ${styles.gallery}`}
+        ref={galleryRef}
+      >
+        <div className="left pl-2 md:pl-8 lg:pl-4 xl:pl-2 pt-[0px] sm:pt-[80px] lg:pt-[0px]">
           <div className="detailsWrapper">
             <div className="details d1">
               <h1 className="headline col1">Character Commission</h1>
@@ -113,14 +151,16 @@ const Ronal1710ShowCase = () => {
             </div>
             <div className=" d4">
               {/* <h1 className="headline col4">Background Art Commission</h1> */}
-             
             </div>
           </div>
         </div>
 
-        <div className="right"> 
-          <div className="photos">
-            <div className="photos-box">
+        <div
+          className="right h-screen"
+          style={isBelowMd ? { width: "95.5%" } : undefined}
+        >
+          <div className="photos ">
+            <div className="photos-box ml-6 sm:ml-5 md:ml-2">
               <div className="photo col1">
                 <img
                   src="/images/characters/char_augusta_wuwa.jpg"

@@ -32,7 +32,7 @@ function Logo({ scale }) {
   return (
     <div
       // onClick={scrollToTop}
-      className={`flex items-center ronal1710logo -order-1 md:-order-1 mr-3 gap-2 ${scaleStyle[scale]}`}
+      className={`flex items-center ronal1710logo mr-0 md:mr-3 gap-2 ${scaleStyle[scale]}`}
       onClick={(e) => {
         e.preventDefault(); // Prevent immediate navigation
         scrollToTop(); // Scroll to the top
@@ -47,7 +47,9 @@ function Logo({ scale }) {
         alt="logo"
         className="h-[36px] w-[36px] rounded-full "
       />
-      <h1 style={logoStyle}>Ronal1710</h1>
+      <h1 className="navbar-logo-text" style={logoStyle}>
+        Ronal1710
+      </h1>
     </div>
   );
 }

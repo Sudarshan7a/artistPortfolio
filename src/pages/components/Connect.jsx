@@ -45,39 +45,51 @@ export default Connect;
  **/
 function Social() {
   return (
-    <div className="m-auto w-auto h-screen bg-primaryColor overflow-y-clip text-textPrimary font-title  gap-4 ">
-      <h1 className="text-2xl sm:text-4xl text-textPrimary font-title font-bold text-center my-16">
-        Connect with me
-      </h1>
-      <ul className="footerul w-auto flex flex-wrap md:flex-col items-center justify-center gap-8">
-        {Links.map((link) => (
-          <li
-            className="mx-2 flex flex-col sm:flex-row gap-8 sm:gap-20 w-auto justify-center items-center"
-            key={link.name}
-          >
-            <div className="flex text-textPrimary scale-125 w-[120px] sm:w-[160px] gap-4 items-center">
-              <svg height="32" width="32" xmlns="">
-                <image width="32" height="32" href={`Icons/${link.icon}`} />
-              </svg>
-              {link.name}
-            </div>
-            <a href={link.url}>
-              <Button variant={1} h={8} className="w-1/2">
-                {" "}
-                send message{" "}
-              </Button>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className="flex absolute mt-40 md:px-[5%] w-auto md:w-full items-start justify-center">
-        <h1 className="text-xl w-auto sm:text-2xl text-textPrimary font-title font-bold text-center">
-          Note:
+    <div className="section-shell min-h-[calc(100vh-72px)] py-10 md:py-14">
+      <div className="rounded-[34px] bg-white border border-[#d9e2f3] shadow-[0_18px_34px_rgba(13,20,36,0.10)] p-6 md:p-10">
+        <h1 className="text-2xl sm:text-4xl text-textPrimary font-title font-bold text-center">
+          Connect with me
         </h1>
-        <p className=" text-lg text-textPrimary text-wrap text-center mx-2 sm:mx-4">
-          it usually take me 24-48 hours to read and reply to your request via
-          all means above, please be patient!
+        <p className="font-subtitle text-textSecondary text-center mt-2">
+          Pick your preferred platform and send your request.
         </p>
+
+        <ul className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+          {Links.map((link) => (
+            <li
+              className="interactive-tile rounded-2xl border border-[#e2e8f7] bg-[#f8faff] p-4 md:p-5 flex items-center justify-between gap-4"
+              key={link.name}
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="h-11 w-11 rounded-xl bg-white border border-[#d7e0f1] flex items-center justify-center shrink-0">
+                  <svg height="24" width="24" xmlns="">
+                    <image width="24" height="24" href={`Icons/${link.icon}`} />
+                  </svg>
+                </div>
+                <p className="font-title font-semibold text-textPrimary text-lg">
+                  {link.name}
+                </p>
+              </div>
+
+              <a
+                href={link.url}
+                target={link.name === "Email" ? undefined : "_blank"}
+                rel={link.name === "Email" ? undefined : "noreferrer"}
+              >
+                <Button variant="secondary" className="min-h-9 px-4 text-sm">
+                  Open
+                </Button>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 rounded-2xl border border-[#dde5f4] bg-[#f5f8ff] p-4 md:p-5">
+          <p className="text-sm md:text-base text-textSecondary font-subtitle text-center">
+            I usually reply within 24-48 hours across Discord, Email, Pixiv, and
+            Twitter.
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -90,7 +102,7 @@ function Back() {
   return (
     <NavLink to="/">
       <svg
-        className="mt-[3px] absolute left-7 sm:left-10 md:left-20 top-16 md:top-24"
+        className="mt-[3px] absolute left-7 sm:left-10 md:left-16 top-24"
         height="28"
         width="28"
         xmlns=""

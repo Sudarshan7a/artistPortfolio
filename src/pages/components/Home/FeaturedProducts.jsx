@@ -33,7 +33,8 @@ function FeaturedProducts() {
       // Right button enabled only if scrollLeft < (scrollWidth - clientWidth)
       // Add 1px tolerance for rounding errors
       setShowRightButton(
-        container.scrollLeft < container.scrollWidth - container.clientWidth - 1
+        container.scrollLeft <
+          container.scrollWidth - container.clientWidth - 1,
       );
     }
   };
@@ -92,7 +93,7 @@ function FeaturedProducts() {
       </div>
       <div
         ref={containerRef}
-        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 w-full overflow-x-auto`}
+        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 pb-8 w-full overflow-x-auto`}
         style={{ scrollBehavior: "smooth" }}
         onClick={() => goToCustomArtWorkSection()}
       >
@@ -100,7 +101,7 @@ function FeaturedProducts() {
           <Cards {...product} key={product.id} />
         ))}
       </div>
-      <div className="flex justify-end gap-10 mt-6 md:mt-12 mr-10 md:mr-20 h-20">
+      <div className="flex justify-end gap-10 -mt-2 md:mt-0 mr-10 md:mr-20 h-20">
         <SidebarButtons
           scale={150}
           rotation={180}
@@ -139,12 +140,12 @@ export default FeaturedProducts;
  */
 function Cards({ title, shortDescription, imageLocation }) {
   return (
-    <div>
+    <div className="interactive-card rounded-[36px] p-2">
       {/* Wrapper div with overflow hidden to contain the scaling image */}
       <div className={styles.imageWrapper}>
         {/* //productImage  */}
         <div
-          className={`${styles.productImage} bg-slate-700`}
+          className={`${styles.productImage} interactive-card-media bg-slate-700`}
           style={{
             flexShrink: 0,
             borderRadius: "40px",

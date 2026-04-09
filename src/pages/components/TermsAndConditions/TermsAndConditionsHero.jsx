@@ -10,7 +10,7 @@ const TermsServiceNavLinks = [
  */
 function TermsAndConditionsHero() {
   return (
-    <div>
+    <section data-hero-reveal>
       <div className="h-[300px] relative">
         <img
           src="images/fullCom/fullCom_preciousBean.jpg"
@@ -26,16 +26,22 @@ function TermsAndConditionsHero() {
         />
       </div>
       <div className="m-10 flex flex-col items-center gap-8">
-        <h1 className="fadein w-auto mx-auto text-center text-2xl sm:text-4xl md:text-6xl lg:text-h1 text-textPrimary font-title font-semibold tracking-wide">
+        <h1
+          className="fadein w-auto mx-auto text-center text-2xl sm:text-4xl md:text-6xl lg:text-h1 text-textPrimary font-title font-semibold tracking-wide hero-stagger"
+          style={{ "--stagger-order": 1 }}
+        >
           Terms and Conditions
         </h1>
-        <ul className="fadein flex flex-wrap sm:flex-nowrap gap-10 mx-auto w-auto text-center text-textSecondary font-title">
+        <ul
+          className="fadein flex flex-wrap sm:flex-nowrap gap-10 mx-auto w-auto text-center text-textSecondary font-title hero-stagger"
+          style={{ "--stagger-order": 2 }}
+        >
           {TermsServiceNavLinks.map((link) => (
             <li key={link}>{link}</li>
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 }
 

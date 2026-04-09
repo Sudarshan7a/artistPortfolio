@@ -1,5 +1,6 @@
 import styles from "./Galleary.module.css";
 import PropTypes from "prop-types";
+import { useMemo } from "react";
 import { galleryList } from "../../../galleryList";
 
 /**
@@ -8,17 +9,55 @@ import { galleryList } from "../../../galleryList";
  * @returns {JSX.Element} The rendered gallery component.
  */
 function Ronal1710Galleary() {
+  const cleanedGalleryList = useMemo(() => {
+    const seenLocations = new Set();
+
+    return galleryList
+      .map((item) => {
+        const requestedLayout = item[0];
+        const uniqueImages = item.slice(1).filter((entry) => {
+          if (!entry?.loc || seenLocations.has(entry.loc)) {
+            return false;
+          }
+          seenLocations.add(entry.loc);
+          return true;
+        });
+
+        if (!uniqueImages.length) {
+          return null;
+        }
+
+        let safeLayout = requestedLayout;
+        if (uniqueImages.length === 1) {
+          safeLayout = 1;
+        }
+        if (
+          uniqueImages.length === 2 &&
+          (requestedLayout === 3 || requestedLayout === 4)
+        ) {
+          safeLayout = 2;
+        }
+
+        return [safeLayout, ...uniqueImages];
+      })
+      .filter(Boolean);
+  }, []);
+
   return (
-    <div
+    <section
       className={`${styles.galleary} flex flex-col sm:gap-[36px]  mt-10 bg-textPrimary items-center  pb-8 mb-10`}
     >
       <h1 className="text-center text-[48px] text-primaryColor font-title font-semiBold m-10 ">
-        Ronal1710's Gallery
+        Ronal1710&apos;s Gallery
       </h1>
-      {galleryList.map((item) => (
-        <ShowCase key={item[1].name} layout={item[0]} loc={item.slice(1)} />
+      {cleanedGalleryList.map((item) => (
+        <ShowCase
+          key={`${item[1].name}-${item[1].loc}`}
+          layout={item[0]}
+          loc={item.slice(1)}
+        />
       ))}
-    </div>
+    </section>
   );
 }
 
@@ -29,7 +68,7 @@ export default Ronal1710Galleary;
  */
 const SingleImageLayout = ({ loc }) => (
   <div className="m-4">
-    <img className=" rounded-md" src={loc[0].loc} alt={loc[0].name} />
+    <img className="rounded-md" src={loc[0].loc} alt={loc[0].name} />
   </div>
 );
 

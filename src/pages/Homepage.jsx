@@ -17,7 +17,6 @@ function Homepage() {
       <FeaturedProducts />
       <AboutMe />
       <Ronal1710ShowCase />
-      <hr className="bg-[#add8e6] h-[80px] border-0" />
       <ImagesShowcase />
       <Footer />
     </>
