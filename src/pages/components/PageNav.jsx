@@ -92,7 +92,7 @@ function PageNav() {
   return (
     <header className="sticky top-0 z-40">
       <nav
-        className={`nav-surface relative w-full px-4 md:px-10 lg:px-20 grid grid-cols-[1fr_auto_1fr] items-center md:flex md:items-center md:justify-between transition-all duration-300 overflow-x-hidden ${
+        className={`nav-surface relative w-full px-3 sm:px-4 md:px-10 lg:px-20 grid grid-cols-[1fr_auto_1fr] items-center md:flex md:items-center md:justify-between transition-all duration-300 overflow-x-hidden ${
           isScrolled
             ? "is-scrolled h-[52px] bg-primaryColor/88"
             : "h-[58px] bg-primaryColor/95"
@@ -100,7 +100,7 @@ function PageNav() {
         id="pageNav"
       >
         <button
-          className="order-1 md:hidden h-8 w-8 rounded-full border border-black/10 flex items-center justify-center flex-shrink-0 justify-self-start"
+          className="nav-mobile-menu-button order-1 md:hidden  rounded-full border border-black/10 flex items-center justify-center flex-shrink-0 justify-self-start"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
@@ -152,7 +152,7 @@ function PageNav() {
         >
           <Button
             variant="ghost"
-            className="nav-contact-button min-h-8 px-3 text-[11px]"
+            className="nav-contact-button nav-contact-button-mobile min-h-8 text-[11px]"
           >
             Contact
           </Button>
@@ -161,11 +161,11 @@ function PageNav() {
 
       {menuOpen && (
         <div
-          className="md:hidden fixed inset-0 top-[58px] z-30 bg-black/30 backdrop-blur-sm flex items-start justify-center px-4 pt-3"
+          className="md:hidden fixed top-[58px] left-0 w-[96%] bottom-0  z-30 bg-black/30 backdrop-blur-sm flex items-start justify-start pt-3 overflow-x-hidden"
           onClick={() => setMenuOpen(false)}
         >
           <div
-            className="bg-primaryColor rounded-3xl p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)] w-full max-w-md"
+            className="bg-primaryColor rounded-3xl p-4 sm:p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)] w-full max-w-sm sm:max-w-md"
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col gap-4 border-b border-black/10 pb-5 mb-5">
