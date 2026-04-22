@@ -150,6 +150,8 @@ html {
   .right {
     width: 100%;
     position: absolute;
+    left: 0;
+    top: 0;
   }
 
   .photos {
@@ -158,6 +160,7 @@ html {
     height: 50vh;
     bottom: 0px;
     margin: auto;
+    left: 0;
   }
 
   .photos-box {

@@ -157,10 +157,10 @@ const Ronal1710ShowCase = () => {
 
         <div
           className="right h-screen"
-          style={isBelowMd ? { width: "95.5%" } : undefined}
+          style={isBelowMd ? { width: "100%" } : undefined}
         >
           <div className="photos ">
-            <div className="photos-box ml-6 sm:ml-5 md:ml-2">
+            <div className="photos-box">
               <div className="photo col1">
                 <img
                   src="/images/characters/char_augusta_wuwa.jpg"
