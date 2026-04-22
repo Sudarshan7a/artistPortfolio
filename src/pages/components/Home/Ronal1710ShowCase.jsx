@@ -121,10 +121,10 @@ const Ronal1710ShowCase = () => {
         Why My Art is best for you.
       </h1>
       <div
-        className={`gallery px-4 sm:px-6 md:px-10 lg:px-[40px] ${styles.gallery}`}
+        className={`gallery ${styles.gallery} ${styles.galleryContent}`}
         ref={galleryRef}
       >
-        <div className="left pl-2 md:pl-8 lg:pl-4 xl:pl-2 pt-[0px] sm:pt-[80px] lg:pt-[0px]">
+        <div className="left pt-[0px] sm:pt-[80px] lg:pt-[0px]">
           <div className="detailsWrapper">
             <div className="details d1">
               <h1 className="headline col1">Character Commission</h1>

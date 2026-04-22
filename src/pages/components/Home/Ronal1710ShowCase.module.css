@@ -103,6 +103,32 @@
   );
 }
 
+.galleryContent {
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 1080px) {
+  .galleryContent {
+    padding-left: 3.75rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .galleryContent {
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .galleryContent {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .hideScroll {
   overflow-x: scroll; /* Enable scrolling behavior */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
