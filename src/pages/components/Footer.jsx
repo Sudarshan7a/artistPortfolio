@@ -226,11 +226,11 @@ function Copywrite() {
 
       {showDeveloperContact && (
         <div
-          className={`fixed inset-y-0  right-[4%] w-[96%] z-[999] flex items-center justify-start py-6 overflow-x-hidden ${isClosing ? "animate-apple-backdrop-hide" : "animate-apple-backdrop"}`}
+          className={`fixed inset-0 z-[999] flex items-center justify-center py-6 overflow-x-hidden px-4 ${isClosing ? "animate-apple-backdrop-hide" : "animate-apple-backdrop"}`}
           onClick={handleCloseContact}
         >
           <div
-            className={`bg-[#f5f5f7]/95 w-full backdrop-blur-2xl border border-black/5 rounded-[2.2rem] sm:rounded-[2.8rem] p-6 sm:p-10 md:p-14 max-w-[680px] max-h-[88vh] overflow-y-auto relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] ${isClosing ? "animate-apple-hide" : "animate-apple-reveal"} flex flex-col items-center`}
+            className={`bg-[#f5f5f7]/95 w-full backdrop-blur-2xl border border-black/5 rounded-[2.2rem] sm:rounded-[2.8rem] p-6 sm:p-10 md:p-14 max-w-[calc(100%-1.5rem)] sm:max-w-[680px] max-h-[88vh] overflow-y-auto relative shadow-[0_20px_40px_rgba(0,0,0,0.06)] ${isClosing ? "animate-apple-hide" : "animate-apple-reveal"} flex flex-col items-center`}
             onClick={(e) => e.stopPropagation()}
           >
             <button

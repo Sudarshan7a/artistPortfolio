@@ -161,10 +161,11 @@ html {
   }
 
   .photos-box {
-    width: 80%;
+    width: 90%;
     height: 100%;
     top: 30%;
-    left: -5%;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 50%;
   }
 
