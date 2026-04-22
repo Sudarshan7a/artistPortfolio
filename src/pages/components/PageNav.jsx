@@ -161,11 +161,11 @@ function PageNav() {
 
       {menuOpen && (
         <div
-          className="md:hidden fixed top-[58px] left-0 w-[96%] bottom-0  z-30 bg-black/30 backdrop-blur-sm flex items-start justify-start pt-3 overflow-x-hidden"
+          className="md:hidden fixed top-[58px] inset-x-0 bottom-0 z-30 bg-black/30 backdrop-blur-sm flex items-start justify-center px-3 sm:px-4 pt-3 overflow-x-hidden"
           onClick={() => setMenuOpen(false)}
         >
           <div
-            className="bg-primaryColor rounded-3xl p-4 sm:p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)] w-full max-w-sm sm:max-w-md"
+            className="bg-primaryColor rounded-3xl p-4 sm:p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)] w-full sm:max-w-md"
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col gap-4 border-b border-black/10 pb-5 mb-5">
