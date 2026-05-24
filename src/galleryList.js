@@ -7,6 +7,13 @@ export const galleryList = [
   [
     1,
     {
+      name: "fullCom_goddess_n_angel_9999",
+      loc: "images/fullCom/fullCom_goddess_n_angel_9999.jpg",
+    },
+  ],
+  [
+    1,
+    {
       name: "fullCom_Crown_2.5_999EX",
       loc: "images/fullCom/fullCom_Augusta_WUWA.jpg",
     },
