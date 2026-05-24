@@ -1,13 +1,14 @@
 .latesArt {
   border-radius: 42px;
   background: linear-gradient(
-    135deg,
-    #8f0b00 0%,
-    #d63200 40%,
-    #ff8c00 60%,
-    #a61b00 100%
+    140deg,
+    #2f2a20 0%,
+    #d7a43a 18%,
+    #86c7f3 46%,
+    #e56095 72%,
+    #29402c 100%
   );
-  filter: blur(45px);
+  filter: blur(72px);
   height: 100%;
 }
 
