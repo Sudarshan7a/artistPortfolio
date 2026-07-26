@@ -2,6 +2,16 @@
 
 Use this skill when the user says "add new art", "new artwork", "latest art", or similar. This is a Ronal1710 artist portfolio site.
 
+## How It Works (Rotation Pattern)
+
+When adding new art, the **old latest art moves to the gallery list** and the **new image becomes the latest art**:
+
+```
+OLD latest art → prepend to galleryList.js
+NEW image     → set as latest art in LatestWork.jsx
+NEW image     → update gradient in Galleary.module.css
+```
+
 ## Step 1: Identify the new image
 
 Check for untracked images in `public/images/fullCom/`:
@@ -10,18 +20,21 @@ git status --short public/images/fullCom/
 ```
 The new image will show as `?? filename.jpg`.
 
-## Step 2: Prepend to gallery list
+## Step 2: Read current latest art
 
-Edit `src/galleryList.js`. Add the new image as the **first entry** in the `galleryList` array:
+Read `src/pages/components/Galleary/LatestWork.jsx` to get the **old latest art filename** from the `latestArt` background URL.
+
+## Step 3: Prepend old latest art to gallery list
+
+Edit `src/galleryList.js`. Prepend the **OLD latest art** (not the new image) as the first entry:
 
 ```js
-// new image images/fullCom/NEW_IMAGE.jpg
 export const galleryList = [
   [
     1,
     {
-      name: "NEW_IMAGE_NAME",
-      loc: "images/fullCom/NEW_IMAGE.jpg",
+      name: "OLD_LATEST_ART_NAME",
+      loc: "images/fullCom/OLD_LATEST_ART.jpg",
     },
   ],
   // ... existing entries follow
@@ -32,9 +45,9 @@ export const galleryList = [
 - `name` = filename without extension
 - `loc` = path relative to `public/`
 
-## Step 3: Update Latest Art Work background
+## Step 4: Set new image as latest art
 
-Edit `src/pages/components/Galleary/LatestWork.jsx`. Update the `latestArt` object:
+Edit `src/pages/components/Galleary/LatestWork.jsx`. Update the `latestArt` object with the **NEW image**:
 
 ```js
 const latestArt = {
@@ -45,13 +58,11 @@ const latestArt = {
 };
 ```
 
-**Important:** Only update LatestWork.jsx if the user explicitly says to change the latest art. The gallery list and latest art are separate things.
-
-## Step 4: Update gradient to match the image
+## Step 5: Update gradient to match the new image
 
 Edit `src/pages/components/Galleary/Galleary.module.css`. Update the `.latesArt` gradient.
 
-**Read the image first** to analyze its dominant colors, then create a gradient:
+**Read the new image first** to analyze its dominant colors, then create a gradient:
 
 ```css
 .latesArt {
@@ -78,7 +89,7 @@ Edit `src/pages/components/Galleary/Galleary.module.css`. Update the `.latesArt`
 - The gradient is blurred (blur: 64px) so colors blend — pick distinct hues
 - Keep the same 7-stop structure for consistency
 
-## Step 5: Verify
+## Step 6: Verify
 
 ```bash
 npm run lint
@@ -87,7 +98,7 @@ npm run build
 
 Both must pass before committing.
 
-## Step 6: Commit
+## Step 7: Commit
 
 Stage all changes and commit with a descriptive message:
 
@@ -100,15 +111,16 @@ git commit -m "feat(gallery): add NEW_IMAGE as latest artwork and update gallery
 
 | File | Purpose |
 |------|---------|
-| `src/galleryList.js` | Gallery image list (prepend new art here) |
-| `src/pages/components/Galleary/LatestWork.jsx` | Latest art background image |
-| `src/pages/components/Galleary/Galleary.module.css` | Gradient glow behind latest art |
+| `src/galleryList.js` | Gallery image list (prepend OLD latest art here) |
+| `src/pages/components/Galleary/LatestWork.jsx` | Latest art background image (set NEW image here) |
+| `src/pages/components/Galleary/Galleary.module.css` | Gradient glow behind latest art (match to NEW image) |
 | `public/images/fullCom/` | Where full commission images live |
 
 ## Key Rules
 
-1. **Gallery list** = `galleryList.js` (array of entries, prepend new art)
-2. **Latest art** = `LatestWork.jsx` (single background image)
-3. **Gradient** = `Galleary.module.css` (match to the latest art image)
-4. Always read the image to analyze colors before setting gradient
-5. Always run `npm run lint` and `npm run build` before committing
+1. **Rotation pattern**: OLD latest art → gallery list, NEW image → latest art
+2. **Gallery list** = `galleryList.js` (prepend the OLD latest art, not the new one)
+3. **Latest art** = `LatestWork.jsx` (set the NEW image as latest)
+4. **Gradient** = `Galleary.module.css` (match to the NEW image colors)
+5. Always read the image to analyze colors before setting gradient
+6. Always run `npm run lint` and `npm run build` before committing
