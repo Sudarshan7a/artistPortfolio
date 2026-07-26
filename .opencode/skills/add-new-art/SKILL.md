@@ -62,32 +62,26 @@ const latestArt = {
 
 Edit `src/pages/components/Galleary/Galleary.module.css`. Update the `.latesArt` gradient.
 
-**Read the new image first** to analyze its dominant colors, then create a gradient:
+**Read the new image first** to analyze its dominant colors, then create a vibrant gradient that matches:
 
 ```css
 .latesArt {
   border-radius: 42px;
   background: linear-gradient(
-    DEGdeg,
-    COLOR1 0%,
-    COLOR2 16%,
-    COLOR3 34%,
-    COLOR4 53%,
-    COLOR5 69%,
-    COLOR6 82%,
-    COLOR7 100%
+    /* any angle that works */,
+    /* 4-8 color stops with vibrant colors from the image */
   );
   filter: blur(64px);
   height: 100%;
 }
 ```
 
-### Color extraction tips:
-- Read the image file using the Read tool
-- Pick 7 colors from the image (dominant, accents, shadows, highlights)
-- Use hex codes directly from what you see
-- The gradient is blurred (blur: 64px) so colors blend — pick distinct hues
-- Keep the same 7-stop structure for consistency
+### Gradient rules:
+- Read the image using the Read tool to see its colors
+- Pick vibrant, saturated colors from the image (dominant, accents, highlights)
+- Angle, number of colors, and percentages are flexible — whatever looks good
+- The gradient is blurred (blur: 64px) so colors blend smoothly
+- Keep `border-radius: 42px`, `filter: blur(64px)`, and `height: 100%`
 
 ## Step 6: Verify
 
