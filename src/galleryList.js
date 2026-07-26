@@ -2,8 +2,15 @@
  * Gallery list data for Ronal1710's gallery page
  */
 
-// new image images/fullCom/fullCom_Crown_2.5_999EX.jpg
+// new image images/fullCom/fullCom_Small_and_Furious_17.jpg
 export const galleryList = [
+  [
+    1,
+    {
+      name: "fullCom_Small_and_Furious_17",
+      loc: "images/fullCom/fullCom_Small_and_Furious_17.jpg",
+    },
+  ],
   [
     1,
     {
