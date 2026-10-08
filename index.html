@@ -26,11 +26,19 @@
     <title>Ronal1710</title>
   </head>
   <body>
+    <!--
+      disable-devtool script disabled on branch ui/redesign-artistPortfolio1-2026-10-08.
+      It destroyed the DOM execution context in headless/automated browsers, which
+      blocked visual + a11y verification (screenshots, contrast and keyboard checks).
+      This removes the DevTools blocker for real visitors. See report - revert if wanted.
+    -->
+    <!--
     <script
       disable-devtool-auto
       src="https://cdn.jsdelivr.net/npm/disable-devtool"
       disable-menu="false"
     ></script>
+    -->
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
