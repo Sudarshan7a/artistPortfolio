@@ -13,11 +13,13 @@ function Homepage() {
   return (
     <>
       <PageNav />
-      <HeroSection />
-      <FeaturedProducts />
-      <AboutMe />
-      <Ronal1710ShowCase />
-      <ImagesShowcase />
+      <main id="main">
+        <HeroSection />
+        <FeaturedProducts />
+        <AboutMe />
+        <Ronal1710ShowCase />
+        <ImagesShowcase />
+      </main>
       <Footer />
     </>
   );

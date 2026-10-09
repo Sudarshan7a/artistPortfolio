@@ -12,10 +12,12 @@ function Commission() {
   return (
     <div>
       <PageNav />
-      <CommissionHero />
-      <CustomArtWorkOptions />
-      <CommissionFeatured />
-      <CustomArtShowcase />
+      <main id="main">
+        <CommissionHero />
+        <CustomArtWorkOptions />
+        <CommissionFeatured />
+        <CustomArtShowcase />
+      </main>
       <Footer />
     </div>
   );

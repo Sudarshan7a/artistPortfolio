@@ -38,6 +38,7 @@ export default {
           text: "var(--night-text)",
           muted: "var(--night-muted)",
           border: "var(--night-border)",
+          danger: "var(--night-danger)",
         },
       },
       fontFamily: {

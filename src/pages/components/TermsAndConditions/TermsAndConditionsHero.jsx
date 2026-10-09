@@ -16,6 +16,8 @@ function TermsAndConditionsHero() {
           src="images/fullCom/fullCom_preciousBean.jpg"
           alt="Precious Bean"
           className="object-cover w-full h-full"
+          decoding="async"
+          fetchPriority="high"
         />
         <div
           className="absolute inset-0"

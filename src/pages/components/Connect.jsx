@@ -32,8 +32,10 @@ function Connect() {
   return (
     <div className=" relative">
       <PageNav />
-      <Back />
-      <Social />
+      <main id="main">
+        <Back />
+        <Social />
+      </main>
     </div>
   );
 }

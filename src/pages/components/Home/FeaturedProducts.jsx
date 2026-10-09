@@ -3,7 +3,7 @@ import { homeFeatured } from "../../../featuredList";
 import PropTypes from "prop-types";
 import SidebarButtons from "../../SidebarButtons";
 import styles from "./Ronal1710ShowCase.module.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 /**
  * Renders the FeaturedProducts component,
  * displaying a list of featured products and navigation buttons.
@@ -14,14 +14,6 @@ function FeaturedProducts() {
   const containerRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(false);
-  const navigate = useNavigate();
-
-  /**
-   * Navigates to the custom artwork section.
-   */
-  const goToCustomArtWorkSection = () => {
-    navigate("/commission#CommissionFeatured"); // Navigate to the specific section
-  };
 
   // Check if the container has horizontal overflow
   const checkScrollability = () => {
@@ -93,9 +85,8 @@ function FeaturedProducts() {
       </div>
       <div
         ref={containerRef}
-        className={`${styles.hideScroll} cursor-pointer flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 pb-8 w-full overflow-x-auto`}
+        className={`${styles.hideScroll} flex gap-10 px-8 sm:px-16 lg:px-32 pt-12 pb-8 w-full overflow-x-auto`}
         style={{ scrollBehavior: "smooth" }}
-        onClick={() => goToCustomArtWorkSection()}
       >
         {homeFeatured.map((product) => (
           <Cards {...product} key={product.id} />
@@ -140,20 +131,25 @@ export default FeaturedProducts;
  */
 function Cards({ title, shortDescription, imageLocation }) {
   return (
-    <div className="interactive-card rounded-[36px] p-2">
+    <NavLink
+      to="/commission#CommissionFeatured"
+      className="interactive-card rounded-[var(--radius-xl)] p-2 block"
+      aria-label={`${title}: view commission options`}
+    >
       {/* Wrapper div with overflow hidden to contain the scaling image */}
       <div className={styles.imageWrapper}>
         {/* //productImage  */}
         <div
-          className={`${styles.productImage} interactive-card-media bg-slate-700`}
+          className={`${styles.productImage} interactive-card-media bg-surface2`}
           style={{
             flexShrink: 0,
-            borderRadius: "40px",
+            borderRadius: "var(--radius-xl)",
             backgroundImage: `url(${imageLocation})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
+          aria-hidden="true"
         />
       </div>
       {/* //productImage's description  */}
@@ -163,6 +159,6 @@ function Cards({ title, shortDescription, imageLocation }) {
           {shortDescription}
         </p>
       </div>
-    </div>
+    </NavLink>
   );
 }

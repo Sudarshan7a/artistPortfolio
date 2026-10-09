@@ -5,7 +5,7 @@
 function GalleryHero() {
   return (
     <div
-      className="text-[#333] text-center mt-[120px] px-4 md:px-0 flex flex-col items-center w-full"
+      className="text-text text-center mt-[120px] px-4 md:px-0 flex flex-col items-center w-full"
       data-hero-reveal
     >
       <h1
@@ -28,7 +28,7 @@ function GalleryHero() {
         style={{ "--stagger-order": 3 }}
         height="32"
         width="32"
-        xmlns=""
+        aria-hidden="true"
       >
         <image width="32" height="32" href="Icons/downArrow.svg" />
       </svg>

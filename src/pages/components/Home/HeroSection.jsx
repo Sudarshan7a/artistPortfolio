@@ -9,8 +9,12 @@ import Button from "../Button";
 function HeroSection() {
   const heroArtRef = useRef(null);
 
+  const motionAllowed = () =>
+    typeof window === "undefined" ||
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const handlePointerMove = (event) => {
-    if (!heroArtRef.current) return;
+    if (!heroArtRef.current || !motionAllowed()) return;
 
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
@@ -33,10 +37,11 @@ function HeroSection() {
       >
         <img
           ref={heroArtRef}
-          className="h-full w-full object-cover object-center hero-parallax-art hero-float"
+          className="h-full w-full object-cover object-center hero-parallax-art"
           src="./images/fullCom/fullCom_whiteKnight/variant2.jpg"
           alt="White Knight commission artwork"
           decoding="async"
+          fetchPriority="high"
         />
       </div>
 
@@ -72,7 +77,7 @@ function HeroSection() {
             to="/commission"
             aria-label="Start a new commission"
           >
-            <Button variant="primary" className="hero-cta-primary">
+            <Button variant="primary">
               Commission Now
             </Button>
           </NavLink>

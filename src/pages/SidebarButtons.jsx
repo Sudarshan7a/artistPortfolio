@@ -26,7 +26,7 @@ import PropTypes from "prop-types";
     <button
       onClick={onClick}
       disabled={isDisabled}
-      className={`bg-surface2 border border-border shadow-sm rounded-full h-12 w-12 flex justify-center items-center transition-[background-color,border-color,box-shadow,transform,opacity] duration-200 text-text ${activeClass}`}
+      className={`bg-surface2 border border-border shadow-sm rounded-full h-12 w-12 flex justify-center items-center transition-[background-color,border-color,box-shadow,transform,opacity] duration-200 text-text hover:-translate-y-0.5 ${activeClass}`}
       style={{ cursor: isDisabled ? "default" : "pointer" }}
       aria-label={ariaLabel}
     >

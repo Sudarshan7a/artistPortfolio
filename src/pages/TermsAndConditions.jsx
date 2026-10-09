@@ -11,8 +11,10 @@ function Termsandconditionspage() {
   return (
     <div>
       <PageNav />
-      <TermsAndConditionsHero />
-      <CommissionGuildLines />
+      <main id="main">
+        <TermsAndConditionsHero />
+        <CommissionGuildLines />
+      </main>
       <Footer />
     </div>
   );

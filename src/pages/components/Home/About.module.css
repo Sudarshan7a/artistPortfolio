@@ -1,5 +1,5 @@
-.aboutMe h1 {
-  color: var(--darkGrayFont, #333);
+.aboutMe .profile-name {
+  color: var(--text);
   font-family: var(--titleFont);
   font-size: clamp(30px, 5vw, 72px);
   font-style: normal;
@@ -7,16 +7,16 @@
   line-height: 120%; /* 86.4px */
 }
 .aboutMe h2 {
-  color: var(--darkGrayFont, #333);
-  font-family: Merriweather;
+  color: var(--text);
+  font-family: var(--subtitleFont);
   font-size: 20px; /* Increased from 18px */
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 28px */
 }
 .aboutMe p {
-  color: var(--darkGrayFont, #333);
-  font-family: Merriweather;
+  color: var(--text);
+  font-family: var(--subtitleFont);
   font-size: clamp(14px, 2.5vw, 18px);
   font-style: normal;
   font-weight: 400;
@@ -25,22 +25,22 @@
 
 .aboutMe img {
   border-radius: 581px;
-  background: lightgray 50% / cover no-repeat;
+  background: var(--surface-2) 50% / cover no-repeat;
   box-shadow: 0px 4px 4px 0px rgba(255, 215, 0, 0.16) inset;
 }
 
 @media (max-width: 620px) {
-  .aboutMe h1 {
+  .aboutMe .profile-name {
     font-size: 48px;
   }
 }
 @media (max-width: 520px) {
-  .aboutMe h1 {
+  .aboutMe .profile-name {
     font-size: 38px;
   }
 }
 @media (max-width: 420px) {
-  .aboutMe h1 {
+  .aboutMe .profile-name {
     font-size: 30px;
   }
 }

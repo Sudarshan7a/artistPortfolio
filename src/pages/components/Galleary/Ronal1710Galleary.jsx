@@ -45,11 +45,12 @@ function Ronal1710Galleary() {
 
   return (
     <section
-      className={`${styles.galleary} flex flex-col sm:gap-[36px]  mt-10 bg-textPrimary items-center  pb-8 mb-10`}
+      aria-label="Artwork gallery"
+      className={`${styles.galleary} flex flex-col sm:gap-[36px] mt-10 bg-night-bg items-center pb-8 mb-10`}
     >
-      <h1 className="text-center text-[48px] text-primaryColor font-title font-semiBold m-10 ">
+      <h2 className="text-center text-4xl md:text-[48px] text-night-text font-title font-semibold m-10">
         Ronal1710&apos;s Gallery
-      </h1>
+      </h2>
       {cleanedGalleryList.map((item) => (
         <ShowCase
           key={`${item[1].name}-${item[1].loc}`}
@@ -68,7 +69,7 @@ export default Ronal1710Galleary;
  */
 const SingleImageLayout = ({ loc }) => (
   <div className="m-4">
-    <img className="rounded-md" src={loc[0].loc} alt={loc[0].name} />
+    <img className="rounded-md bg-night-surface" src={loc[0].loc} alt={loc[0].name} loading="lazy" decoding="async" />
   </div>
 );
 
@@ -82,14 +83,18 @@ SingleImageLayout.propTypes = {
 const TwoImageMainLayout = ({ loc }) => (
   <div className="m-4 flex flex-col lg:flex-row items-center justify-center gap-8 scale-105 ">
     <img
-      className="px-4 w-full lg:w-7/12 rounded-md"
+      className="px-4 w-full lg:w-7/12 rounded-md bg-night-surface"
       src={loc[0].loc}
       alt={loc[0].name}
+      loading="lazy"
+      decoding="async"
     />
     <img
-      className="px-4 w-full lg:w-1/3 rounded-md"
+      className="px-4 w-full lg:w-1/3 rounded-md bg-night-surface"
       src={loc[1].loc}
       alt={loc[1].name}
+      loading="lazy"
+      decoding="async"
     />
   </div>
 );
@@ -102,22 +107,28 @@ TwoImageMainLayout.propTypes = {
  * Renders a three image layout with main and two sub images
  */
 const ThreeImageMainLayout = ({ loc }) => (
-  <div className="mx-4  sm:pm-0 w-fit h-fit flex flex-col md:flex-row md:items-center justify-end sm:justify-end gap-4 md:gap-8 ">
+  <div className="mx-4 w-fit h-fit flex flex-col md:flex-row md:items-center justify-end sm:justify-end gap-4 md:gap-8 ">
     <img
-      className="w-11/12 h-fit m-auto md:w-8/12 rounded-md scale-105"
+      className="w-11/12 h-fit m-auto md:w-8/12 rounded-md bg-night-surface scale-105"
       src={loc[0].loc}
       alt={loc[0].name}
+      loading="lazy"
+      decoding="async"
     />
     <div className="w-full sm:w-1/2 flex-grow sm:flex-grow-0 justify-start md:w-1/4 scale-90 flex flex-col sm:flex-row md:flex-col gap-12 sm:gap-4">
       <img
-        className="rounded-md sm:scale-90"
+        className="rounded-md bg-night-surface sm:scale-90"
         src={loc[1].loc}
         alt={loc[1].name}
+        loading="lazy"
+        decoding="async"
       />
       <img
-        className="rounded-md sm:scale-90"
+        className="rounded-md bg-night-surface sm:scale-90"
         src={loc[2].loc}
         alt={loc[2].name}
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </div>
@@ -133,19 +144,25 @@ ThreeImageMainLayout.propTypes = {
 const ThreeImageGridLayout = ({ loc }) => (
   <div className="m-4 px-4 flex flex-col sm:flex-row gap-8 sm:gap-8   justify-around ">
     <img
-      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      className="rounded-md bg-night-surface lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
       src={loc[0].loc}
       alt={loc[0].name}
+      loading="lazy"
+      decoding="async"
     />
     <img
-      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      className="rounded-md bg-night-surface lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
       src={loc[1].loc}
       alt={loc[1].name}
+      loading="lazy"
+      decoding="async"
     />
     <img
-      className="rounded-md lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
+      className="rounded-md bg-night-surface lg:scale-125 w-full sm:w-[30%] lg:w-3/12"
       src={loc[2].loc}
       alt={loc[2].name}
+      loading="lazy"
+      decoding="async"
     />
   </div>
 );
@@ -161,16 +178,20 @@ const TwoImageEqualLayout = ({ loc }) => (
   <div className="m-4 mx-8 my-8  flex flex-col md:flex-row items-center gap-8 md:gap-4 justify-between">
     <div className="w-full md:w-1/2 md:pr-4">
       <img
-        className="rounded-md w-max-fit"
+        className="rounded-md bg-night-surface w-max-fit"
         src={loc[0].loc}
         alt={loc[0].name}
+        loading="lazy"
+        decoding="async"
       />
     </div>
     <div className="w-full md:w-1/2 md:pl-4">
       <img
-        className="rounded-md w-max-fit"
+        className="rounded-md bg-night-surface w-max-fit"
         src={loc[1].loc}
         alt={loc[1].name}
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </div>
@@ -192,7 +213,7 @@ TwoImageEqualLayout.propTypes = {
 function ShowCase({ layout, loc }) {
   if (!loc || loc.length === 0) {
     return (
-      <div className="m-4 text-center text-gray-500">No images available</div>
+      <div className="m-4 text-center text-night-muted">No images available</div>
     );
   }
 
@@ -209,7 +230,7 @@ function ShowCase({ layout, loc }) {
       return <TwoImageEqualLayout loc={loc} />;
     default:
       return (
-        <div className="m-4 text-center text-red-500">
+        <div className="m-4 text-center text-night-danger">
           Unsupported layout type: {layout}
         </div>
       );

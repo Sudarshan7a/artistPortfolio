@@ -182,7 +182,7 @@ function Motivation() {
         type="button"
         onClick={scrollToTop}
         aria-label="Scroll back to top"
-        className="scrollToTop bg-surface2 border border-border relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer "
+        className="scrollToTop bg-surface2 border border-border relative rotate-180 rounded-full w-[52px] h-[52px] flex items-center justify-center cursor-pointer transition-transform hover:-translate-y-0.5 "
       >
         <svg className="top-3 absolute" height="32" width="32" xmlns="">
           <image width="32" height="32" href="Icons/downArrow.svg" />
