@@ -72,20 +72,12 @@ function HeroSection() {
           className="mt-7 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 hero-stagger"
           style={{ "--stagger-order": 3 }}
         >
-          <NavLink
-            className="w-fit m-auto sm:m-0"
-            to="/commission"
-            aria-label="Start a new commission"
-          >
+          <NavLink className="w-fit m-auto sm:m-0" to="/commission">
             <Button variant="primary">
               Commission Now
             </Button>
           </NavLink>
-          <NavLink
-            className="w-fit m-auto sm:m-0"
-            to="/gallery"
-            aria-label="Explore gallery"
-          >
+          <NavLink className="w-fit m-auto sm:m-0" to="/gallery">
             <Button variant="secondary">View Gallery</Button>
           </NavLink>
         </div>
