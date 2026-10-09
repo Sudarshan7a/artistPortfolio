@@ -3,8 +3,8 @@ import pro_lg from "../../assets/images/profile/pro_lg.jpg";
 import PropTypes from "prop-types";
 
 const logoStyle = {
-  color: "#333333",
-  fontFamily: "Montserrat, sans-serif",
+  color: "var(--text)",
+  fontFamily: "var(--titleFont)",
   fontSize: "24px",
   fontStyle: "normal",
   fontWeight: 400,

@@ -83,19 +83,20 @@ function PageNav() {
   }, []);
 
   const getNavClass = ({ isActive }) =>
-    `nav-link-animated text-[15px] tracking-wide transition-all duration-300 nav-text-glow ${
-      isActive
-        ? "opacity-100 font-semibold nav-link-active"
-        : "opacity-80 hover:opacity-100"
+    `nav-link-animated text-[15px] tracking-wide transition-[color] duration-200 nav-text-glow ${
+      isActive ? "text-text font-semibold nav-link-active" : "text-textMuted hover:text-text"
     }`;
 
   return (
-    <header className="sticky top-0 z-40">
+    <header className="sticky top-0 z-header">
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <nav
-        className={`nav-surface relative w-full px-3 sm:px-4 md:px-10 lg:px-20 grid grid-cols-[1fr_auto_1fr] items-center md:flex md:items-center md:justify-between transition-all duration-300 overflow-x-hidden ${
+        className={`nav-surface relative w-full px-3 sm:px-4 md:px-10 lg:px-20 grid grid-cols-[1fr_auto_1fr] items-center md:flex md:items-center md:justify-between transition-[height,background-color,box-shadow] duration-200 overflow-x-hidden ${
           isScrolled
-            ? "is-scrolled h-[52px] bg-primaryColor/88"
-            : "h-[58px] bg-primaryColor/95"
+            ? "is-scrolled h-[52px] bg-[color-mix(in_srgb,var(--primaryColor)_88%,transparent)]"
+            : "h-[58px] bg-[color-mix(in_srgb,var(--primaryColor)_95%,transparent)]"
         }`}
         id="pageNav"
       >
@@ -103,6 +104,8 @@ function PageNav() {
           className="nav-mobile-menu-button order-1 md:hidden  rounded-full border border-black/10 flex items-center justify-center flex-shrink-0 justify-self-start"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           <svg height="18" width="18" xmlns="http://www.w3.org/2000/svg">
             <image
@@ -161,11 +164,12 @@ function PageNav() {
 
       {menuOpen && (
         <div
-          className="md:hidden fixed top-[58px] inset-x-0 bottom-0 z-30 bg-black/30 backdrop-blur-sm flex items-start justify-center px-3 sm:px-4 pt-3 overflow-x-hidden"
+          id="mobile-menu"
+          className="md:hidden fixed top-[58px] inset-x-0 bottom-0 z-menu bg-black/30 backdrop-blur-sm flex items-start justify-center px-3 sm:px-4 pt-3 overflow-x-hidden"
           onClick={() => setMenuOpen(false)}
         >
           <div
-            className="bg-primaryColor rounded-3xl p-4 sm:p-6 shadow-[0_18px_36px_rgba(13,20,36,0.18)] w-full sm:max-w-md"
+            className="bg-primaryColor rounded-3xl p-4 sm:p-6 shadow-modal w-full sm:max-w-md"
             onClick={(e) => e.stopPropagation()}
           >
             <ul className="flex flex-col gap-4 border-b border-black/10 pb-5 mb-5">

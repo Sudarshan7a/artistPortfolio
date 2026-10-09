@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "../Button";
 import SidebarButtons from "../../SidebarButtons";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 CommissionCard.propTypes = {
   title: PropTypes.string.isRequired,
@@ -28,6 +28,8 @@ function CommissionCard({
 }) {
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const openButtonRef = useRef(null);
+  const closeButtonRef = useRef(null);
 
   function handleThumbnailClick(index) {
     setMainImageIndex(index);
@@ -36,9 +38,23 @@ function CommissionCard({
     setIsModalOpen(!isModalOpen);
   }
 
+  useEffect(() => {
+    if (!isModalOpen) return;
+    closeButtonRef.current?.focus();
+    const opener = openButtonRef.current;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setIsModalOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      opener?.focus();
+    };
+  }, [isModalOpen]);
+
   return (
-    <div className={`mb-20  ${isModalOpen ? "overflow-hidden h-screen" : ""}`}>
-      <div className="w-[90%] sm:w-[85%] max-w-5xl max-h-screen mx-auto p-4 sm:p-6 md:p-[3%] bg-white shadow-lg rounded-[40px] overflow-hidden flex flex-col lg:flex-row">
+    <div className={`mb-20  ${isModalOpen ? "overflow-hidden h-dvh" : ""}`}>
+      <div className="w-[90%] sm:w-[85%] max-w-5xl max-h-dvh mx-auto p-4 sm:p-6 md:p-[3%] bg-white shadow-lg rounded-[var(--radius-xl)] overflow-hidden flex flex-col lg:flex-row">
         {/* Images */}
         <div className="w-full lg:w-1/2 xl:w-5/12 mt-6 md:mt-0 flex flex-col items-center">
           {images.length === 1 && (
@@ -72,17 +88,24 @@ function CommissionCard({
               />
               <div className="flex gap-2 overflow-x-auto w-full">
                 {images.map((image, index) => (
-                  <img
+                  <button
                     key={image}
-                    src={image}
-                    alt={`Thumbnail ${index}`}
-                    className={`w-24 h-24 sm:w-32 sm:h-24 imgs rounded-md object-cover border-4 flex-shrink-0  ${
-                      mainImageIndex === index
-                        ? "border-accentColorRed"
-                        : "border-gray-200"
-                    } cursor-pointer`}
+                    type="button"
                     onClick={() => handleThumbnailClick(index)}
-                  />
+                    aria-pressed={mainImageIndex === index}
+                    aria-label={`Show preview ${index + 1} of ${images.length}`}
+                    className={`w-24 h-24 sm:w-32 sm:h-24 rounded-md border-4 flex-shrink-0 overflow-hidden ${
+                      mainImageIndex === index
+                        ? "border-primary-border"
+                        : "border-border"
+                    } cursor-pointer`}
+                  >
+                    <img
+                      src={image}
+                      alt=""
+                      className="imgs w-full h-full object-cover"
+                    />
+                  </button>
                 ))}
               </div>
             </div>
@@ -90,7 +113,7 @@ function CommissionCard({
           <div>
             {/* View Larger Button */}
             <div className="mt-6 flex justify-center">
-              <Button onClick={toggleModal} variant={1}>
+              <Button ref={openButtonRef} onClick={toggleModal} variant={1}>
                 View Larger
               </Button>
             </div>
@@ -140,25 +163,30 @@ function CommissionCard({
       {/*View larger Modal */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center overlay bg-opacity-10"
+          className="fixed inset-0 z-modal flex items-center justify-center overlay bg-opacity-10"
           onClick={toggleModal}
         >
           <button
+            ref={closeButtonRef}
             onClick={toggleModal}
-            className="absolute top-3 md:top-7 z-20 right-4 md:right-8 text-gray-950 hover:text-gray-900"
+            aria-label="Close enlarged view"
+            className="absolute top-3 md:top-7 right-4 md:right-8 rounded-full bg-black/60 p-2 text-white hover:bg-black/80 transition-colors"
           >
-            <svg className="" height="32" width="32" xmlns="">
+            <svg height="32" width="32" viewBox="0 0 32 32" aria-hidden="true">
               <image width="32" height="32" href="Icons/closeIcon.svg" />
             </svg>
           </button>
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${title} enlarged view`}
             className={`relative bg-primaryColor mx-6 p-4 rounded-lg object-fit overflow-x-scroll no-scrollbar`}
             onClick={(e) => e.stopPropagation()} // Prevent click bubbling
           >
             <img
               src={images[mainImageIndex]}
               alt="Enlarged View"
-              className=" rounded-lg max-h-[80vh] object-cover"
+              className=" rounded-lg max-h-[80dvh] object-cover"
             />
           </div>
         </div>
@@ -188,13 +216,14 @@ function FullSidebarButtons({
         rotation={180}
         available={currentIndex > 0} // Disable if at the start
       />
-      <div className="w-32 h-16 bg-slate-300 flex gap-2 justify-center items-center rounded-full">
+      <div className="w-32 h-16 bg-border flex gap-2 justify-center items-center rounded-full">
         {Array.from({ length: indexLength }).map((_, index) => (
           <div
             key={index}
+            aria-hidden="true"
             className={`h-2 w-2 ${
               index === currentIndex ? "w-5" : ""
-            } bg-slate-600 rounded-full`}
+            } bg-textMuted rounded-full`}
           />
         ))}
       </div>

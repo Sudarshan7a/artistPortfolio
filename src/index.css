@@ -224,6 +224,15 @@
   --primary-hover: #f7e1ab;
   --primary-strong: #8d6a2c;
 
+  /* Gold ramp (primitive tier): only button surfaces use these */
+  --gold-50: #fffdf3;
+  --gold-100: #fff9d8;
+  --gold-200: #f7e1ab;
+  --gold-300: #f1d58f;
+  --gold-400: #ecd08c;
+  --gold-500: #e2b75b;
+  --gold-600: #d7aa49;
+
   /* Status (02 §6): always icon + text + color, never color alone */
   --success: #15803d;
   --success-bg: #f0fdf4;
@@ -339,6 +348,69 @@ li a:hover {
   font-family: var(--titleFont);
   font-size: var(--buttonFontSize);
   font-weight: var(--semiBold);
+}
+
+/* Button variants: single source of truth (Button.jsx maps variant -> class) */
+.btn-primary {
+  color: var(--on-primary);
+  background: linear-gradient(
+    130deg,
+    var(--gold-100) 0%,
+    var(--gold-300) 45%,
+    var(--gold-50) 100%
+  );
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 6px 14px rgb(226 183 91 / 0.2);
+}
+.btn-primary:hover {
+  color: var(--on-primary);
+  background: linear-gradient(
+    130deg,
+    var(--gold-50) 0%,
+    var(--gold-200) 45%,
+    #ffffff 100%
+  );
+  border-color: var(--gold-600);
+  box-shadow: 0 10px 22px rgb(226 183 91 / 0.24);
+}
+.btn-secondary {
+  color: var(--primary-strong);
+  background: transparent;
+  border: 2px solid var(--primary-border);
+}
+.btn-secondary:hover {
+  color: var(--on-primary);
+  background: var(--primary-hover);
+  border-color: var(--primary-border-hover);
+}
+.btn-ghost {
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+  border-color: var(--border-soft);
+}
+
+/* Skip link: visually hidden until keyboard focus (09) */
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: var(--z-toast);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--text);
+  color: var(--surface);
+  font-family: var(--titleFont);
+  font-weight: var(--semiBold);
+  transform: translateY(-300%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 .homeheroh1 {

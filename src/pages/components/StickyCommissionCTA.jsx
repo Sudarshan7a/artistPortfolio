@@ -15,10 +15,7 @@ function StickyCommissionCTA() {
   return (
     <div className="sticky-commission">
       <NavLink to="/commission" aria-label="Open commission page">
-        <Button
-          variant="primary"
-          className="cta-attention px-5 md:px-6 text-xs md:text-sm"
-        >
+        <Button variant="primary" className="px-5 md:px-6 text-xs md:text-sm">
           Commission Now
         </Button>
       </NavLink>
