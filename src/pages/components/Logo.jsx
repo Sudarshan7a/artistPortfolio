@@ -47,9 +47,9 @@ function Logo({ scale }) {
         alt="logo"
         className="h-[36px] w-[36px] rounded-full "
       />
-      <h1 className="navbar-logo-text" style={logoStyle}>
+      <p className="navbar-logo-text" style={logoStyle}>
         Ronal1710
-      </h1>
+      </p>
     </div>
   );
 }
