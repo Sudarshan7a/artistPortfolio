@@ -7,8 +7,7 @@ import { memo } from "react";
 function CustomArtWorkOptions() {
   return (
     <div className="mx-[5%] lg:mx-[10%] my-10 md:my-16 lg:my-24">
-      <h2 className="mb-8 tracking-wide">{""}</h2>
-      <div className="px-5 lg:px-11 py-4 text-textPrimary text-2xl sm:text-4xl font-semibold bg-white shadow-custom-light rounded-[40px]">
+      <div className="px-5 lg:px-11 py-4 text-textPrimary text-2xl sm:text-4xl font-semibold bg-white shadow-custom-light rounded-[var(--radius-xl)]">
         {customArtworkOptions.map((group, groupIndex) => (
           <div
             className="mt-12 font-subtitle"
@@ -25,7 +24,7 @@ function CustomArtWorkOptions() {
                     } sm:mx-2 lg:mx-8 flex justify-center items-center`}
                     height="32"
                     width="32"
-                    xmlns=""
+                    aria-hidden="true"
                   >
                     <image
                       className="  "

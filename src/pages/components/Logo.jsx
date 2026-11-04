@@ -3,8 +3,8 @@ import pro_lg from "../../assets/images/profile/pro_lg.jpg";
 import PropTypes from "prop-types";
 
 const logoStyle = {
-  color: "#333333",
-  fontFamily: "Montserrat, sans-serif",
+  color: "var(--text)",
+  fontFamily: "var(--titleFont)",
   fontSize: "24px",
   fontStyle: "normal",
   fontWeight: 400,
@@ -47,9 +47,9 @@ function Logo({ scale }) {
         alt="logo"
         className="h-[36px] w-[36px] rounded-full "
       />
-      <h1 className="navbar-logo-text" style={logoStyle}>
+      <p className="navbar-logo-text" style={logoStyle}>
         Ronal1710
-      </h1>
+      </p>
     </div>
   );
 }

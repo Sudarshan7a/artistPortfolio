@@ -2,10 +2,10 @@ import styles from "./Galleary.module.css";
 import { memo } from "react";
 
 const latestArt = {
-  borderRadius: "40px",
+  borderRadius: "var(--radius-xl)",
   height: "100%",
   background:
-    'url("images/fullCom/fullCom_Moon_Fox_Hsin.jpg") lightgray 50% / cover no-repeat',
+    'url("images/fullCom/fullCom_porsche_29.jpg") lightgray 50% / cover no-repeat',
 };
 /**
  * LatestWork component renders the latest artwork section.
@@ -25,9 +25,11 @@ function LatestWork() {
       <div className="m-auto my-20 mb-32 md:mb-20 relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]  xl:h-[90vh]">
         <div className={`${styles.latesArt} mt-12 m-auto p-4`} />
         <div
-          className="justify-center   absolute top-0 left-0 right-0 bottom-0"
+          className="justify-center absolute top-0 left-0 right-0 bottom-0"
           style={latestArt}
-        ></div>
+          role="img"
+          aria-label="Latest artwork: Porsche 29"
+        />
       </div>
     </div>
   );

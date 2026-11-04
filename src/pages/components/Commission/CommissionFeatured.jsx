@@ -19,11 +19,7 @@ function CommissionFeatured() {
         ))}
       </div>
       <div
-        className="mt-20 bg-primaryColor p-[4%] text-textPrimary text-h3 font-title"
-        style={{
-          borderRadius: "40px",
-          boxShadow: "0px 0px 16px 0px rgba(0, 0, 0, 0.20)",
-        }}
+        className="mt-20 bg-primaryColor p-[4%] text-textPrimary text-h3 font-title rounded-[var(--radius-xl)] shadow-md"
       >
         <h3>Key Highlights:</h3>
         <ul className="mt-8 mx-2 sm:mx-8 text-textPrimary font-subtitle">
@@ -31,7 +27,7 @@ function CommissionFeatured() {
             <li key={index} className="flex items-center text-lg my-2">
               <img
                 src="Icons/tickMarkIcon.svg" // Cycle through icons
-                alt={`icon-${index}`}
+                alt=""
                 className="w-6 h-6 m-2 mx-4"
               />
               {highlight}
@@ -60,16 +56,18 @@ const icons = [drawingIcon, landscape, start];
 
 function Card({ title, price, image: imageLocation, layout, addons }) {
   return (
-    <article className="rounded-[30px] border border-[#d9e2f3] bg-[#f9fbff] p-4 shadow-[0_12px_24px_rgba(13,20,36,0.08)] h-full flex flex-col">
+    <article className="rounded-[var(--radius-xl)] border border-border bg-surface2 p-4 shadow-card h-full flex flex-col">
       {/* Product Image */}
       <div
         className="w-full h-[320px] md:h-[360px] min-h-[50vh]"
         style={{
           flexShrink: 0,
-          borderRadius: "40px",
-          border: "1px solid rgba(51, 51, 51, 0.20)",
+          borderRadius: "var(--radius-xl)",
+          border: "1px solid var(--border)",
           background: `url(${imageLocation}) lightgray ${layout}  no-repeat`,
         }}
+        role="img"
+        aria-label={`${title} example artwork`}
       />
 
       {/* Product Description */}
@@ -84,12 +82,12 @@ function Card({ title, price, image: imageLocation, layout, addons }) {
           {addons.map((addon, index) => (
             <li
               key={index}
-              className="flex max-w-full items-start text-sm text-gray-600"
+              className="flex max-w-full items-start text-sm text-textSecondary"
             >
               {/* Icon before text */}
               <img
                 src={icons[index % icons.length]} // Cycle through icons
-                alt={`icon-${index}`}
+                alt=""
                 className="w-5 h-5 mr-2 mt-0.5"
               />
               {addon}

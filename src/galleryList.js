@@ -2,8 +2,15 @@
  * Gallery list data for Ronal1710's gallery page
  */
 
-// new image images/fullCom/fullCom_Shork_999_Tyberos.jpg
+// new image images/fullCom/fullCom_porsche_29.jpg
 export const galleryList = [
+  [
+    1,
+    {
+      name: "fullCom_Moon_Fox_Hsin",
+      loc: "images/fullCom/fullCom_Moon_Fox_Hsin.jpg",
+    },
+  ],
   [
     1,
     {
@@ -72,6 +79,13 @@ export const galleryList = [
     {
       name: "fullCom_Mafia_waifu_21",
       loc: "images/fullCom/fullCom_Mafia_waifu_21.jpg",
+    },
+  ],
+  [
+    1,
+    {
+      name: "fullCom_rose",
+      loc: "images/fullCom/fullCom_rose.jpg",
     },
   ],
   [

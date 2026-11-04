@@ -11,9 +11,11 @@ function Gallery() {
   return (
     <div>
       <PageNav />
-      <GalleryHero />
-      <LatestWork />
-      <Ronal1710Gallery />
+      <main id="main">
+        <GalleryHero />
+        <LatestWork />
+        <Ronal1710Gallery />
+      </main>
       <Footer />
     </div>
   );

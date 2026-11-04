@@ -6,84 +6,70 @@ function ImagesShowcase() {
   const images = [
     {
       src: "images/fullCom/fullCom_whiteKnight/variant1.jpg",
-      alt: "fullCom_whiteKnight_variant1",
+      alt: "White Knight full commission artwork",
       key: "2",
     },
 
-    { src: "images/background/bg_alteisen.jpg", alt: "bg_alteisen", key: "3" },
+    {
+      src: "images/background/bg_alteisen.jpg",
+      alt: "Alteisen background artwork",
+      key: "3",
+    },
 
     {
       src: "images/fullCom/fullCom_elainaBlueWorld.jpg",
-      alt: "fullCom_elainaBlueWorld",
+      alt: "Elaina Blue World full commission",
       key: "4",
     },
 
     {
       src: "images/fullCom/fullCom_crownVsHarvester/variant1.jpg",
-      alt: "fullCom_crownVsHarvester_variant1",
+      alt: "Crown versus Harvester commission",
       key: "5",
     },
 
     {
       src: "images/fullCom/fullCom_snowWhite.jpg",
-      alt: "fullCom_snowWhite",
+      alt: "Snow White full commission",
       key: "6",
     },
 
     {
       src: "images/characters/char_redHood.jpg",
-      alt: "char_redHood",
+      alt: "Red Hood character artwork",
       key: "7",
     },
 
-    { src: "images/background/bg_ryukawa.jpg", alt: "ryukawa", key: "8" },
+    {
+      src: "images/background/bg_ryukawa.jpg",
+      alt: "Ryukawa background artwork",
+      key: "8",
+    },
 
     {
       src: "images/characters/char_scarlet/variant1.jpg",
-      alt: "char_scarlet_variant1",
+      alt: "Scarlet character artwork",
       key: "9",
     },
-    { src: "images/characters/char_jinhsi.jpg", alt: "char_jinhsi", key: "11" },
+    {
+      src: "images/characters/char_jinhsi.jpg",
+      alt: "Jinhsi character artwork",
+      key: "11",
+    },
   ];
   return (
     <div className="imagesShowcase">
-      {/* <div className="imagesShowcaseSlide">
-        {images.map((image) => (
-          <img
-            key={image.key}
-            src={image.src}
-            alt={`Marquee ${image.key}`}
-            loading="lazy"
-          />
-        ))}
-
-        <img
-          src="images/fullCom/fullCom_whiteKnight/variant1.jpg"
-          alt={`Marquee `}
-          loading="lazy"
-        />
-        <img
-          src="images/background/bg_alteisen.jpg"
-          alt={`Marquee `}
-          loading="lazy"
-        />
-        <img
-          src="images/fullCom/fullCom_elainaBlueWorld.jpg"
-          alt={`Marquee `}
-          loading="lazy"
-        />
-      </div> */}
       <ul>
         {images.map((image) => (
           <li key={image.key}>
-            <img src={image.src} alt={image.alt} loading="lazy" />
+            <img src={image.src} alt={image.alt} loading="lazy" decoding="async" />
           </li>
         ))}
       </ul>
       <ul aria-hidden="true">
         {images.map((image) => (
           <li key={image.key}>
-            <img src={image.src} alt={image.alt} loading="lazy" />
+            <img src={image.src} alt="" loading="lazy" decoding="async" />
           </li>
         ))}
       </ul>

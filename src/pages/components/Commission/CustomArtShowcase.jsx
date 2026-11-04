@@ -52,9 +52,9 @@ function CustomArtShowcase() {
 
   return (
     <div className="flex flex-col">
-      <h1 className="my-10 text-center text-3xl sm:text-4xl md:text-h1 text-textPrimary font-title font-semibold max-w-4xl mx-auto px-4">
+      <h2 className="my-10 text-center text-3xl sm:text-4xl md:text-h1 text-textPrimary font-title font-semibold max-w-4xl mx-auto px-4">
         Custom Artwork Showcase
-      </h1>
+      </h2>
       <div>
         <h2 className="w-[90%] sm:w-[85%] max-w-4xl mx-auto mb-8 text-textPrimary font-title text-2xl md:text-h2 tracking-wide">
           Characters
@@ -186,7 +186,6 @@ function CustomArtShowcase() {
           />
         </div>
       </div>
-      ;
     </div>
   );
 }

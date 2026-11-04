@@ -18,7 +18,7 @@ function CommissionHero() {
       data-hero-reveal
     >
       <div
-        className="h-fit w-auto m-auto flex justify-center items-center px-6 text-textPrimary bg-white rounded-[2px] hero-stagger"
+        className="h-fit w-auto m-auto flex justify-center items-center px-6 text-textPrimary bg-white rounded-sm hero-stagger"
         style={{ "--stagger-order": 1 }}
       >
         <p className="md:px-20">{translations.promotion}</p>
@@ -33,12 +33,12 @@ function CommissionHero() {
           {translations.yourVision}
         </span>
       </h1>
-      <h3
-        className="my-5 mx-4 font-[600] text-lg sm:text-xl md:text-2xl text-textSecondary hero-stagger"
+      <p
+        className="my-5 mx-4 font-semibold text-lg sm:text-xl md:text-2xl text-textSecondary hero-stagger"
         style={{ "--stagger-order": 3 }}
       >
         {translations.subtitle}
-      </h3>
+      </p>
       <h2
         className="my-10 mx-4 text-2xl sm:text-4xl md:text-h3 lg:text-h2 hero-stagger"
         style={{ "--stagger-order": 4 }}

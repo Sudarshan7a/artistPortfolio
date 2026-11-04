@@ -79,7 +79,12 @@ Edit `src/pages/components/Galleary/Galleary.module.css`. Update the `.latesArt`
 ### Gradient rules:
 - Read the image using the Read tool to see its colors
 - Pick vibrant, saturated colors from the image (dominant, accents, highlights)
-- Angle, number of colors, and percentages are flexible — whatever looks good
+- Mirror the artwork's layout: order stops top-to-bottom like the image (e.g. sky colors at 0%, ground/warm colors at 100%); use ~170-180deg when the image has sky on top and warm ground at bottom
+- No phantom colors: every stop must exist in the image (a near-black navy has no place behind a bright daylight piece)
+- Weight spacing by dominance: the color covering the most pixels gets the widest bands, not even 20% steps
+- Never strand a key accent at the 100% edge alone — blur(64px) eats it; place accents at ~75-85% and anchor 100% with the dominant ground/edge color
+- Saturate mids enough to survive blur + light-page washout (pale pastels disappear; pick one notch more saturated than the pixels look)
+- Angle, number of colors (4-8), and percentages are flexible — whatever matches the image
 - The gradient is blurred (blur: 64px) so colors blend smoothly
 - Keep `border-radius: 42px`, `filter: blur(64px)`, and `height: 100%`
 
@@ -92,13 +97,14 @@ npm run build
 
 Both must pass before committing.
 
-## Step 7: Commit
+## Step 7: Commit and push
 
-Stage all changes and commit with a descriptive message:
+Stage all changes, commit, and push — always, no exceptions:
 
 ```bash
 git add src/galleryList.js src/pages/components/Galleary/Galleary.module.css src/pages/components/Galleary/LatestWork.jsx public/images/fullCom/NEW_IMAGE.jpg
 git commit -m "feat(gallery): add NEW_IMAGE as latest artwork and update gallery list"
+git push origin main
 ```
 
 ## File Reference
@@ -118,3 +124,4 @@ git commit -m "feat(gallery): add NEW_IMAGE as latest artwork and update gallery
 4. **Gradient** = `Galleary.module.css` (match to the NEW image colors)
 5. Always read the image to analyze colors before setting gradient
 6. Always run `npm run lint` and `npm run build` before committing
+7. Always commit AND push (`git push origin main`) — never leave changes unpushed

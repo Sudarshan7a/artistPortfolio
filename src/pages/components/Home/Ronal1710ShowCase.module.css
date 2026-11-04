@@ -1,6 +1,6 @@
-.gallery h1 {
-  color: var(--darkGrayFont, #333);
-  font-family: Montserrat;
+.gallery h2 {
+  color: var(--text);
+  font-family: var(--titleFont);
   font-size: 44px; /* Increased from 40px to 44px */
   font-style: normal;
   font-weight: 600;
@@ -8,26 +8,26 @@
 }
 
 @media (max-width: 1080px) {
-  .gallery h1 {
+  .gallery h2 {
     font-size: 38px; /* Reduced font size for screens 1080px and below */
   }
 }
 
 @media (max-width: 620px) {
-  .gallery h1 {
+  .gallery h2 {
     font-size: 36px; /* Reduced font size for screens 620px and below */
   }
 }
 
 @media (max-width: 420px) {
-  .gallery h1 {
+  .gallery h2 {
     font-size: 28px; /* Reduced font size for screens 420px and below */
   }
 }
 
 .gallery p {
-  color: var(--darkGrayFont, #333);
-  font-family: Merriweather;
+  color: var(--text);
+  font-family: var(--subtitleFont);
   font-size: 28px; /* Increased from 24px to 28px */
   font-style: normal;
   font-weight: 400;
@@ -53,8 +53,8 @@
 }
 
 .headline {
-  color: var(--darkGrayFont, #333);
-  font-family: Montserrat;
+  color: var(--text);
+  font-family: var(--titleFont);
   font-size: 66px;
   font-style: normal;
   font-weight: 700;
@@ -94,13 +94,7 @@
 
 .gallery {
   display: flex;
-  background: linear-gradient(
-    180deg,
-    #add8e6 0%,
-    #2dd4bf 33%,
-    rgba(139, 92, 246, 0.9) 66%,
-    #add8e6 100%
-  );
+  background: var(--bg);
 }
 
 .galleryContent {
@@ -146,7 +140,7 @@
 /* Wrapper to contain the image and hide overflow when scaling */
 .imageWrapper {
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: var(--radius-xl);
   width: 350px;
   height: 580px;
 }
@@ -166,11 +160,4 @@
 
 .productImage:hover {
   transform: scale(1.04);
-}
-
-button {
-  transition: transform 0.4s ease-out;
-}
-button:hover {
-  transform: scale(1.08);
 }

@@ -65,18 +65,8 @@ const Ronal1710ShowCase = () => {
       scrub: 2,
     });
 
-    // Background color changes
-    // const colors = ["#f9d2e5aa", "#cdd1ffaa", "#ffe4d3ee", "#ffb399aa"];
-    // details.forEach((detail, index) => {
-    //   gsap.to(gallery, {
-    //     duration: 1,
-    //     backgroundColor: colors[index],
-    //     scrollTrigger: {
-    //       trigger: detail,
-    //       scrub: true,
-    //     },
-    //   });
-    // });
+    // Background color changes are intentionally disabled: the section
+    // stays on the quiet paper surface so the artwork carries the color.
 
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill()); // Clean up ScrollTrigger on unmount
@@ -115,11 +105,9 @@ const Ronal1710ShowCase = () => {
 
   return (
     <div>
-      <h1
-        className={`${styles.headline} bg-gradient-to-b  from-secondaryColor to-[#add8e6]`}
-      >
+      <h2 className={styles.headline}>
         Why My Art is best for you.
-      </h1>
+      </h2>
       <div
         className={`gallery ${styles.gallery} ${styles.galleryContent}`}
         ref={galleryRef}
@@ -127,7 +115,7 @@ const Ronal1710ShowCase = () => {
         <div className="left pt-[0px] sm:pt-[80px] lg:pt-[0px]">
           <div className="detailsWrapper">
             <div className="details d1">
-              <h1 className="headline col1">Character Commission</h1>
+              <h2 className="headline col1">Character Commission</h2>
               <p className="text">
                 Character commissions capture each character&apos;s unique
                 personality and story, ensuring every detail reflects the
@@ -135,28 +123,26 @@ const Ronal1710ShowCase = () => {
               </p>
             </div>
             <div className="details d2">
-              <h1 className="headline col2">Full Illustration</h1>
+              <h2 className="headline col2">Full Illustration</h2>
               <p className="text">
                 Discover immersive, anime-inspired worlds crafted with precision
                 and passion.
               </p>
             </div>
             <div className="details d3">
-              <h1 className="headline col3">Background Art Commission</h1>
+              <h2 className="headline col3">Background Art Commission</h2>
               <p className="text">
                 Transform your artwork with custom backgrounds that add depth,
                 atmosphere, and vibrant detail, perfectly complementing your
                 characters and story.
               </p>
             </div>
-            <div className=" d4">
-              {/* <h1 className="headline col4">Background Art Commission</h1> */}
-            </div>
+            <div className="d4" aria-hidden="true" />
           </div>
         </div>
 
         <div
-          className="right h-screen"
+          className="right h-dvh"
           style={isBelowMd ? { width: "100%" } : undefined}
         >
           <div className="photos ">
